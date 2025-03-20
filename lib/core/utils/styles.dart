@@ -15,4 +15,17 @@ class Styles {
     fontFamily: 'Inter',
     color: ColorsManager.searchFieldText,
   );
+
+  static final textStyle16 = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: 'Inter',
+    color: ColorsManager.white,
+  );
+  static final textStyle10 = TextStyle(
+    fontSize: 10.sp,
+    fontWeight: FontWeight.w500,
+    fontFamily: 'Inter',
+    color: ColorsManager.navBarText,
+  );
 }

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:insighta/core/theming/colors.dart';
 import 'package:insighta/core/utils/styles.dart';
 import 'package:insighta/features/home/ui/widgets/custom_search_text_field.dart';
+import 'package:insighta/features/home/ui/widgets/home_grid_view.dart';
 
 class HomeScreenBody extends StatelessWidget {
   const HomeScreenBody({super.key});
@@ -23,6 +25,8 @@ class HomeScreenBody extends StatelessWidget {
             height: 24.h,
           ),
           CustomSearchTextField(),
+          SizedBox(height: 16.h),
+          Expanded(child: HomeGridView()),
         ]),
       )),
     );

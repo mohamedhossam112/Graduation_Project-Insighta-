@@ -8,4 +8,5 @@ class ColorsManager {
   static const Color searchFieldText = Color(0xff515050);
   static const Color white = Colors.white;
   static const Color black = Colors.black;
+  static const Color navBarText = Color(0xff9A9898);
 }

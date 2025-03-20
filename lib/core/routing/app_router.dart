@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:insighta/bottom_navigation_bar.dart';
 import 'package:insighta/core/routing/routes.dart';
 import 'package:insighta/features/home/ui/home_screen.dart';
 import 'package:insighta/features/login/ui/login_screen.dart';
@@ -13,6 +14,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const Onboarding());
       case Routes.logInScreen:
         return MaterialPageRoute(builder: (_) => const LoginScreen());
+      case Routes.navBarScreen:
+        return MaterialPageRoute(builder: (_) => const navBar());
       case Routes.homeScreen:
         return MaterialPageRoute(builder: (_) => const HomeScreen());
       default:

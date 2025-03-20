@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:insighta/core/routing/app_router.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:insighta/core/routing/routes.dart';
@@ -17,7 +18,7 @@ class InsightaApp extends StatelessWidget {
             primaryColor: ColorsManager.primaryColor,
             scaffoldBackgroundColor: ColorsManager.white),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.homeScreen,
+        initialRoute: Routes.navBarScreen,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );

@@ -9,4 +9,5 @@ class ColorsManager {
   static const Color white = Colors.white;
   static const Color black = Colors.black;
   static const Color navBarText = Color(0xff9A9898);
+  static const Color cardText = Color(0xff616161);
 }

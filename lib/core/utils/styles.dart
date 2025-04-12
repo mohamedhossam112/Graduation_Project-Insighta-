@@ -34,4 +34,16 @@ class Styles {
     fontFamily: 'Inter',
     color: Color(0xff455A64),
   );
+  static final textStyle12 = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    fontFamily: 'Inter',
+    color: ColorsManager.cardText,
+  );
+  static final textStyle20 = TextStyle(
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w700,
+    fontFamily: 'Inter',
+    color: ColorsManager.primaryColor,
+  );
 }

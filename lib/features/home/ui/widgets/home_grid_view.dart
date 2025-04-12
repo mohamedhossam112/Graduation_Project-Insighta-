@@ -8,7 +8,7 @@ class HomeGridView extends StatelessWidget {
   const HomeGridView({super.key});
   static const List<Map<String, dynamic>> buttonData = [
     {'icon': FontAwesomeIcons.solidHeart, 'label': 'Suggest'},
-    {'icon': Icons.chat, 'label': 'Rebort'},
+    {'icon': Icons.chat, 'label': 'Report'},
     {'icon': FontAwesomeIcons.chartColumn, 'label': 'Usage'},
     {'icon': FontAwesomeIcons.userGroup, 'label': 'Parent'},
     {'icon': FontAwesomeIcons.userDoctor, 'label': 'Thearpy'},
@@ -29,7 +29,13 @@ class HomeGridView extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
           ),
-          onPressed: () {},
+          onPressed: () {
+            switch (data['label']) {
+              case 'Report':
+                Navigator.pushNamed(context, '/reportScreen');
+                break;
+            }
+          },
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

@@ -19,8 +19,8 @@ class HomeGridView extends StatelessWidget {
     return GridView.count(
       crossAxisCount: 2,
       mainAxisSpacing: 10.h,
-      crossAxisSpacing: 10.w,
-      childAspectRatio: 2,
+      crossAxisSpacing: 8.w,
+      childAspectRatio: 2.2,
       children: buttonData.map((data) {
         return ElevatedButton(
           style: ElevatedButton.styleFrom(

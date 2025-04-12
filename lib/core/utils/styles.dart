@@ -28,4 +28,10 @@ class Styles {
     fontFamily: 'Inter',
     color: ColorsManager.navBarText,
   );
+  static final textStyle22 = TextStyle(
+    fontSize: 22.sp,
+    fontWeight: FontWeight.w600,
+    fontFamily: 'Inter',
+    color: Color(0xff455A64),
+  );
 }

@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:insighta/core/theming/colors.dart';
 import 'package:insighta/features/home/ui/home_screen.dart';
-import 'package:insighta/features/report/ui/report_screen.dart';
 
 // ignore: camel_case_types
 class navBar extends StatefulWidget {
@@ -37,17 +36,23 @@ class _navBarState extends State<navBar> {
         index: _selectedIndex,
         children: _screens,
       ),
-      bottomNavigationBar: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Divider(
-            height: 2.h,
-            color: Color(0xffE5E7EB),
-          ),
-          BottomNavigationBar(
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: Color(0xffE5E7EB),
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30.r), topRight: Radius.circular(30.r)),
+          boxShadow: [
+            BoxShadow(color: Colors.black12, spreadRadius: 2, blurRadius: 2),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(40.r),
+          child: BottomNavigationBar(
             iconSize: 18.r,
-            backgroundColor: Color(0xffEBE7E7),
+            elevation: 0,
             showUnselectedLabels: true,
+            type: BottomNavigationBarType.fixed,
+            backgroundColor: Colors.transparent,
             currentIndex: _selectedIndex,
             onTap: _onItemTapped,
             items: const [
@@ -61,9 +66,9 @@ class _navBarState extends State<navBar> {
                   icon: Icon(FontAwesomeIcons.gear), label: "Setting"),
             ],
             selectedItemColor: ColorsManager.primaryColor,
-            unselectedItemColor: ColorsManager.navBarText,
+            unselectedItemColor: Colors.grey,
           ),
-        ],
+        ),
       ),
     );
   }

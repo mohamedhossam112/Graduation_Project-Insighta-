@@ -8,18 +8,12 @@ import 'package:insighta/core/utils/styles.dart';
 class ReportCardDetailsScreen extends StatelessWidget {
   final Map<String, dynamic>? arguments;
   const ReportCardDetailsScreen({
-    Key? key,
+    super.key,
     this.arguments,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
-    if (arguments == null) {
-      return const Scaffold(
-        body: Center(child: Text('No data received for this card.')),
-      );
-    }
-
     final String platform = arguments!['platform'];
     final String assetPath = arguments!['assetPath'];
 

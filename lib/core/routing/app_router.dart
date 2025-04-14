@@ -4,6 +4,7 @@ import 'package:insighta/core/routing/routes.dart';
 import 'package:insighta/features/home/ui/home_screen.dart';
 import 'package:insighta/features/login/ui/login_screen.dart';
 import 'package:insighta/features/onboarding/ui/onboarding.dart';
+import 'package:insighta/features/report/ui/report_card_details_screen.dart';
 import 'package:insighta/features/report/ui/report_screen.dart';
 
 class AppRouter {
@@ -21,6 +22,10 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const HomeScreen());
       case Routes.reportScreen:
         return MaterialPageRoute(builder: (_) => const ReportScreen());
+      case Routes.reportCardDetailsScreen:
+        final args = settings.arguments as Map<String, dynamic>?;
+        return MaterialPageRoute(
+            builder: (_) => ReportCardDetailsScreen(arguments: args));
       default:
         // If no route matches, show an error screen
         return MaterialPageRoute(

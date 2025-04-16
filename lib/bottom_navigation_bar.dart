@@ -38,7 +38,7 @@ class _navBarState extends State<navBar> {
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          color: Color(0xffE5E7EB),
+          color: ColorsManager.searchField,
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(30.r), topRight: Radius.circular(30.r)),
           boxShadow: [
@@ -66,7 +66,7 @@ class _navBarState extends State<navBar> {
                   icon: Icon(FontAwesomeIcons.gear), label: "Setting"),
             ],
             selectedItemColor: ColorsManager.primaryColor,
-            unselectedItemColor: Colors.grey,
+            unselectedItemColor: ColorsManager.searchFieldText,
           ),
         ),
       ),

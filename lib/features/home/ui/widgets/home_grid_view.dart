@@ -11,7 +11,7 @@ class HomeGridView extends StatelessWidget {
     {'icon': Icons.chat, 'label': 'Report'},
     {'icon': FontAwesomeIcons.chartColumn, 'label': 'Usage'},
     {'icon': FontAwesomeIcons.userGroup, 'label': 'Parent'},
-    {'icon': FontAwesomeIcons.userDoctor, 'label': 'Thearpy'},
+    {'icon': FontAwesomeIcons.userDoctor, 'label': 'Therapy'},
     {'icon': FontAwesomeIcons.commentDots, 'label': 'Contact Us'},
   ];
   @override
@@ -35,6 +35,11 @@ class HomeGridView extends StatelessWidget {
                 Navigator.pushNamed(context, '/reportScreen');
                 break;
             }
+            switch (data['label']) {
+              case 'Therapy':
+                Navigator.pushNamed(context, '/therapyScreen');
+                break;
+            }
           },
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -47,7 +52,7 @@ class HomeGridView extends StatelessWidget {
               SizedBox(height: 5.h),
               Text(
                 data['label'],
-                style: Styles.textStyle16,
+                style: Styles.textStyle16I,
               ),
             ],
           ),

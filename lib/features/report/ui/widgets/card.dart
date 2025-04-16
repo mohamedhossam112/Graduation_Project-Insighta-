@@ -48,7 +48,7 @@ class ReportCard extends StatelessWidget {
                     SizedBox(width: 4.w),
                     Text(
                       platform,
-                      style: Styles.textStyle20,
+                      style: Styles.textStyle20I,
                     ),
                   ],
                 ),
@@ -61,7 +61,7 @@ class ReportCard extends StatelessWidget {
                 ),
                 Text(
                   '"Please remember to wear a headscarf when visiting the mosque as a sign of respect for Islamic traditions and the sacredness of the place. Wearing a headscarf reflects modesty and reverence in religious spaces and is part of the etiquette for entering mosques."',
-                  style: Styles.textStyle12,
+                  style: Styles.textStyle12I,
                 ),
               ],
             ),

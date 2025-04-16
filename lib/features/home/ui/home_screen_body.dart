@@ -20,7 +20,7 @@ class HomeScreenBody extends StatelessWidget {
         children: [
           Text(
             'Discover',
-            style: Styles.textStyle30,
+            style: Styles.textStyle30I,
           ),
           SizedBox(
             height: 20.h,
@@ -31,7 +31,7 @@ class HomeScreenBody extends StatelessWidget {
           SizedBox(height: 14.h),
           Text(
             'Last Week',
-            style: Styles.textStyle22,
+            style: Styles.textStyle22I,
           ),
           SizedBox(
             height: 18.h,

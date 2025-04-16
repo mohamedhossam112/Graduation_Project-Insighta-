@@ -7,6 +7,10 @@ class ReportScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: BackButton(),
+      ),
       body: SafeArea(child: ReportScreenBody()),
     );
   }

@@ -6,6 +6,7 @@ import 'package:insighta/features/login/ui/login_screen.dart';
 import 'package:insighta/features/onboarding/ui/onboarding.dart';
 import 'package:insighta/features/report/ui/report_card_details_screen.dart';
 import 'package:insighta/features/report/ui/report_screen.dart';
+import 'package:insighta/features/therapy/ui/therapy_screen.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
@@ -22,6 +23,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const HomeScreen());
       case Routes.reportScreen:
         return MaterialPageRoute(builder: (_) => const ReportScreen());
+      case Routes.therapyScreen:
+        return MaterialPageRoute(builder: (_) => const TherapyScreen());
       case Routes.reportCardDetailsScreen:
         final args = settings.arguments as Map<String, dynamic>?;
         return MaterialPageRoute(

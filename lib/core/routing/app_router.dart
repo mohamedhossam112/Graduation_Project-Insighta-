@@ -6,7 +6,7 @@ import 'package:insighta/features/login/ui/login_screen.dart';
 import 'package:insighta/features/onboarding/ui/onboarding.dart';
 import 'package:insighta/features/report/ui/report_card_details_screen.dart';
 import 'package:insighta/features/report/ui/report_screen.dart';
-import 'package:insighta/features/therapy/ui/booking_time_screen.dart';
+import 'package:insighta/features/therapy/ui/booking_screen.dart';
 import 'package:insighta/features/therapy/ui/therapy_screen.dart';
 
 class AppRouter {
@@ -30,8 +30,8 @@ class AppRouter {
         final args = settings.arguments as Map<String, dynamic>?;
         return MaterialPageRoute(
             builder: (_) => ReportCardDetailsScreen(arguments: args));
-      case Routes.bookingTimeScreen:
-        return MaterialPageRoute(builder: (_) => const BookingTimeScreen());
+      case Routes.bookingScreen:
+        return MaterialPageRoute(builder: (_) => const BookingScreen());
       default:
         // If no route matches, show an error screen
         return MaterialPageRoute(

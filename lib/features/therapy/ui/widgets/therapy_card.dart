@@ -12,7 +12,7 @@ class TherapyCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, '/bookingTimeScreen');
+        Navigator.pushNamed(context, '/bookingScreen');
       },
       child: Card(
         shape: RoundedRectangleBorder(

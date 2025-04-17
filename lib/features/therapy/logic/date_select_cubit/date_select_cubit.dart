@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
 
 part 'date_select_state.dart';
 
@@ -15,9 +14,7 @@ class DateSelectCubit extends Cubit<DateSelectState> {
   }
 
   void selectDate(int index) {
-    if (state is DateSelectLoaded) {
-      final currentState = state as DateSelectLoaded;
-      emit(DateSelectLoaded(selectedIndex: index, dates: currentState.dates));
-    }
+    final currentState = state as DateSelectLoaded;
+    emit(DateSelectLoaded(selectedIndex: index, dates: currentState.dates));
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:insighta/features/report/ui/widgets/card.dart';
+import 'package:insighta/features/report/ui/widgets/report_card.dart';
 
 class ReportScreenBody extends StatelessWidget {
   ReportScreenBody({super.key});

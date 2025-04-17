@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:insighta/core/theming/colors.dart';
+import 'package:insighta/core/utils/styles.dart';
 
 import 'package:insighta/features/home/ui/home_screen_body.dart';
 

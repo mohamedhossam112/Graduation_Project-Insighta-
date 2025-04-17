@@ -10,72 +10,77 @@ class TherapyCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        side: BorderSide(color: ColorsManager.primaryColor, width: 2.w),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      elevation: 2,
-      color: Colors.white,
-      margin: EdgeInsets.all(8.sp),
-      child: Column(
-        children: [
-          ListTile(
-            leading: Image.asset('assets/images/doc.png'),
-            title: Text(
-              'Dr Mohamed Breset ',
-              style: Styles.textStyle20P,
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, '/bookingTimeScreen');
+      },
+      child: Card(
+        shape: RoundedRectangleBorder(
+          side: BorderSide(color: ColorsManager.primaryColor, width: 2.w),
+          borderRadius: BorderRadius.circular(12),
+        ),
+        elevation: 2,
+        color: Colors.white,
+        margin: EdgeInsets.all(8.sp),
+        child: Column(
+          children: [
+            ListTile(
+              leading: Image.asset('assets/images/doc.png'),
+              title: Text(
+                'Dr Mohamed Breset ',
+                style: Styles.textStyle20P,
+              ),
+              subtitle: Text('Gynecologue obstericien'),
             ),
-            subtitle: Text('Gynecologue obstericien'),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 12.h),
-            child: Row(
-              children: [
-                Icon(
-                  FontAwesomeIcons.locationDot,
-                  color: ColorsManager.primaryColor,
-                  size: 20.sp,
-                ),
-                SizedBox(
-                  width: 10.w,
-                ),
-                Text(
-                  '4 Rue du Doctour Roux 75015 Paric',
-                  style: Styles.textStyle14P,
-                ),
-              ],
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 12.h),
+              child: Row(
+                children: [
+                  Icon(
+                    FontAwesomeIcons.locationDot,
+                    color: ColorsManager.primaryColor,
+                    size: 20.sp,
+                  ),
+                  SizedBox(
+                    width: 10.w,
+                  ),
+                  Text(
+                    '4 Rue du Doctour Roux 75015 Paric',
+                    style: Styles.textStyle14P,
+                  ),
+                ],
+              ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 18.w,
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 18.w,
+              ),
+              child: Row(
+                children: [
+                  Icon(
+                    FontAwesomeIcons.check,
+                    color: ColorsManager.primaryColor,
+                    size: 20.sp,
+                  ),
+                  SizedBox(
+                    width: 10.w,
+                  ),
+                  Text(
+                    'Conventionne secture 2',
+                    style: Styles.textStyle14P,
+                  ),
+                ],
+              ),
             ),
-            child: Row(
-              children: [
-                Icon(
-                  FontAwesomeIcons.check,
-                  color: ColorsManager.primaryColor,
-                  size: 20.sp,
-                ),
-                SizedBox(
-                  width: 10.w,
-                ),
-                Text(
-                  'Conventionne secture 2',
-                  style: Styles.textStyle14P,
-                ),
-              ],
+            Divider(
+              color: ColorsManager.primaryColor,
             ),
-          ),
-          Divider(
-            color: ColorsManager.primaryColor,
-          ),
-          SecondHalfofTherapyCard(),
-          SizedBox(
-            height: 40.h,
-          ),
-        ],
+            SecondHalfofTherapyCard(),
+            SizedBox(
+              height: 40.h,
+            ),
+          ],
+        ),
       ),
     );
   }

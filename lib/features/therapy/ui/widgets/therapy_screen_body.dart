@@ -12,16 +12,7 @@ class TherapyScreenBody extends StatelessWidget {
       padding: EdgeInsets.symmetric(
         horizontal: 24.w,
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Image.asset('assets/images/therapy.png'),
-          SizedBox(
-            height: 12,
-          ),
-          Expanded(child: TherapyListView()),
-        ],
-      ),
+      child: TherapyListView(),
     );
   }
 }

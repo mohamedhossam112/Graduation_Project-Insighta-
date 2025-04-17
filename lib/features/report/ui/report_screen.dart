@@ -9,7 +9,6 @@ class ReportScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: BackButton(),
       ),
       body: SafeArea(child: ReportScreenBody()),
     );

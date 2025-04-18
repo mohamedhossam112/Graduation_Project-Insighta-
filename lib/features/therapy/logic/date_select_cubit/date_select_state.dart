@@ -1,5 +1,6 @@
 part of 'date_select_cubit.dart';
 
+@immutable
 sealed class DateSelectState {}
 
 final class DateSelectInitial extends DateSelectState {}

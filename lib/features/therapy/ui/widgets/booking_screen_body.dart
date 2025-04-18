@@ -23,7 +23,7 @@ class BookingScreenBody extends StatelessWidget {
             height: 1.h,
             thickness: 1,
             color: ColorsManager.primaryColor,
-          )
+          ),
         ],
       ),
     );

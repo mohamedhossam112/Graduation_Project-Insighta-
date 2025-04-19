@@ -9,9 +9,9 @@ class TimeSelectCubit extends Cubit<TimeSelectState> {
     generateTime();
   }
   void generateTime() {
-    List<String> morning = generateTimeRange(9, 12);
-    List<String> afternoon = generateTimeRange(13, 15);
-    List<String> evening = generateTimeRange(17, 20);
+    List<String> morning = generateTimeRange(9, 13);
+    List<String> afternoon = generateTimeRange(13, 17);
+    List<String> evening = generateTimeRange(17, 21);
 
     emit(TimeSelectLoaded(
       morningSlots: morning,

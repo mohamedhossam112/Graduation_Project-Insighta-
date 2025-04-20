@@ -6,6 +6,7 @@ import 'package:insighta/features/login/ui/login_screen.dart';
 import 'package:insighta/features/onboarding/ui/onboarding.dart';
 import 'package:insighta/features/report/ui/report_card_details_screen.dart';
 import 'package:insighta/features/report/ui/report_screen.dart';
+import 'package:insighta/features/suggest/ui/suggest_screen.dart';
 import 'package:insighta/features/therapy/ui/select_time_slots_screen.dart';
 import 'package:insighta/features/therapy/ui/booking_success_screen.dart';
 import 'package:insighta/features/therapy/ui/therapy_screen.dart';
@@ -40,6 +41,8 @@ class AppRouter {
                   date: args['date'] as DateTime,
                   time: args['time'] as String,
                 ));
+      case Routes.suggestScreen:
+        return MaterialPageRoute(builder: (_) => const SuggestScreen());
       default:
         // If no route matches, show an error screen
         return MaterialPageRoute(

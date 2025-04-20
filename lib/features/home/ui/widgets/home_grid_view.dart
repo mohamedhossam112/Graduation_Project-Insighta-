@@ -33,11 +33,14 @@ class HomeGridView extends StatelessWidget {
             switch (data['label']) {
               case 'Report':
                 Navigator.pushNamed(context, '/reportScreen');
-                break;
             }
             switch (data['label']) {
               case 'Therapy':
                 Navigator.pushNamed(context, '/therapyScreen');
+            }
+            switch (data['label']) {
+              case 'Suggest':
+                Navigator.pushNamed(context, '/suggestScreen');
                 break;
             }
           },

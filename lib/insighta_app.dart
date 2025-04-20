@@ -17,26 +17,13 @@ class InsightaApp extends StatelessWidget {
     return ScreenUtilInit(
       minTextAdapt: true,
       designSize: const Size(393, 852),
-      child: MultiBlocProvider(
-        providers: [
-          BlocProvider(
-            create: (context) => DateSelectCubit(),
-          ),
-          BlocProvider(
-            create: (context) => TimeSelectCubit(),
-          ),
-          BlocProvider(
-            create: (context) => AppointmentCubit(),
-          ),
-        ],
-        child: MaterialApp(
-          theme: ThemeData(
-              primaryColor: ColorsManager.primaryColor,
-              scaffoldBackgroundColor: ColorsManager.white),
-          debugShowCheckedModeBanner: false,
-          initialRoute: Routes.navBarScreen,
-          onGenerateRoute: appRouter.generateRoute,
-        ),
+      child: MaterialApp(
+        theme: ThemeData(
+            primaryColor: ColorsManager.primaryColor,
+            scaffoldBackgroundColor: ColorsManager.white),
+        debugShowCheckedModeBanner: false,
+        initialRoute: Routes.navBarScreen,
+        onGenerateRoute: appRouter.generateRoute,
       ),
     );
   }

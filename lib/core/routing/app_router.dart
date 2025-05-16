@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:insighta/bottom_navigation_bar.dart';
 import 'package:insighta/core/routing/routes.dart';
 import 'package:insighta/features/home/ui/home_screen.dart';
-import 'package:insighta/features/login/ui/login_screen.dart';
+import 'package:insighta/features/auth/ui/login_screen.dart';
 import 'package:insighta/features/onboarding/ui/onboarding.dart';
 import 'package:insighta/features/report/ui/report_card_details_screen.dart';
 import 'package:insighta/features/report/ui/report_screen.dart';
@@ -10,6 +10,7 @@ import 'package:insighta/features/suggest/ui/suggest_screen.dart';
 import 'package:insighta/features/therapy/ui/select_time_slots_screen.dart';
 import 'package:insighta/features/therapy/ui/booking_success_screen.dart';
 import 'package:insighta/features/therapy/ui/therapy_screen.dart';
+import 'package:insighta/features/usage/ui/usage_screen.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
@@ -43,6 +44,8 @@ class AppRouter {
                 ));
       case Routes.suggestScreen:
         return MaterialPageRoute(builder: (_) => const SuggestScreen());
+      case Routes.usageScreen:
+        return MaterialPageRoute(builder: (_) => const UsageScreen());
       default:
         // If no route matches, show an error screen
         return MaterialPageRoute(

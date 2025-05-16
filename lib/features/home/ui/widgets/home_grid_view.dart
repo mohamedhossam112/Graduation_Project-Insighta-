@@ -43,6 +43,11 @@ class HomeGridView extends StatelessWidget {
                 Navigator.pushNamed(context, '/suggestScreen');
                 break;
             }
+            switch (data['label']) {
+              case 'Usage':
+                Navigator.pushNamed(context, '/usageScreen');
+                break;
+            }
           },
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

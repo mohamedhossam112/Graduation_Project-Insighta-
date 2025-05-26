@@ -23,12 +23,12 @@ class HomeScreenBody extends StatelessWidget {
             style: Styles.textStyle30I,
           ),
           SizedBox(
-            height: 20.h,
+            height: 30.h,
           ),
           CustomSearchTextField(),
-          SizedBox(height: 14.h),
+          SizedBox(height: 28.h),
           Expanded(child: HomeGridView()),
-          SizedBox(height: 14.h),
+          SizedBox(height: 8.h),
           Text(
             'Last Week',
             style: Styles.textStyle22I,
@@ -37,6 +37,9 @@ class HomeScreenBody extends StatelessWidget {
             height: 18.h,
           ),
           ScatterChartWidget(),
+          SizedBox(
+            height: 22.h,
+          ),
         ],
       ),
     );

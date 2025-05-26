@@ -10,17 +10,15 @@ class HomeGridView extends StatelessWidget {
     {'icon': FontAwesomeIcons.solidHeart, 'label': 'Suggest'},
     {'icon': Icons.chat, 'label': 'Report'},
     {'icon': FontAwesomeIcons.chartColumn, 'label': 'Usage'},
-    {'icon': FontAwesomeIcons.userGroup, 'label': 'Parent'},
     {'icon': FontAwesomeIcons.userDoctor, 'label': 'Therapy'},
-    {'icon': FontAwesomeIcons.commentDots, 'label': 'Contact Us'},
   ];
   @override
   Widget build(BuildContext context) {
     return GridView.count(
       crossAxisCount: 2,
-      mainAxisSpacing: 10.h,
-      crossAxisSpacing: 8.w,
-      childAspectRatio: 2.2,
+      mainAxisSpacing: 12.h,
+      crossAxisSpacing: 10.w,
+      childAspectRatio: 1.6,
       children: buttonData.map((data) {
         return ElevatedButton(
           style: ElevatedButton.styleFrom(
@@ -57,7 +55,7 @@ class HomeGridView extends StatelessWidget {
                 color: Colors.white,
                 size: 24.r,
               ),
-              SizedBox(height: 5.h),
+              SizedBox(height: 8.h),
               Text(
                 data['label'],
                 style: Styles.textStyle16I,

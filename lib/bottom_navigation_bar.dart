@@ -18,9 +18,9 @@ class _navBarState extends State<navBar> {
   final List<Widget> _screens = [
     HomeScreen(),
 
-    // ProfileScreen(),
     // NotificationScreen(),
-    // SettingsScreen(),
+    // ParentScreen(),
+    // ProfileScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -59,11 +59,11 @@ class _navBarState extends State<navBar> {
               BottomNavigationBarItem(
                   icon: Icon(FontAwesomeIcons.house), label: "Home"),
               BottomNavigationBarItem(
-                  icon: Icon(FontAwesomeIcons.user), label: "Profile"),
-              BottomNavigationBarItem(
                   icon: Icon(FontAwesomeIcons.bell), label: "Notification"),
               BottomNavigationBarItem(
-                  icon: Icon(FontAwesomeIcons.gear), label: "Setting"),
+                  icon: Icon(FontAwesomeIcons.userGroup), label: "Parent"),
+              BottomNavigationBarItem(
+                  icon: Icon(FontAwesomeIcons.user), label: "Profile"),
             ],
             selectedItemColor: ColorsManager.primaryColor,
             unselectedItemColor: ColorsManager.searchFieldText,

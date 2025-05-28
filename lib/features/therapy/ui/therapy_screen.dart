@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:insighta/core/utils/styles.dart';
+import 'package:insighta/core/widgets/custom_back_button.dart';
 import 'package:insighta/features/therapy/ui/widgets/therapy_screen_body.dart';
 
 class TherapyScreen extends StatelessWidget {
@@ -9,6 +10,7 @@ class TherapyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: CustomBackButton(),
         backgroundColor: Colors.white,
         centerTitle: true,
         title: Text(

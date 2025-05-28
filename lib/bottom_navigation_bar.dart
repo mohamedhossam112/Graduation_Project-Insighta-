@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:insighta/core/theming/colors.dart';
 import 'package:insighta/features/home/ui/home_screen.dart';
+import 'package:insighta/features/notification/ui/notification_screen.dart';
 
 // ignore: camel_case_types
 class navBar extends StatefulWidget {
@@ -18,7 +19,7 @@ class _navBarState extends State<navBar> {
   final List<Widget> _screens = [
     HomeScreen(),
 
-    // NotificationScreen(),
+    NotificationScreen(),
     // ParentScreen(),
     // ProfileScreen(),
   ];

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:insighta/core/utils/styles.dart';
+import 'package:insighta/core/widgets/custom_back_button.dart';
 
 class ReportCardDetailsScreen extends StatelessWidget {
   final Map<String, dynamic>? arguments;
@@ -20,7 +21,7 @@ class ReportCardDetailsScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,
-          leading: BackButton(),
+          leading: CustomBackButton(),
         ),
         body: SafeArea(
             child: Column(

@@ -3,6 +3,7 @@ import 'package:insighta/bottom_navigation_bar.dart';
 import 'package:insighta/core/routing/routes.dart';
 import 'package:insighta/features/home/ui/home_screen.dart';
 import 'package:insighta/features/auth/ui/login_screen.dart';
+import 'package:insighta/features/notification/ui/notification_screen.dart';
 import 'package:insighta/features/onboarding/ui/onboarding.dart';
 import 'package:insighta/features/report/ui/report_card_details_screen.dart';
 import 'package:insighta/features/report/ui/report_screen.dart';
@@ -25,6 +26,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const navBar());
       case Routes.homeScreen:
         return MaterialPageRoute(builder: (_) => const HomeScreen());
+      case Routes.notificationScreen:
+        return MaterialPageRoute(builder: (_) => const NotificationScreen());
       case Routes.reportScreen:
         return MaterialPageRoute(builder: (_) => const ReportScreen());
       case Routes.therapyScreen:

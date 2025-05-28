@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:insighta/core/theming/colors.dart';
 import 'package:insighta/core/utils/styles.dart';
+import 'package:insighta/core/widgets/custom_back_button.dart';
 import 'package:insighta/features/therapy/logic/appointment_cubit/appointment_cubit.dart';
 import 'package:insighta/features/therapy/logic/date_select_cubit/date_select_cubit.dart';
 import 'package:insighta/features/therapy/logic/time_select_cubit/time_select_cubit.dart';
@@ -29,7 +30,7 @@ class SelectTimeSlotsScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,
-          leading: BackButton(),
+          leading: CustomBackButton(),
           centerTitle: true,
           title: Text(
             'Select Time Slots',

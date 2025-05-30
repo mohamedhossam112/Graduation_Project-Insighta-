@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:insighta/core/theming/colors.dart';
 import 'package:insighta/core/utils/styles.dart';
-import 'package:insighta/features/auth/ui/widgets/already_have_account_text.dart';
-import 'package:insighta/features/auth/ui/widgets/app_text_button.dart';
-import 'package:insighta/features/auth/ui/widgets/app_text_form_field.dart';
-import 'package:insighta/features/auth/ui/widgets/continue_with_other_platform.dart';
-import 'package:insighta/features/auth/ui/widgets/custom_divider.dart';
+import 'package:insighta/features/auth/login/ui/widgets/already_have_account_text.dart';
+import 'package:insighta/features/auth/login/ui/widgets/app_text_button.dart';
+import 'package:insighta/features/auth/login/ui/widgets/app_text_form_field.dart';
+import 'package:insighta/features/auth/login/ui/widgets/continue_with_other_platform.dart';
+import 'package:insighta/features/auth/login/ui/widgets/custom_divider.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

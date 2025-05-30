@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:insighta/core/utils/styles.dart';
@@ -16,7 +17,11 @@ class AlreadyHaveAccountText extends StatelessWidget {
           ),
           TextSpan(
               text: ' Sign Up',
-              style: Styles.textStyle16P.copyWith(fontWeight: FontWeight.w600)),
+              style: Styles.textStyle16P.copyWith(fontWeight: FontWeight.w600),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () {
+                  Navigator.pushNamed(context, '/signUpScreen');
+                }),
         ]));
   }
 }

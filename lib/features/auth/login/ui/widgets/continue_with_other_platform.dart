@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:insighta/features/auth/ui/widgets/social_media_part.dart';
+import 'package:insighta/features/auth/login/ui/widgets/social_media_part.dart';
 
 class ContinueWithOtherPlatform extends StatelessWidget {
   const ContinueWithOtherPlatform({super.key});

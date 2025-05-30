@@ -26,7 +26,7 @@ class InsightaApp extends StatelessWidget {
             scaffoldBackgroundColor: ColorsManager.white),
         debugShowCheckedModeBanner: false,
         initialRoute:
-            //hasSeenOnboarding ? Routes.logInScreen : Routes.onBoardingScreen,
+            //    hasSeenOnboarding ? Routes.logInScreen : Routes.onBoardingScreen,
             '/onBoardingScreen',
         onGenerateRoute: appRouter.generateRoute,
       ),

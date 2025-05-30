@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:insighta/bottom_navigation_bar.dart';
 import 'package:insighta/core/routing/routes.dart';
+import 'package:insighta/features/auth/login/ui/login_screen.dart';
 import 'package:insighta/features/home/ui/home_screen.dart';
-import 'package:insighta/features/auth/ui/login_screen.dart';
+
 import 'package:insighta/features/notification/ui/notification_screen.dart';
 import 'package:insighta/features/onboarding/ui/onBoarding_screen.dart';
 import 'package:insighta/features/report/ui/report_card_details_screen.dart';

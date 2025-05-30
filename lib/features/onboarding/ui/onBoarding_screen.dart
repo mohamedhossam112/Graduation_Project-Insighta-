@@ -25,7 +25,7 @@ class _onBoardingScreenState extends State<onBoardingScreen> {
   void finishOnboarding() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('hasSeenOnboarding', true);
-    Navigator.pushReplacementNamed(context, '/navBar');
+    Navigator.pushReplacementNamed(context, '/logInScreen');
   }
 
   @override

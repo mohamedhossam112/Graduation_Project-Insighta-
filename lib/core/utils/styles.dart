@@ -65,6 +65,12 @@ class Styles {
     fontFamily: 'Poppins',
     color: ColorsManager.therapyGrey,
   );
+  static final textStyle16P = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w600,
+    fontFamily: 'Poppins',
+    color: ColorsManager.primaryColor,
+  );
   static final textStyle24P = TextStyle(
     fontSize: 24.sp,
     fontWeight: FontWeight.w600,

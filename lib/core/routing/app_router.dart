@@ -4,7 +4,7 @@ import 'package:insighta/core/routing/routes.dart';
 import 'package:insighta/features/home/ui/home_screen.dart';
 import 'package:insighta/features/auth/ui/login_screen.dart';
 import 'package:insighta/features/notification/ui/notification_screen.dart';
-import 'package:insighta/features/onboarding/ui/onboarding.dart';
+import 'package:insighta/features/onboarding/ui/onBoarding_screen.dart';
 import 'package:insighta/features/report/ui/report_card_details_screen.dart';
 import 'package:insighta/features/report/ui/report_screen.dart';
 import 'package:insighta/features/suggest/ui/suggest_screen.dart';
@@ -19,7 +19,7 @@ class AppRouter {
     final arguments = settings.arguments;
     switch (settings.name) {
       case Routes.onBoardingScreen:
-        return MaterialPageRoute(builder: (_) => const Onboarding());
+        return MaterialPageRoute(builder: (_) => const onBoardingScreen());
       case Routes.logInScreen:
         return MaterialPageRoute(builder: (_) => const LoginScreen());
       case Routes.navBarScreen:

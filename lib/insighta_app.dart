@@ -1,13 +1,19 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:insighta/core/routing/app_router.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:insighta/core/routing/routes.dart';
+
 import 'package:insighta/core/theming/colors.dart';
 
 class InsightaApp extends StatelessWidget {
-  const InsightaApp({super.key, required this.appRouter});
+  const InsightaApp({
+    Key? key,
+    required this.appRouter,
+    required this.hasSeenOnboarding,
+  }) : super(key: key);
   final AppRouter appRouter;
+  final bool hasSeenOnboarding;
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -18,7 +24,7 @@ class InsightaApp extends StatelessWidget {
             primaryColor: ColorsManager.primaryColor,
             scaffoldBackgroundColor: ColorsManager.white),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.navBarScreen,
+        initialRoute: '/onBoardingScreen',
         onGenerateRoute: appRouter.generateRoute,
       ),
     );

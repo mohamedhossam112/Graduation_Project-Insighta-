@@ -50,6 +50,8 @@ dependencies:
   meta: ^1.16.0
   pretty_dio_logger: ^1.4.0
   retrofit: ^4.4.2
+  shared_preferences: ^2.5.3
+  smooth_page_indicator: ^1.2.1
   top_snackbar_flutter: ^3.2.0
 
 dev_dependencies:

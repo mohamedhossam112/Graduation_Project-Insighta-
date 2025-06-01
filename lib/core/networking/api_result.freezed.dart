@@ -101,9 +101,9 @@ class _$SuccessCopyWithImpl<T, $Res> implements $SuccessCopyWith<T, $Res> {
 /// @nodoc
 
 class Failure<T> implements ApiResult<T> {
-  const Failure(this.errMessage);
+  const Failure(this.apiErrorModel);
 
-  final String errMessage;
+  final ApiErrorModel apiErrorModel;
 
   /// Create a copy of ApiResult
   /// with the given fields replaced by the non-null parameter values.
@@ -117,16 +117,16 @@ class Failure<T> implements ApiResult<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is Failure<T> &&
-            (identical(other.errMessage, errMessage) ||
-                other.errMessage == errMessage));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, errMessage);
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   @override
   String toString() {
-    return 'ApiResult<$T>.failure(errMessage: $errMessage)';
+    return 'ApiResult<$T>.failure(apiErrorModel: $apiErrorModel)';
   }
 }
 
@@ -136,7 +136,7 @@ abstract mixin class $FailureCopyWith<T, $Res>
   factory $FailureCopyWith(Failure<T> value, $Res Function(Failure<T>) _then) =
       _$FailureCopyWithImpl;
   @useResult
-  $Res call({String errMessage});
+  $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
@@ -150,13 +150,13 @@ class _$FailureCopyWithImpl<T, $Res> implements $FailureCopyWith<T, $Res> {
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? errMessage = null,
+    Object? apiErrorModel = null,
   }) {
     return _then(Failure<T>(
-      null == errMessage
-          ? _self.errMessage
-          : errMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == apiErrorModel
+          ? _self.apiErrorModel
+          : apiErrorModel // ignore: cast_nullable_to_non_nullable
+              as ApiErrorModel,
     ));
   }
 }

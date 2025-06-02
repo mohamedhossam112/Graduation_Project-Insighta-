@@ -5,6 +5,7 @@ import 'package:insighta/core/networking/dio_factory.dart';
 import 'package:insighta/features/auth/login/data/repos/login_repo.dart';
 import 'package:insighta/features/auth/login/logic/login_cubit/login_cubit.dart';
 import 'package:insighta/features/auth/sign_up/data/repos/sign_up_repo.dart';
+import 'package:insighta/features/auth/sign_up/logic/signup_cubit/signup_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -14,7 +15,8 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
   // Login
   getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
-  getIt.registerLazySingleton<LoginCubit>(() => LoginCubit(getIt()));
+  getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
   //Signup
   getIt.registerLazySingleton<SignUpRepo>(() => SignUpRepo(getIt()));
+  getIt.registerFactory<SignupCubit>(() => SignupCubit(getIt()));
 }

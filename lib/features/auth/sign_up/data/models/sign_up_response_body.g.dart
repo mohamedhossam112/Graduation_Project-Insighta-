@@ -11,7 +11,7 @@ SignupResponseBody _$SignupResponseBodyFromJson(Map<String, dynamic> json) =>
       status: json['status'] as bool,
       message: json['message'] as String,
       token: json['token'] as String,
-      verificationCode: json['verificationCode'] as String,
+      verificationCode: json['Verification Code'] as String,
     );
 
 Map<String, dynamic> _$SignupResponseBodyToJson(SignupResponseBody instance) =>
@@ -19,5 +19,5 @@ Map<String, dynamic> _$SignupResponseBodyToJson(SignupResponseBody instance) =>
       'status': instance.status,
       'message': instance.message,
       'token': instance.token,
-      'verificationCode': instance.verificationCode,
+      'Verification Code': instance.verificationCode,
     };

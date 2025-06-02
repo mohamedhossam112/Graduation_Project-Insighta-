@@ -12,7 +12,7 @@ class SignupCubit extends Cubit<SignupState> {
   TextEditingController emailController = TextEditingController();
 
   TextEditingController passwordController = TextEditingController();
-  TextEditingController roleController = TextEditingController();
+  TextEditingController roleController = TextEditingController(text: 'User');
   SignupCubit(this._signUpRepo) : super(SignupState.initial());
   void emitSignupStates() async {
     emit(const SignupState.loading());

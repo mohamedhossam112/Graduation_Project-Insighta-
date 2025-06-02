@@ -12,14 +12,14 @@ class PasswordValidations extends StatelessWidget {
     required this.hasLowerCase,
     required this.hasSpecialCharacters,
     required this.hasNumber,
-    required this.hasMinLenght,
+    required this.hasMinLength,
   }) : super(key: key);
 
   final bool hasUpperCase;
   final bool hasLowerCase;
   final bool hasSpecialCharacters;
   final bool hasNumber;
-  final bool hasMinLenght;
+  final bool hasMinLength;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -41,7 +41,7 @@ class PasswordValidations extends StatelessWidget {
         SizedBox(
           height: 2.h,
         ),
-        buildValidationRow('At least 8 characters long.', hasMinLenght),
+        buildValidationRow('At least 8 characters long.', hasMinLength),
       ],
     );
   }

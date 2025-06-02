@@ -8,6 +8,8 @@ import 'package:insighta/features/auth/login/ui/widgets/app_text_form_field.dart
 import 'package:insighta/features/auth/login/ui/widgets/continue_with_other_platform.dart';
 import 'package:insighta/features/auth/login/ui/widgets/custom_divider.dart';
 import 'package:insighta/features/auth/sign_up/logic/signup_cubit/signup_cubit.dart';
+import 'package:insighta/features/auth/sign_up/ui/widgets/sign_up_bloc_listener.dart';
+import 'package:insighta/features/auth/sign_up/ui/widgets/sign_up_form.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -36,91 +38,38 @@ class _SignUpScreenState extends State<SignUpScreen> {
             SizedBox(
               height: 36.h,
             ),
-            Form(
-              key: formKey,
-              child: Column(
-                children: [
-                  AppTextFormField(
-                    hintText: 'Enter your Name',
-                    validator: (value) {},
-                  ),
-                  SizedBox(
-                    height: 16.h,
-                  ),
-                  AppTextFormField(
-                    hintText: 'Enter your Email',
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please Enter Valid Email';
-                      }
-                    },
-                  ),
-                  SizedBox(
-                    height: 16.h,
-                  ),
-                  AppTextFormField(
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please Enter Valid Password';
-                      }
-                    },
-                    hintText: 'Enter your Password',
-                    isObscureText: isObsecureText,
-                    suffixIcon: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          isObsecureText = !isObsecureText;
-                        });
-                      },
-                      child: Icon(isObsecureText
-                          ? Icons.visibility_off
-                          : Icons.visibility),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 16.h,
-                  ),
-                  AppTextFormField(
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please Enter Valid Password';
-                      }
-                    },
-                    hintText: 'Role',
-                  ),
-                  SizedBox(
-                    height: 16.h,
-                  ),
-                  SizedBox(
-                    height: 40.h,
-                  ),
-                  AppTextButton(
-                    text: 'Sign Up',
-                    buttonheight: 60.h,
-                    textStyle:
-                        Styles.textStyle24P.copyWith(color: Colors.white),
-                    onPressed: () {
-                      validateThenDoSignup(context);
-                    },
-                  ),
-                  SizedBox(
-                    height: 16.h,
-                  ),
-                  CustomDivider(),
-                  SizedBox(
-                    height: 24.h,
-                  ),
-                  ContinueWithOtherPlatform(),
-                  SizedBox(
-                    height: 60.h,
-                  ),
-                  AlreadyHaveAccountText(
-                    text1: 'Already have an account?',
-                    text2: ' Log In',
-                    path: '/logInScreen',
-                  ),
-                ],
-              ),
+            Column(
+              children: [
+                SignUpForm(),
+                SizedBox(
+                  height: 40.h,
+                ),
+                AppTextButton(
+                  text: 'Sign Up',
+                  buttonheight: 60.h,
+                  textStyle: Styles.textStyle24P.copyWith(color: Colors.white),
+                  onPressed: () {
+                    validateThenDoSignup(context);
+                  },
+                ),
+                SizedBox(
+                  height: 16.h,
+                ),
+                CustomDivider(),
+                SizedBox(
+                  height: 24.h,
+                ),
+                ContinueWithOtherPlatform(),
+                SizedBox(
+                  height: 60.h,
+                ),
+                AlreadyHaveAccountText(
+                  text1: 'Already have an account?',
+                  text2: ' Log In',
+                  path: '/logInScreen',
+                ),
+                SignUpBlocListener(),
+              ],
             ),
           ],
         )),

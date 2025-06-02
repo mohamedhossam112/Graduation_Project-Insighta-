@@ -86,13 +86,13 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             SizedBox(
               height: 18.h,
             ),
-            PasswordValidations(
+            /*   PasswordValidations(
               hasLowerCase: hasLowerCase,
               hasUpperCase: hasUpperCase,
               hasSpecialCharacters: hasSpecialCharacters,
               hasNumber: hasNumber,
-              hasMinLenght: hasMinLenght,
-            ),
+              hasMinLength: hasMinLenght,
+            ),*/
           ],
         ));
   }

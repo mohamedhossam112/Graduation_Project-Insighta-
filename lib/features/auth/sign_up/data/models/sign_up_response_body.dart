@@ -6,6 +6,8 @@ class SignupResponseBody {
   bool status;
   String message;
   String token;
+
+  @JsonKey(name: 'Verification Code')
   String verificationCode;
 
   SignupResponseBody(

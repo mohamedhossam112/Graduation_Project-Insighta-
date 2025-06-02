@@ -7,6 +7,7 @@ import 'package:insighta/features/auth/forget_password/ui/forget_password_screen
 import 'package:insighta/features/auth/login/logic/login_cubit/login_cubit.dart';
 import 'package:insighta/features/auth/login/ui/login_screen.dart';
 import 'package:insighta/features/auth/otp/ui/otp_screen.dart';
+import 'package:insighta/features/auth/sign_up/logic/signup_cubit/signup_cubit.dart';
 import 'package:insighta/features/auth/sign_up/ui/sign_up_screen.dart';
 import 'package:insighta/features/home/ui/home_screen.dart';
 
@@ -34,7 +35,11 @@ class AppRouter {
                   child: LoginScreen(),
                 ));
       case Routes.signUpScreen:
-        return MaterialPageRoute(builder: (_) => const SignUpScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => getIt<SignupCubit>(),
+                  child: const SignUpScreen(),
+                ));
       case Routes.forgetPasswordScreen:
         return MaterialPageRoute(builder: (_) => const ForgetPasswordScreen());
       case Routes.otpScreen:

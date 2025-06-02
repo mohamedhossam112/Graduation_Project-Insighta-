@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:insighta/core/routing/routes.dart';
 import 'package:insighta/core/theming/colors.dart';
 import 'package:insighta/core/utils/styles.dart';
-import 'package:insighta/features/auth/login/logic/login_cubit/login_cubit.dart';
-import 'package:insighta/features/auth/login/logic/login_cubit/login_state.dart';
+import 'package:insighta/features/auth/sign_up/logic/signup_cubit/signup_cubit.dart';
+import 'package:insighta/features/auth/sign_up/logic/signup_cubit/signup_state.dart';
 
-class LoginBlocListener extends StatelessWidget {
-  const LoginBlocListener({super.key});
+class SignUpBlocListener extends StatelessWidget {
+  const SignUpBlocListener({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<LoginCubit, LoginState>(
+    return BlocListener<SignupCubit, SignupState>(
       listenWhen: (previous, current) =>
           current is Loading || current is Sucess || current is Error,
       listener: (context, state) {
@@ -27,7 +28,7 @@ class LoginBlocListener extends StatelessWidget {
               ),
             );
           },
-          sucess: (loginResponse) {
+          sucess: (signupResponse) {
             Navigator.of(context).pop();
             Navigator.of(context).pushNamed(Routes.navBarScreen);
             /*   Navigator.pushNamedAndRemoveUntil(

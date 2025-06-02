@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:insighta/core/utils/styles.dart';
 import 'package:insighta/features/auth/login/ui/widgets/already_have_account_text.dart';
@@ -6,6 +7,7 @@ import 'package:insighta/features/auth/login/ui/widgets/app_text_button.dart';
 import 'package:insighta/features/auth/login/ui/widgets/app_text_form_field.dart';
 import 'package:insighta/features/auth/login/ui/widgets/continue_with_other_platform.dart';
 import 'package:insighta/features/auth/login/ui/widgets/custom_divider.dart';
+import 'package:insighta/features/auth/sign_up/logic/signup_cubit/signup_cubit.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -97,7 +99,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     buttonheight: 60.h,
                     textStyle:
                         Styles.textStyle24P.copyWith(color: Colors.white),
-                    onPressed: () {},
+                    onPressed: () {
+                      validateThenDoSignup(context);
+                    },
                   ),
                   SizedBox(
                     height: 16.h,
@@ -122,5 +126,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
         )),
       ),
     ));
+  }
+}
+
+void validateThenDoSignup(BuildContext context) {
+  if (context.read<SignupCubit>().formKey.currentState!.validate()) {
+    context.read<SignupCubit>().emitSignupStates();
   }
 }

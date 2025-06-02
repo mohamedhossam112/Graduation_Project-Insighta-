@@ -9,7 +9,7 @@ class SignUpRepo {
   final ApiService _apiService;
 
   SignUpRepo(this._apiService);
-  Future<ApiResult<SignupResponseBody>> login(
+  Future<ApiResult<SignupResponseBody>> signup(
       SignupRequestBody signupRequestBody) async {
     try {
       final response = await _apiService.signup(signupRequestBody);

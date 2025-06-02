@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:insighta/core/helpers/app_regex.dart';
 import 'package:insighta/features/auth/login/logic/login_cubit/login_cubit.dart';
 import 'package:insighta/features/auth/login/ui/widgets/app_text_form_field.dart';
 import 'package:insighta/features/auth/login/ui/widgets/password_validations.dart';
@@ -15,15 +16,30 @@ class EmailAndPassword extends StatefulWidget {
 class _EmailAndPasswordState extends State<EmailAndPassword> {
   bool isObsecureText = true;
   late TextEditingController passwordController;
-  bool hasLowerCase = false;
+
   bool hasUpperCase = false;
+  bool hasLowerCase = false;
   bool hasSpecialCharacters = false;
   bool hasNumber = false;
   bool hasMinLenght = false;
   @override
   void initState() {
-    passwordController = context.read<LoginCubit>().passwordController;
     super.initState();
+    passwordController = context.read<LoginCubit>().passwordController;
+    setupPasswordControllerListener();
+  }
+
+  void setupPasswordControllerListener() {
+    passwordController.addListener(() {
+      setState(() {
+        hasUpperCase = AppRegex.hasUpperCase(passwordController.text);
+        hasLowerCase = AppRegex.hasLowerCase(passwordController.text);
+        hasSpecialCharacters =
+            AppRegex.hasSpecialCharacter(passwordController.text);
+        hasNumber = AppRegex.hasNumber(passwordController.text);
+        hasMinLenght = AppRegex.hasMinLength(passwordController.text);
+      });
+    });
   }
 
   @override
@@ -33,13 +49,16 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
         child: Column(
           children: [
             AppTextFormField(
-              controller: context.read<LoginCubit>().emailController,
               hintText: 'Email',
               validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please Enter Vakid Email';
+                if (value == null ||
+                    value.isEmpty ||
+                    !AppRegex.isEmailValid(value)) {
+                  return 'Please Enter Valid Email';
                 }
+                return null;
               },
+              controller: context.read<LoginCubit>().emailController,
             ),
             SizedBox(
               height: 16.h,
@@ -50,6 +69,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
                 if (value == null || value.isEmpty) {
                   return 'Please Enter Valid Password';
                 }
+                return null;
               },
               hintText: 'Password',
               isobscureText: isObsecureText,
@@ -75,5 +95,11 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             ),
           ],
         ));
+  }
+
+  @override
+  void dispose() {
+    passwordController.dispose();
+    super.dispose();
   }
 }

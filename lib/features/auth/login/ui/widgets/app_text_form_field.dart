@@ -16,7 +16,7 @@ class AppTextFormField extends StatelessWidget {
   final Widget? suffixIcon;
   final Color? fillColor;
   final TextEditingController? controller;
-  final Function(String?) validator;
+  final String? Function(String?) validator;
   const AppTextFormField({
     Key? key,
     this.contentPadding,
@@ -46,25 +46,11 @@ class AppTextFormField extends StatelessWidget {
               vertical: 18.h,
             ),
         focusedBorder: focusedBorder ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.r),
-              borderSide:
-                  BorderSide(color: ColorsManager.primaryColor, width: 1.4.w),
-            ),
+            buildOutlineInputBorder(color: ColorsManager.primaryColor),
         enabledBorder: enabledBorder ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.r),
-              borderSide: BorderSide(
-                  color: ColorsManager.textFieldBorder, width: 1.4.w),
-            ),
-        focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12.r),
-          borderSide: BorderSide(color: Colors.red, width: 1.4.w),
-        ),
-        errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12.r),
-          borderSide: BorderSide(color: Colors.red, width: 1.4.w),
-        ),
+            buildOutlineInputBorder(color: ColorsManager.textFieldBorder),
+        focusedErrorBorder: buildOutlineInputBorder(color: Colors.red),
+        errorBorder: buildOutlineInputBorder(color: Colors.red),
         hintText: hintText,
         hintStyle: hintStyle ??
             Styles.textStyle14P.copyWith(color: ColorsManager.hintText),
@@ -79,4 +65,11 @@ class AppTextFormField extends StatelessWidget {
       },
     );
   }
+}
+
+OutlineInputBorder buildOutlineInputBorder({required Color color}) {
+  return OutlineInputBorder(
+    borderSide: BorderSide(color: color, width: 1.4.w),
+    borderRadius: BorderRadius.circular(12.r),
+  );
 }

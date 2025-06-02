@@ -1,20 +1,22 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:insighta/core/theming/colors.dart';
 import 'package:insighta/core/utils/styles.dart';
 
 class PasswordValidations extends StatelessWidget {
   const PasswordValidations({
     Key? key,
-    required this.hasLowerCase,
     required this.hasUpperCase,
+    required this.hasLowerCase,
     required this.hasSpecialCharacters,
     required this.hasNumber,
     required this.hasMinLenght,
   }) : super(key: key);
-  final bool hasLowerCase;
+
   final bool hasUpperCase;
+  final bool hasLowerCase;
   final bool hasSpecialCharacters;
   final bool hasNumber;
   final bool hasMinLenght;
@@ -22,11 +24,11 @@ class PasswordValidations extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        buildValidationRow('At least 1 lowercase letter.', hasLowerCase),
+        buildValidationRow('At least 1 uppercase letter.', hasUpperCase),
         SizedBox(
           height: 2.h,
         ),
-        buildValidationRow('At least 1 uppercase letter.', hasUpperCase),
+        buildValidationRow('At least 1 lowercase letter.', hasLowerCase),
         SizedBox(
           height: 2.h,
         ),

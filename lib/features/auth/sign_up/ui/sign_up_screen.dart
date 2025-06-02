@@ -38,15 +38,30 @@ class _SignUpScreenState extends State<SignUpScreen> {
               key: formKey,
               child: Column(
                 children: [
-                  const AppTextFormField(hintText: 'Enter your Name'),
-                  SizedBox(
-                    height: 16.h,
+                  AppTextFormField(
+                    hintText: 'Enter your Name',
+                    validator: (value) {},
                   ),
-                  const AppTextFormField(hintText: 'Enter your Email'),
                   SizedBox(
                     height: 16.h,
                   ),
                   AppTextFormField(
+                    hintText: 'Enter your Email',
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please Enter Valid Email';
+                      }
+                    },
+                  ),
+                  SizedBox(
+                    height: 16.h,
+                  ),
+                  AppTextFormField(
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please Enter Valid Password';
+                      }
+                    },
                     hintText: 'Enter your Password',
                     isobscureText: isObsecureText,
                     suffixIcon: GestureDetector(
@@ -64,6 +79,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     height: 16.h,
                   ),
                   AppTextFormField(
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please Enter Valid Password';
+                      }
+                    },
                     hintText: 'Confirm your Password',
                     isobscureText: isObsecureText,
                     suffixIcon: GestureDetector(

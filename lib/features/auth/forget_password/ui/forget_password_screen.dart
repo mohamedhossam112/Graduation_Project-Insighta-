@@ -41,7 +41,14 @@ class ForgetPasswordScreen extends StatelessWidget {
                 key: formKey,
                 child: Column(
                   children: [
-                    const AppTextFormField(hintText: 'Enter your Email'),
+                    AppTextFormField(
+                      hintText: 'Enter your Email',
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please Enter Valid Email';
+                        }
+                      },
+                    ),
                     SizedBox(
                       height: 400.h,
                     ),

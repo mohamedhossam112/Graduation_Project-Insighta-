@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insighta/bottom_navigation_bar.dart';
+import 'package:insighta/core/di/dependency_injection.dart';
 import 'package:insighta/core/routing/routes.dart';
 import 'package:insighta/features/auth/forget_password/ui/forget_password_screen.dart';
+import 'package:insighta/features/auth/login/logic/login_cubit/login_cubit.dart';
 import 'package:insighta/features/auth/login/ui/login_screen.dart';
 import 'package:insighta/features/auth/sign_up/ui/sign_up_screen.dart';
 import 'package:insighta/features/home/ui/home_screen.dart';
@@ -24,7 +27,11 @@ class AppRouter {
       case Routes.onBoardingScreen:
         return MaterialPageRoute(builder: (_) => const onBoardingScreen());
       case Routes.logInScreen:
-        return MaterialPageRoute(builder: (_) => const LoginScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => getIt<LoginCubit>(),
+                  child: LoginScreen(),
+                ));
       case Routes.signUpScreen:
         return MaterialPageRoute(builder: (_) => const SignUpScreen());
       case Routes.forgetPasswordScreen:

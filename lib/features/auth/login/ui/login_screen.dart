@@ -4,9 +4,10 @@ import 'package:insighta/core/theming/colors.dart';
 import 'package:insighta/core/utils/styles.dart';
 import 'package:insighta/features/auth/login/ui/widgets/already_have_account_text.dart';
 import 'package:insighta/features/auth/login/ui/widgets/app_text_button.dart';
-import 'package:insighta/features/auth/login/ui/widgets/app_text_form_field.dart';
+
 import 'package:insighta/features/auth/login/ui/widgets/continue_with_other_platform.dart';
 import 'package:insighta/features/auth/login/ui/widgets/custom_divider.dart';
+import 'package:insighta/features/auth/login/ui/widgets/email_and_password.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -16,8 +17,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final formKey = GlobalKey<FormState>();
-  bool isObsecureText = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,73 +39,51 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(
               height: 16.h,
             ),
-            Form(
-              key: formKey,
-              child: Column(
-                children: [
-                  const AppTextFormField(hintText: 'Email'),
-                  SizedBox(
-                    height: 16.h,
-                  ),
-                  AppTextFormField(
-                    hintText: 'Password',
-                    isobscureText: isObsecureText,
-                    suffixIcon: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          isObsecureText = !isObsecureText;
-                        });
-                      },
-                      child: Icon(isObsecureText
-                          ? Icons.visibility_off
-                          : Icons.visibility),
+            Column(
+              children: [
+                const EmailAndPassword(),
+               
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/forgetPasswordScreen');
+                  },
+                  child: Align(
+                    alignment: AlignmentDirectional.centerEnd,
+                    child: Text(
+                      'Forgot Password?',
+                      style: Styles.textStyle14P.copyWith(
+                          color: ColorsManager.primaryColor,
+                          fontWeight: FontWeight.w700),
                     ),
                   ),
-                  SizedBox(
-                    height: 18.h,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, '/forgetPasswordScreen');
-                    },
-                    child: Align(
-                      alignment: AlignmentDirectional.centerEnd,
-                      child: Text(
-                        'Forgot Password?',
-                        style: Styles.textStyle14P.copyWith(
-                            color: ColorsManager.primaryColor,
-                            fontWeight: FontWeight.w700),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 40.h,
-                  ),
-                  AppTextButton(
-                    text: 'Login',
-                    buttonheight: 60.h,
-                    textStyle:
-                        Styles.textStyle24P.copyWith(color: Colors.white),
-                    onPressed: () {},
-                  ),
-                  SizedBox(
-                    height: 16.h,
-                  ),
-                  CustomDivider(),
-                  SizedBox(
-                    height: 24.h,
-                  ),
-                  ContinueWithOtherPlatform(),
-                  SizedBox(
-                    height: 60.h,
-                  ),
-                  AlreadyHaveAccountText(
-                    text1: 'Don\'t have an account?',
-                    text2: ' Sign Up',
-                    path: '/signUpScreen',
-                  ),
-                ],
-              ),
+                ),
+                SizedBox(
+                  height: 40.h,
+                ),
+                AppTextButton(
+                  text: 'Login',
+                  buttonheight: 60.h,
+                  textStyle:
+                      Styles.textStyle24P.copyWith(color: Colors.white),
+                  onPressed: () {},
+                ),
+                SizedBox(
+                  height: 16.h,
+                ),
+                CustomDivider(),
+                SizedBox(
+                  height: 24.h,
+                ),
+                ContinueWithOtherPlatform(),
+                SizedBox(
+                  height: 60.h,
+                ),
+                AlreadyHaveAccountText(
+                  text1: 'Don\'t have an account?',
+                  text2: ' Sign Up',
+                  path: '/signUpScreen',
+                ),
+              ],
             ),
           ],
         )),

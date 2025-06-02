@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:insighta/core/theming/colors.dart';
 import 'package:insighta/core/utils/styles.dart';
+import 'package:insighta/features/auth/login/data/models/login_request_body.dart';
+import 'package:insighta/features/auth/login/logic/login_cubit/login_cubit.dart';
 import 'package:insighta/features/auth/login/ui/widgets/already_have_account_text.dart';
 import 'package:insighta/features/auth/login/ui/widgets/app_text_button.dart';
 
@@ -17,7 +20,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +44,6 @@ class _LoginScreenState extends State<LoginScreen> {
             Column(
               children: [
                 const EmailAndPassword(),
-               
                 GestureDetector(
                   onTap: () {
                     Navigator.pushNamed(context, '/forgetPasswordScreen');
@@ -63,9 +64,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 AppTextButton(
                   text: 'Login',
                   buttonheight: 60.h,
-                  textStyle:
-                      Styles.textStyle24P.copyWith(color: Colors.white),
-                  onPressed: () {},
+                  textStyle: Styles.textStyle24P.copyWith(color: Colors.white),
+                  onPressed: () {
+                    validateThenDoLogin(context);
+                  },
                 ),
                 SizedBox(
                   height: 16.h,
@@ -89,5 +91,15 @@ class _LoginScreenState extends State<LoginScreen> {
         )),
       ),
     ));
+  }
+
+  void validateThenDoLogin(BuildContext context) {
+    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+      context.read<LoginCubit>().emitLoginStates(
+            LoginRequestBody(
+                email: context.read<LoginCubit>().emailController.text,
+                password: context.read<LoginCubit>().passwordController.text),
+          );
+    }
   }
 }

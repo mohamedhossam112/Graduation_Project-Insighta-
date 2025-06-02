@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:insighta/features/auth/login/logic/login_cubit/login_cubit.dart';
 import 'package:insighta/features/auth/login/ui/widgets/app_text_form_field.dart';
+import 'package:insighta/features/auth/login/ui/widgets/password_validations.dart';
 
 class EmailAndPassword extends StatefulWidget {
   const EmailAndPassword({super.key});
@@ -14,6 +15,11 @@ class EmailAndPassword extends StatefulWidget {
 class _EmailAndPasswordState extends State<EmailAndPassword> {
   bool isObsecureText = true;
   late TextEditingController passwordController;
+  bool hasLowerCase = false;
+  bool hasUpperCase = false;
+  bool hasSpecialCharacters = false;
+  bool hasNumber = false;
+  bool hasMinLenght = false;
   @override
   void initState() {
     passwordController = context.read<LoginCubit>().passwordController;
@@ -59,6 +65,13 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             ),
             SizedBox(
               height: 18.h,
+            ),
+            PasswordValidations(
+              hasLowerCase: hasLowerCase,
+              hasUpperCase: hasUpperCase,
+              hasSpecialCharacters: hasSpecialCharacters,
+              hasNumber: hasNumber,
+              hasMinLenght: hasMinLenght,
             ),
           ],
         ));

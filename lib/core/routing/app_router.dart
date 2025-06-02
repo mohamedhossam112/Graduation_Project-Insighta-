@@ -6,6 +6,7 @@ import 'package:insighta/core/routing/routes.dart';
 import 'package:insighta/features/auth/forget_password/ui/forget_password_screen.dart';
 import 'package:insighta/features/auth/login/logic/login_cubit/login_cubit.dart';
 import 'package:insighta/features/auth/login/ui/login_screen.dart';
+import 'package:insighta/features/auth/otp/ui/otp_screen.dart';
 import 'package:insighta/features/auth/sign_up/ui/sign_up_screen.dart';
 import 'package:insighta/features/home/ui/home_screen.dart';
 
@@ -36,6 +37,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const SignUpScreen());
       case Routes.forgetPasswordScreen:
         return MaterialPageRoute(builder: (_) => const ForgetPasswordScreen());
+      case Routes.otpScreen:
+        return MaterialPageRoute(builder: (_) => const OtpScreen());
       case Routes.navBarScreen:
         return MaterialPageRoute(builder: (_) => const navBar());
       case Routes.homeScreen:

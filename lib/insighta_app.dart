@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:insighta/core/routing/app_router.dart';
-import 'package:insighta/core/routing/routes.dart';
 
 import 'package:insighta/core/theming/colors.dart';
 

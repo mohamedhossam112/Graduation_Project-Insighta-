@@ -72,7 +72,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
                 return null;
               },
               hintText: 'Password',
-              isobscureText: isObsecureText,
+              isObscureText: isObsecureText,
               suffixIcon: GestureDetector(
                 onTap: () {
                   setState(() {

@@ -57,7 +57,9 @@ class ForgetPasswordScreen extends StatelessWidget {
                       buttonheight: 60.h,
                       textStyle:
                           Styles.textStyle24P.copyWith(color: Colors.white),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/otpScreen');
+                      },
                     ),
                   ],
                 ),

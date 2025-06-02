@@ -63,7 +63,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       }
                     },
                     hintText: 'Enter your Password',
-                    isobscureText: isObsecureText,
+                    isObscureText: isObsecureText,
                     suffixIcon: GestureDetector(
                       onTap: () {
                         setState(() {
@@ -84,18 +84,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         return 'Please Enter Valid Password';
                       }
                     },
-                    hintText: 'Confirm your Password',
-                    isobscureText: isObsecureText,
-                    suffixIcon: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          isObsecureText = !isObsecureText;
-                        });
-                      },
-                      child: Icon(isObsecureText
-                          ? Icons.visibility_off
-                          : Icons.visibility),
-                    ),
+                    hintText: 'Role',
                   ),
                   SizedBox(
                     height: 16.h,

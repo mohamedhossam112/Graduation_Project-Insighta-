@@ -29,7 +29,7 @@ class LoginBlocListener extends StatelessWidget {
           },
           sucess: (loginResponse) {
             Navigator.of(context).pop();
-            Navigator.of(context).pushNamed(Routes.homeScreen);
+            Navigator.of(context).pushNamed(Routes.navBarScreen);
             /*   Navigator.pushNamedAndRemoveUntil(
   context,
   Routes.homeScreen,

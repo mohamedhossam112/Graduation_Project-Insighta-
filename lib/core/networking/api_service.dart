@@ -27,7 +27,7 @@ abstract class ApiService {
     @Body() ForgetPasswordRequestBody forgetPasswordRequestBody,
   );
    @POST(ApiConstants.otpResetPassword)
-  Future<OtpResetPasswordResponseBody> verifyOtp(
+  Future<OtpResetPasswordResponseBody> otpResetPassword(
     @Body()OtpResetPasswordRequestBody otpResetPasswordRequestBody,
   );
 

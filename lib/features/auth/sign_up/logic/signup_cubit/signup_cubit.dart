@@ -24,7 +24,7 @@ class SignupCubit extends Cubit<SignupState> {
           role: roleController.text),
     );
     response.when(success: (signupResponseBody) {
-      emit(SignupState.sucess(signupResponse: signupResponseBody));
+      emit(SignupState.success(signupResponse: signupResponseBody));
     }, failure: (error) {
       emit(SignupState.error(error: error.message ?? ''));
     });

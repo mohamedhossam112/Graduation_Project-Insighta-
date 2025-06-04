@@ -106,7 +106,7 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<OtpResetPasswordResponseBody> verifyOtp(
+  Future<OtpResetPasswordResponseBody> otpResetPassword(
     OtpResetPasswordRequestBody otpResetPasswordRequestBody,
   ) async {
     final _extra = <String, dynamic>{};

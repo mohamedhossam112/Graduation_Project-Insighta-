@@ -6,8 +6,8 @@ part 'signup_state.freezed.dart';
 class SignupState with _$SignupState {
   const factory SignupState.initial() = _Initial;
   const factory SignupState.loading() = Loading;
-  const factory SignupState.sucess({
+  const factory SignupState.success({
     required SignupResponseBody signupResponse,
-  }) = Sucess;
+  }) = Success;
   const factory SignupState.error({required String error}) = Error;
 }

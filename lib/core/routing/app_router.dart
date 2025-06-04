@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insighta/bottom_navigation_bar.dart';
 import 'package:insighta/core/di/dependency_injection.dart';
 import 'package:insighta/core/routing/routes.dart';
+import 'package:insighta/features/auth/forget_password/logic/forget_password_cubit/forget_password_cubit.dart';
 import 'package:insighta/features/auth/forget_password/ui/forget_password_screen.dart';
 import 'package:insighta/features/auth/login/logic/login_cubit/login_cubit.dart';
 import 'package:insighta/features/auth/login/ui/login_screen.dart';
@@ -40,8 +41,13 @@ class AppRouter {
                   create: (context) => getIt<SignupCubit>(),
                   child: const SignUpScreen(),
                 ));
+
       case Routes.forgetPasswordScreen:
-        return MaterialPageRoute(builder: (_) => const ForgetPasswordScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => getIt<ForgetPasswordCubit>(),
+                  child: const ForgetPasswordScreen(),
+                ));
       case Routes.otpScreen:
         return MaterialPageRoute(builder: (_) => const OtpScreen());
       case Routes.navBarScreen:

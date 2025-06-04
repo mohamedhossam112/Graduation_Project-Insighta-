@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:insighta/core/routing/routes.dart';
 import 'package:insighta/core/theming/colors.dart';
 import 'package:insighta/core/utils/styles.dart';
 import 'package:insighta/features/auth/login/data/models/login_request_body.dart';
@@ -82,6 +83,11 @@ class LoginScreen extends StatelessWidget {
                   path: '/signUpScreen',
                 ),
                 LoginBlocListener(),
+                IconButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(Routes.otpScreen);
+                    },
+                    icon: Icon(Icons.add_ic_call_outlined))
               ],
             ),
           ],

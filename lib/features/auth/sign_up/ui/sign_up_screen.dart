@@ -19,7 +19,6 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  final formKey = GlobalKey<FormState>();
   bool isObsecureText = true;
   @override
   Widget build(BuildContext context) {

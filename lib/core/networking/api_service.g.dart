@@ -77,13 +77,13 @@ class _ApiService implements ApiService {
 
   @override
   Future<ForgetPasswordResponseBody> forgetPassword(
-    ForgetPasswordRequestBody forgetPasswordRequestBODY,
+    ForgetPasswordRequestBody forgetPasswordRequestBody,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    _data.addAll(forgetPasswordRequestBODY.toJson());
+    _data.addAll(forgetPasswordRequestBody.toJson());
     final _options = _setStreamType<ForgetPasswordResponseBody>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
@@ -98,6 +98,36 @@ class _ApiService implements ApiService {
     late ForgetPasswordResponseBody _value;
     try {
       _value = ForgetPasswordResponseBody.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<OtpResetPasswordResponseBody> verifyOtp(
+    OtpResetPasswordRequestBody otpResetPasswordRequestBody,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(otpResetPasswordRequestBody.toJson());
+    final _options = _setStreamType<OtpResetPasswordResponseBody>(
+      Options(method: 'POST', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'password/reset/verify',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late OtpResetPasswordResponseBody _value;
+    try {
+      _value = OtpResetPasswordResponseBody.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

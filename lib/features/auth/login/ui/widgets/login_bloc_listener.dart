@@ -14,7 +14,7 @@ class LoginBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
       listenWhen: (previous, current) =>
-          current is Loading || current is Sucess || current is Error,
+          current is Loading || current is Success || current is Error,
       listener: (context, state) {
         state.whenOrNull(
           loading: () {
@@ -27,7 +27,7 @@ class LoginBlocListener extends StatelessWidget {
               ),
             );
           },
-          sucess: (loginResponse) {
+          success: (loginResponse) {
             Navigator.of(context).pop();
             Navigator.of(context).pushNamed(Routes.navBarScreen);
             /*   Navigator.pushNamedAndRemoveUntil(

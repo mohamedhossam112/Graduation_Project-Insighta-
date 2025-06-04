@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'login_state.dart';
+part of 'forget_password_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,12 +15,13 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$LoginState {
+mixin _$ForgetPasswordState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(LoginResponseBody loginResponse) success,
+    required TResult Function(ForgetPasswordResponseBody forgetPasswordResponse)
+        success,
     required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +29,8 @@ mixin _$LoginState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(LoginResponseBody loginResponse)? success,
+    TResult? Function(ForgetPasswordResponseBody forgetPasswordResponse)?
+        success,
     TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +38,8 @@ mixin _$LoginState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(LoginResponseBody loginResponse)? success,
+    TResult Function(ForgetPasswordResponseBody forgetPasswordResponse)?
+        success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
@@ -69,23 +72,23 @@ mixin _$LoginState {
 }
 
 /// @nodoc
-abstract class $LoginStateCopyWith<$Res> {
-  factory $LoginStateCopyWith(
-          LoginState value, $Res Function(LoginState) then) =
-      _$LoginStateCopyWithImpl<$Res, LoginState>;
+abstract class $ForgetPasswordStateCopyWith<$Res> {
+  factory $ForgetPasswordStateCopyWith(
+          ForgetPasswordState value, $Res Function(ForgetPasswordState) then) =
+      _$ForgetPasswordStateCopyWithImpl<$Res, ForgetPasswordState>;
 }
 
 /// @nodoc
-class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
-    implements $LoginStateCopyWith<$Res> {
-  _$LoginStateCopyWithImpl(this._value, this._then);
+class _$ForgetPasswordStateCopyWithImpl<$Res, $Val extends ForgetPasswordState>
+    implements $ForgetPasswordStateCopyWith<$Res> {
+  _$ForgetPasswordStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of LoginState
+  /// Create a copy of ForgetPasswordState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -98,13 +101,13 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$ForgetPasswordStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LoginState
+  /// Create a copy of ForgetPasswordState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -115,7 +118,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'LoginState.initial()';
+    return 'ForgetPasswordState.initial()';
   }
 
   @override
@@ -132,7 +135,8 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(LoginResponseBody loginResponse) success,
+    required TResult Function(ForgetPasswordResponseBody forgetPasswordResponse)
+        success,
     required TResult Function(String error) error,
   }) {
     return initial();
@@ -143,7 +147,8 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(LoginResponseBody loginResponse)? success,
+    TResult? Function(ForgetPasswordResponseBody forgetPasswordResponse)?
+        success,
     TResult? Function(String error)? error,
   }) {
     return initial?.call();
@@ -154,7 +159,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(LoginResponseBody loginResponse)? success,
+    TResult Function(ForgetPasswordResponseBody forgetPasswordResponse)?
+        success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -202,7 +208,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements LoginState {
+abstract class _Initial implements ForgetPasswordState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -215,13 +221,13 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$ForgetPasswordStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LoginState
+  /// Create a copy of ForgetPasswordState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -232,7 +238,7 @@ class _$LoadingImpl implements Loading {
 
   @override
   String toString() {
-    return 'LoginState.loading()';
+    return 'ForgetPasswordState.loading()';
   }
 
   @override
@@ -249,7 +255,8 @@ class _$LoadingImpl implements Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(LoginResponseBody loginResponse) success,
+    required TResult Function(ForgetPasswordResponseBody forgetPasswordResponse)
+        success,
     required TResult Function(String error) error,
   }) {
     return loading();
@@ -260,7 +267,8 @@ class _$LoadingImpl implements Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(LoginResponseBody loginResponse)? success,
+    TResult? Function(ForgetPasswordResponseBody forgetPasswordResponse)?
+        success,
     TResult? Function(String error)? error,
   }) {
     return loading?.call();
@@ -271,7 +279,8 @@ class _$LoadingImpl implements Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(LoginResponseBody loginResponse)? success,
+    TResult Function(ForgetPasswordResponseBody forgetPasswordResponse)?
+        success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -319,7 +328,7 @@ class _$LoadingImpl implements Loading {
   }
 }
 
-abstract class Loading implements LoginState {
+abstract class Loading implements ForgetPasswordState {
   const factory Loading() = _$LoadingImpl;
 }
 
@@ -329,29 +338,29 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({LoginResponseBody loginResponse});
+  $Res call({ForgetPasswordResponseBody forgetPasswordResponse});
 }
 
 /// @nodoc
 class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$SuccessImpl>
+    extends _$ForgetPasswordStateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LoginState
+  /// Create a copy of ForgetPasswordState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? loginResponse = null,
+    Object? forgetPasswordResponse = null,
   }) {
     return _then(_$SuccessImpl(
-      loginResponse: null == loginResponse
-          ? _value.loginResponse
-          : loginResponse // ignore: cast_nullable_to_non_nullable
-              as LoginResponseBody,
+      forgetPasswordResponse: null == forgetPasswordResponse
+          ? _value.forgetPasswordResponse
+          : forgetPasswordResponse // ignore: cast_nullable_to_non_nullable
+              as ForgetPasswordResponseBody,
     ));
   }
 }
@@ -359,14 +368,14 @@ class __$$SuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SuccessImpl implements Success {
-  const _$SuccessImpl({required this.loginResponse});
+  const _$SuccessImpl({required this.forgetPasswordResponse});
 
   @override
-  final LoginResponseBody loginResponse;
+  final ForgetPasswordResponseBody forgetPasswordResponse;
 
   @override
   String toString() {
-    return 'LoginState.success(loginResponse: $loginResponse)';
+    return 'ForgetPasswordState.success(forgetPasswordResponse: $forgetPasswordResponse)';
   }
 
   @override
@@ -374,14 +383,14 @@ class _$SuccessImpl implements Success {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuccessImpl &&
-            (identical(other.loginResponse, loginResponse) ||
-                other.loginResponse == loginResponse));
+            (identical(other.forgetPasswordResponse, forgetPasswordResponse) ||
+                other.forgetPasswordResponse == forgetPasswordResponse));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, loginResponse);
+  int get hashCode => Object.hash(runtimeType, forgetPasswordResponse);
 
-  /// Create a copy of LoginState
+  /// Create a copy of ForgetPasswordState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -394,10 +403,11 @@ class _$SuccessImpl implements Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(LoginResponseBody loginResponse) success,
+    required TResult Function(ForgetPasswordResponseBody forgetPasswordResponse)
+        success,
     required TResult Function(String error) error,
   }) {
-    return success(loginResponse);
+    return success(forgetPasswordResponse);
   }
 
   @override
@@ -405,10 +415,11 @@ class _$SuccessImpl implements Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(LoginResponseBody loginResponse)? success,
+    TResult? Function(ForgetPasswordResponseBody forgetPasswordResponse)?
+        success,
     TResult? Function(String error)? error,
   }) {
-    return success?.call(loginResponse);
+    return success?.call(forgetPasswordResponse);
   }
 
   @override
@@ -416,12 +427,13 @@ class _$SuccessImpl implements Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(LoginResponseBody loginResponse)? success,
+    TResult Function(ForgetPasswordResponseBody forgetPasswordResponse)?
+        success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(loginResponse);
+      return success(forgetPasswordResponse);
     }
     return orElse();
   }
@@ -464,13 +476,14 @@ class _$SuccessImpl implements Success {
   }
 }
 
-abstract class Success implements LoginState {
-  const factory Success({required final LoginResponseBody loginResponse}) =
+abstract class Success implements ForgetPasswordState {
+  const factory Success(
+          {required final ForgetPasswordResponseBody forgetPasswordResponse}) =
       _$SuccessImpl;
 
-  LoginResponseBody get loginResponse;
+  ForgetPasswordResponseBody get forgetPasswordResponse;
 
-  /// Create a copy of LoginState
+  /// Create a copy of ForgetPasswordState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
@@ -488,13 +501,13 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$ForgetPasswordStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LoginState
+  /// Create a copy of ForgetPasswordState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -520,7 +533,7 @@ class _$ErrorImpl implements Error {
 
   @override
   String toString() {
-    return 'LoginState.error(error: $error)';
+    return 'ForgetPasswordState.error(error: $error)';
   }
 
   @override
@@ -534,7 +547,7 @@ class _$ErrorImpl implements Error {
   @override
   int get hashCode => Object.hash(runtimeType, error);
 
-  /// Create a copy of LoginState
+  /// Create a copy of ForgetPasswordState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -547,7 +560,8 @@ class _$ErrorImpl implements Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(LoginResponseBody loginResponse) success,
+    required TResult Function(ForgetPasswordResponseBody forgetPasswordResponse)
+        success,
     required TResult Function(String error) error,
   }) {
     return error(this.error);
@@ -558,7 +572,8 @@ class _$ErrorImpl implements Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(LoginResponseBody loginResponse)? success,
+    TResult? Function(ForgetPasswordResponseBody forgetPasswordResponse)?
+        success,
     TResult? Function(String error)? error,
   }) {
     return error?.call(this.error);
@@ -569,7 +584,8 @@ class _$ErrorImpl implements Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(LoginResponseBody loginResponse)? success,
+    TResult Function(ForgetPasswordResponseBody forgetPasswordResponse)?
+        success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -617,12 +633,12 @@ class _$ErrorImpl implements Error {
   }
 }
 
-abstract class Error implements LoginState {
+abstract class Error implements ForgetPasswordState {
   const factory Error({required final String error}) = _$ErrorImpl;
 
   String get error;
 
-  /// Create a copy of LoginState
+  /// Create a copy of ForgetPasswordState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>

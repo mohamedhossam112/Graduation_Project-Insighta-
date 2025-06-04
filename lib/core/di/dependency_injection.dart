@@ -19,4 +19,5 @@ Future<void> setupGetIt() async {
   //Signup
   getIt.registerLazySingleton<SignUpRepo>(() => SignUpRepo(getIt()));
   getIt.registerFactory<SignupCubit>(() => SignupCubit(getIt()));
+  //forgetPassword
 }

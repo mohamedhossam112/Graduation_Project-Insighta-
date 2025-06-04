@@ -48,14 +48,12 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<SignupResponseBody> signup(
-    SignupRequestBody signupResponseBody,
-  ) async {
+  Future<SignupResponseBody> signup(SignupRequestBody signupRequestBody) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    _data.addAll(signupResponseBody.toJson());
+    _data.addAll(signupRequestBody.toJson());
     final _options = _setStreamType<SignupResponseBody>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
@@ -70,6 +68,36 @@ class _ApiService implements ApiService {
     late SignupResponseBody _value;
     try {
       _value = SignupResponseBody.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<ForgetPasswordResponseBody> forgetPassword(
+    ForgetPasswordRequestBody forgetPasswordRequestBODY,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(forgetPasswordRequestBODY.toJson());
+    final _options = _setStreamType<ForgetPasswordResponseBody>(
+      Options(method: 'POST', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            'password/reset/otp',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ForgetPasswordResponseBody _value;
+    try {
+      _value = ForgetPasswordResponseBody.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

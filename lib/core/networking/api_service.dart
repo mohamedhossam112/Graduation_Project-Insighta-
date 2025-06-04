@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:insighta/core/networking/api_constants.dart';
+import 'package:insighta/features/auth/forget_password/data/models/forget_password_request_body.dart';
+import 'package:insighta/features/auth/forget_password/data/models/forget_password_response_body.dart';
 import 'package:insighta/features/auth/login/data/models/login_request_body.dart';
 import 'package:insighta/features/auth/login/data/models/login_response_body.dart';
 import 'package:insighta/features/auth/sign_up/data/models/sign_up_request_body.dart';
@@ -14,8 +16,12 @@ abstract class ApiService {
   Future<LoginResponseBody> login(
     @Body() LoginRequestBody loginRequestBody,
   );
-    @POST(ApiConstants.signup)
+  @POST(ApiConstants.signup)
   Future<SignupResponseBody> signup(
-    @Body() SignupRequestBody signupResponseBody,
+    @Body() SignupRequestBody signupRequestBody,
+  );
+  @POST(ApiConstants.forgetPassword)
+  Future<ForgetPasswordResponseBody> forgetPassword(
+    @Body() ForgetPasswordRequestBody forgetPasswordRequestBODY,
   );
 }

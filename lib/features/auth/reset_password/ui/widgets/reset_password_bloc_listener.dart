@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:insighta/core/routing/routes.dart';
@@ -28,12 +27,12 @@ class ResetPasswordListener extends StatelessWidget {
               ),
             );
           },
-          success: (forgetPasswordResponse) {
+          success: () {
             Navigator.of(context).pop();
-            Navigator.of(context).pushNamed(Routes.navBarScreen);
+            Navigator.of(context).pushNamed(Routes.logInScreen);
             /*   Navigator.pushNamedAndRemoveUntil(
   context,
-  Routes.navBarScreen,
+  Routes.logInScreen,
   (route) => false,
 );*/
           },

@@ -68,7 +68,7 @@ class ResetPasswordCubit extends Cubit<ResetPasswordState> {
     );
     final result = await _resetPasswordRepo.resetPassword(requestModel);
     result.when(
-      success: (resetPasswordResponse) => emit(ResetPasswordState.success(resetPasswordResponse: resetPasswordResponse)),
+      success: (resetPasswordResponse) => emit(ResetPasswordState.success()),
       failure: (error) => emit(ResetPasswordState.error(error: ApiErrorModel(message: 'Email or OTP not loaded'))),
     );
   }

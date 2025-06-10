@@ -9,6 +9,7 @@ import 'package:insighta/features/auth/login/logic/login_cubit/login_cubit.dart'
 import 'package:insighta/features/auth/login/ui/login_screen.dart';
 import 'package:insighta/features/auth/otp/logic/otp_reset_pass_cubit/otp_reset_pass_cubit.dart';
 import 'package:insighta/features/auth/otp/ui/otp_screen.dart';
+import 'package:insighta/features/auth/reset_password/logic/reset_password_cubit/reset_password_cubit.dart';
 import 'package:insighta/features/auth/reset_password/ui/reset_password_screen.dart';
 import 'package:insighta/features/auth/sign_up/logic/signup_cubit/signup_cubit.dart';
 import 'package:insighta/features/auth/sign_up/ui/sign_up_screen.dart';
@@ -57,7 +58,11 @@ class AppRouter {
                   child: const OtpScreen(),
                 ));
       case Routes.resetPasswordScreen:
-        return MaterialPageRoute(builder: (_) => const ResetPasswordScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => getIt<ResetPasswordCubit>(),
+                  child: const ResetPasswordScreen(),
+                ));
       case Routes.navBarScreen:
         return MaterialPageRoute(builder: (_) => const navBar());
       case Routes.homeScreen:

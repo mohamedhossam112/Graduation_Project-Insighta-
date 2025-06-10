@@ -8,6 +8,8 @@ import 'package:insighta/features/auth/login/data/repos/login_repo.dart';
 import 'package:insighta/features/auth/login/logic/login_cubit/login_cubit.dart';
 import 'package:insighta/features/auth/otp/data/repos/otp_reset_password_repo.dart';
 import 'package:insighta/features/auth/otp/logic/otp_reset_pass_cubit/otp_reset_pass_cubit.dart';
+import 'package:insighta/features/auth/reset_password/data/repos/reset_password_repo.dart';
+import 'package:insighta/features/auth/reset_password/logic/reset_password_cubit/reset_password_cubit.dart';
 import 'package:insighta/features/auth/sign_up/data/repos/sign_up_repo.dart';
 import 'package:insighta/features/auth/sign_up/logic/signup_cubit/signup_cubit.dart';
 
@@ -28,8 +30,12 @@ Future<void> setupGetIt() async {
       () => ForgetPasswordRepo(getIt()));
   getIt
       .registerFactory<ForgetPasswordCubit>(() => ForgetPasswordCubit(getIt()));
-  //otpResetPassword
+  //otp
   getIt.registerLazySingleton<OtpResetPasswordRepo>(
       () => OtpResetPasswordRepo(getIt()));
   getIt.registerFactory<OtpResetPassCubit>(() => OtpResetPassCubit(getIt()));
+  //resetPassword
+  getIt.registerLazySingleton<ResetPasswordRepo>(
+      () => ResetPasswordRepo(getIt()));
+  getIt.registerFactory<ResetPasswordCubit>(() => ResetPasswordCubit(getIt()));
 }

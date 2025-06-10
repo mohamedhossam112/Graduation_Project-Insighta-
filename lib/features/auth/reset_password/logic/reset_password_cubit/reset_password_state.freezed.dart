@@ -24,8 +24,7 @@ mixin _$ResetPasswordState {
             bool isPasswordHidden, bool isConfirmPasswordHidden)
         storedDataLoaded,
     required TResult Function() loading,
-    required TResult Function(ResetPasswordResponseBody resetPasswordResponse)
-        success,
+    required TResult Function() success,
     required TResult Function(ApiErrorModel error) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +35,7 @@ mixin _$ResetPasswordState {
     TResult? Function(bool isPasswordHidden, bool isConfirmPasswordHidden)?
         storedDataLoaded,
     TResult? Function()? loading,
-    TResult? Function(ResetPasswordResponseBody resetPasswordResponse)? success,
+    TResult? Function()? success,
     TResult? Function(ApiErrorModel error)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -47,7 +46,7 @@ mixin _$ResetPasswordState {
     TResult Function(bool isPasswordHidden, bool isConfirmPasswordHidden)?
         storedDataLoaded,
     TResult Function()? loading,
-    TResult Function(ResetPasswordResponseBody resetPasswordResponse)? success,
+    TResult Function()? success,
     TResult Function(ApiErrorModel error)? error,
     required TResult orElse(),
   }) =>
@@ -153,8 +152,7 @@ class _$InitialImpl implements _Initial {
             bool isPasswordHidden, bool isConfirmPasswordHidden)
         storedDataLoaded,
     required TResult Function() loading,
-    required TResult Function(ResetPasswordResponseBody resetPasswordResponse)
-        success,
+    required TResult Function() success,
     required TResult Function(ApiErrorModel error) error,
   }) {
     return initial();
@@ -168,7 +166,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(bool isPasswordHidden, bool isConfirmPasswordHidden)?
         storedDataLoaded,
     TResult? Function()? loading,
-    TResult? Function(ResetPasswordResponseBody resetPasswordResponse)? success,
+    TResult? Function()? success,
     TResult? Function(ApiErrorModel error)? error,
   }) {
     return initial?.call();
@@ -182,7 +180,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(bool isPasswordHidden, bool isConfirmPasswordHidden)?
         storedDataLoaded,
     TResult Function()? loading,
-    TResult Function(ResetPasswordResponseBody resetPasswordResponse)? success,
+    TResult Function()? success,
     TResult Function(ApiErrorModel error)? error,
     required TResult orElse(),
   }) {
@@ -287,8 +285,7 @@ class _$LoadingStoredDataImpl implements LoadingStoredData {
             bool isPasswordHidden, bool isConfirmPasswordHidden)
         storedDataLoaded,
     required TResult Function() loading,
-    required TResult Function(ResetPasswordResponseBody resetPasswordResponse)
-        success,
+    required TResult Function() success,
     required TResult Function(ApiErrorModel error) error,
   }) {
     return loadingStoredData();
@@ -302,7 +299,7 @@ class _$LoadingStoredDataImpl implements LoadingStoredData {
     TResult? Function(bool isPasswordHidden, bool isConfirmPasswordHidden)?
         storedDataLoaded,
     TResult? Function()? loading,
-    TResult? Function(ResetPasswordResponseBody resetPasswordResponse)? success,
+    TResult? Function()? success,
     TResult? Function(ApiErrorModel error)? error,
   }) {
     return loadingStoredData?.call();
@@ -316,7 +313,7 @@ class _$LoadingStoredDataImpl implements LoadingStoredData {
     TResult Function(bool isPasswordHidden, bool isConfirmPasswordHidden)?
         storedDataLoaded,
     TResult Function()? loading,
-    TResult Function(ResetPasswordResponseBody resetPasswordResponse)? success,
+    TResult Function()? success,
     TResult Function(ApiErrorModel error)? error,
     required TResult orElse(),
   }) {
@@ -462,8 +459,7 @@ class _$StoredDataLoadedImpl implements StoredDataLoaded {
             bool isPasswordHidden, bool isConfirmPasswordHidden)
         storedDataLoaded,
     required TResult Function() loading,
-    required TResult Function(ResetPasswordResponseBody resetPasswordResponse)
-        success,
+    required TResult Function() success,
     required TResult Function(ApiErrorModel error) error,
   }) {
     return storedDataLoaded(isPasswordHidden, isConfirmPasswordHidden);
@@ -477,7 +473,7 @@ class _$StoredDataLoadedImpl implements StoredDataLoaded {
     TResult? Function(bool isPasswordHidden, bool isConfirmPasswordHidden)?
         storedDataLoaded,
     TResult? Function()? loading,
-    TResult? Function(ResetPasswordResponseBody resetPasswordResponse)? success,
+    TResult? Function()? success,
     TResult? Function(ApiErrorModel error)? error,
   }) {
     return storedDataLoaded?.call(isPasswordHidden, isConfirmPasswordHidden);
@@ -491,7 +487,7 @@ class _$StoredDataLoadedImpl implements StoredDataLoaded {
     TResult Function(bool isPasswordHidden, bool isConfirmPasswordHidden)?
         storedDataLoaded,
     TResult Function()? loading,
-    TResult Function(ResetPasswordResponseBody resetPasswordResponse)? success,
+    TResult Function()? success,
     TResult Function(ApiErrorModel error)? error,
     required TResult orElse(),
   }) {
@@ -607,8 +603,7 @@ class _$LoadingImpl implements Loading {
             bool isPasswordHidden, bool isConfirmPasswordHidden)
         storedDataLoaded,
     required TResult Function() loading,
-    required TResult Function(ResetPasswordResponseBody resetPasswordResponse)
-        success,
+    required TResult Function() success,
     required TResult Function(ApiErrorModel error) error,
   }) {
     return loading();
@@ -622,7 +617,7 @@ class _$LoadingImpl implements Loading {
     TResult? Function(bool isPasswordHidden, bool isConfirmPasswordHidden)?
         storedDataLoaded,
     TResult? Function()? loading,
-    TResult? Function(ResetPasswordResponseBody resetPasswordResponse)? success,
+    TResult? Function()? success,
     TResult? Function(ApiErrorModel error)? error,
   }) {
     return loading?.call();
@@ -636,7 +631,7 @@ class _$LoadingImpl implements Loading {
     TResult Function(bool isPasswordHidden, bool isConfirmPasswordHidden)?
         storedDataLoaded,
     TResult Function()? loading,
-    TResult Function(ResetPasswordResponseBody resetPasswordResponse)? success,
+    TResult Function()? success,
     TResult Function(ApiErrorModel error)? error,
     required TResult orElse(),
   }) {
@@ -699,8 +694,6 @@ abstract class _$$SuccessImplCopyWith<$Res> {
   factory _$$SuccessImplCopyWith(
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ResetPasswordResponseBody resetPasswordResponse});
 }
 
 /// @nodoc
@@ -713,52 +706,26 @@ class __$$SuccessImplCopyWithImpl<$Res>
 
   /// Create a copy of ResetPasswordState
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? resetPasswordResponse = null,
-  }) {
-    return _then(_$SuccessImpl(
-      resetPasswordResponse: null == resetPasswordResponse
-          ? _value.resetPasswordResponse
-          : resetPasswordResponse // ignore: cast_nullable_to_non_nullable
-              as ResetPasswordResponseBody,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$SuccessImpl implements Success {
-  const _$SuccessImpl({required this.resetPasswordResponse});
-
-  @override
-  final ResetPasswordResponseBody resetPasswordResponse;
+  const _$SuccessImpl();
 
   @override
   String toString() {
-    return 'ResetPasswordState.success(resetPasswordResponse: $resetPasswordResponse)';
+    return 'ResetPasswordState.success()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SuccessImpl &&
-            (identical(other.resetPasswordResponse, resetPasswordResponse) ||
-                other.resetPasswordResponse == resetPasswordResponse));
+        (other.runtimeType == runtimeType && other is _$SuccessImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, resetPasswordResponse);
-
-  /// Create a copy of ResetPasswordState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
-      __$$SuccessImplCopyWithImpl<_$SuccessImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -769,11 +736,10 @@ class _$SuccessImpl implements Success {
             bool isPasswordHidden, bool isConfirmPasswordHidden)
         storedDataLoaded,
     required TResult Function() loading,
-    required TResult Function(ResetPasswordResponseBody resetPasswordResponse)
-        success,
+    required TResult Function() success,
     required TResult Function(ApiErrorModel error) error,
   }) {
-    return success(resetPasswordResponse);
+    return success();
   }
 
   @override
@@ -784,10 +750,10 @@ class _$SuccessImpl implements Success {
     TResult? Function(bool isPasswordHidden, bool isConfirmPasswordHidden)?
         storedDataLoaded,
     TResult? Function()? loading,
-    TResult? Function(ResetPasswordResponseBody resetPasswordResponse)? success,
+    TResult? Function()? success,
     TResult? Function(ApiErrorModel error)? error,
   }) {
-    return success?.call(resetPasswordResponse);
+    return success?.call();
   }
 
   @override
@@ -798,12 +764,12 @@ class _$SuccessImpl implements Success {
     TResult Function(bool isPasswordHidden, bool isConfirmPasswordHidden)?
         storedDataLoaded,
     TResult Function()? loading,
-    TResult Function(ResetPasswordResponseBody resetPasswordResponse)? success,
+    TResult Function()? success,
     TResult Function(ApiErrorModel error)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(resetPasswordResponse);
+      return success();
     }
     return orElse();
   }
@@ -853,17 +819,7 @@ class _$SuccessImpl implements Success {
 }
 
 abstract class Success implements ResetPasswordState {
-  const factory Success(
-          {required final ResetPasswordResponseBody resetPasswordResponse}) =
-      _$SuccessImpl;
-
-  ResetPasswordResponseBody get resetPasswordResponse;
-
-  /// Create a copy of ResetPasswordState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory Success() = _$SuccessImpl;
 }
 
 /// @nodoc
@@ -940,8 +896,7 @@ class _$ErrorImpl implements Error {
             bool isPasswordHidden, bool isConfirmPasswordHidden)
         storedDataLoaded,
     required TResult Function() loading,
-    required TResult Function(ResetPasswordResponseBody resetPasswordResponse)
-        success,
+    required TResult Function() success,
     required TResult Function(ApiErrorModel error) error,
   }) {
     return error(this.error);
@@ -955,7 +910,7 @@ class _$ErrorImpl implements Error {
     TResult? Function(bool isPasswordHidden, bool isConfirmPasswordHidden)?
         storedDataLoaded,
     TResult? Function()? loading,
-    TResult? Function(ResetPasswordResponseBody resetPasswordResponse)? success,
+    TResult? Function()? success,
     TResult? Function(ApiErrorModel error)? error,
   }) {
     return error?.call(this.error);
@@ -969,7 +924,7 @@ class _$ErrorImpl implements Error {
     TResult Function(bool isPasswordHidden, bool isConfirmPasswordHidden)?
         storedDataLoaded,
     TResult Function()? loading,
-    TResult Function(ResetPasswordResponseBody resetPasswordResponse)? success,
+    TResult Function()? success,
     TResult Function(ApiErrorModel error)? error,
     required TResult orElse(),
   }) {

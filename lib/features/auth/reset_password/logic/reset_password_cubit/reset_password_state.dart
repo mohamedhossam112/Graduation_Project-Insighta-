@@ -13,9 +13,7 @@ class ResetPasswordState with _$ResetPasswordState {
     required bool isConfirmPasswordHidden,
   }) = StoredDataLoaded;
   const factory ResetPasswordState.loading() = Loading;
-  const factory ResetPasswordState.success({
-    required ResetPasswordResponseBody resetPasswordResponse,
-  }) = Success;
+  const factory ResetPasswordState.success() = Success;
   const factory ResetPasswordState.error({required ApiErrorModel error}) =
       Error;
 }

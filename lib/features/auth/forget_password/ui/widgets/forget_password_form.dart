@@ -43,7 +43,8 @@ class _ForgetPasswordFormState extends State<ForgetPasswordForm> {
             buttonheight: 60.h,
             textStyle: Styles.textStyle24P.copyWith(color: Colors.white),
             onPressed: () {
-              submitForm(context);
+              submitForm(context,
+                  context.read<ForgetPasswordCubit>().emailController.text);
             },
           ),
         ],
@@ -52,9 +53,9 @@ class _ForgetPasswordFormState extends State<ForgetPasswordForm> {
   }
 }
 
-void submitForm(BuildContext context) {
+void submitForm(BuildContext context, String email) {
   final cubit = context.read<ForgetPasswordCubit>();
   if (cubit.formKey.currentState!.validate()) {
-    cubit.resetPassword();
+    cubit.resetPassword(email);
   }
 }

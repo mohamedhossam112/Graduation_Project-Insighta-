@@ -59,7 +59,7 @@ class _OtpTextFieldState extends State<OtpTextField> {
         focusNode: widget.focusNode,
         keyboardType: TextInputType.number,
         textAlign: TextAlign.center,
-        style: Styles.textStyle14P,
+        style: Styles.textStyle20P,
         inputFormatters: [
           FilteringTextInputFormatter.digitsOnly,
           LengthLimitingTextInputFormatter(1),

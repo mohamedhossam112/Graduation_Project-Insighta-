@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:insighta/core/helpers/app_regex.dart';
@@ -26,11 +26,14 @@ class _SignUpFormState extends State<SignUpForm> {
   bool hasMinLength = false;
 
   late TextEditingController passwordController;
+  late TextEditingController passwordConfirmationController;
 
   @override
   void initState() {
     super.initState();
     passwordController = context.read<SignupCubit>().passwordController;
+    passwordController =
+        context.read<SignupCubit>().passwordConfirmationController;
     setupPasswordControllerListener();
   }
 
@@ -100,13 +103,24 @@ class _SignUpFormState extends State<SignUpForm> {
             height: 16.h,
           ),
           AppTextFormField(
-            controller: context.read<SignupCubit>().roleController,
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please Enter your Role';
+                return 'Please Enter Valid Password';
               }
             },
-            hintText: 'Role',
+            controller:
+                context.read<SignupCubit>().passwordConfirmationController,
+            hintText: 'Confirm Password',
+            isObscureText: isObsecureText,
+            suffixIcon: GestureDetector(
+              onTap: () {
+                setState(() {
+                  isObsecureText = !isObsecureText;
+                });
+              },
+              child: Icon(
+                  isObsecureText ? Icons.visibility_off : Icons.visibility),
+            ),
           ),
           SizedBox(
             height: 16.h,

@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:insighta/core/helpers/shared_pref_helper.dart';
 import 'package:insighta/core/utils/styles.dart';
 import 'package:insighta/features/auth/login/ui/widgets/app_text_button.dart';
+import 'package:insighta/features/auth/otp/data/models/otp_reset_password_request_body.dart';
 
-import 'package:top_snackbar_flutter/custom_snack_bar.dart';
+import 'package:insighta/features/auth/otp/logic/otp_reset_pass_cubit/otp_reset_pass_cubit.dart';
+
 import 'otp_text_field.dart';
 
-/*class OtpForm extends StatefulWidget {
+class OtpForm extends StatefulWidget {
   const OtpForm({super.key});
 
   @override
@@ -14,7 +18,7 @@ import 'otp_text_field.dart';
 }
 
 class _OtpFormState extends State<OtpForm> {
-  late VerifyOtpCubit cubit;
+  late OtpResetPassCubit cubit;
   final List<FocusNode> _focusNodes = List.generate(6, (_) => FocusNode());
   final List<TextEditingController> _controllers =
       List.generate(6, (_) => TextEditingController());
@@ -22,7 +26,7 @@ class _OtpFormState extends State<OtpForm> {
   @override
   void initState() {
     super.initState();
-    cubit = BlocProvider.of<VerifyOtpCubit>(context);
+    cubit = BlocProvider.of<OtpResetPassCubit>(context);
     for (var controller in _controllers) {
       controller.addListener(_updateOtp);
     }
@@ -30,7 +34,7 @@ class _OtpFormState extends State<OtpForm> {
 
   void _updateOtp() {
     final otp = _controllers.map((c) => c.text).join();
-    context.read<VerifyOtpCubit>().enteredOtp = otp;
+    context.read<OtpResetPassCubit>().enteredOtp = otp;
   }
 
   void _nextField({required String value, required int index}) {
@@ -52,16 +56,27 @@ class _OtpFormState extends State<OtpForm> {
     if (isValid) {
       final otp = _controllers.map((c) => c.text).join();
       final email = await SharedPrefHelper.getEmail();
-      final requestModel = VerifyOtpRequestModel(
+      final requestModel = OtpResetPasswordRequestBody(
         email: email,
         otp: otp,
       );
       await SharedPrefHelper.setSecuredString('otp', otp);
       cubit.verifyOtp(requestModel);
     } else {
-      CustomSnackBar.showError(
-        context,
-        'Please enter the complete OTP code',
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+            icon: Icon(
+              Icons.error,
+              size: 32.w,
+              color: Colors.red,
+            ),
+            content: Text(
+              'Please Enter The Correct OTP',
+              style: Styles.textStyle16P.copyWith(
+                fontSize: 12.sp,
+              ),
+            )),
       );
     }
   }
@@ -93,16 +108,16 @@ class _OtpFormState extends State<OtpForm> {
             );
           }),
         ),
-        const Spacer(),
+        SizedBox(
+          height: 400.h,
+        ),
         AppTextButton(
           onPressed: _verifyOtp,
           text: 'Continue',
-          textStyle:  Styles.textStyle24P.copyWith(color: Colors.white),
+          buttonheight: 60.h,
+          textStyle: Styles.textStyle24P.copyWith(color: Colors.white),
         ),
-        
       ],
     );
   }
 }
-
-*/

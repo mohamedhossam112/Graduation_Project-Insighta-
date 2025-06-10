@@ -83,11 +83,6 @@ class LoginScreen extends StatelessWidget {
                   path: '/signUpScreen',
                 ),
                 LoginBlocListener(),
-                IconButton(
-                    onPressed: () {
-                      Navigator.of(context).pushNamed(Routes.otpScreen);
-                    },
-                    icon: Icon(Icons.add_ic_call_outlined))
               ],
             ),
           ],

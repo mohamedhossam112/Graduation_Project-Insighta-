@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
+import 'package:insighta/core/helpers/shared_pref_helper.dart';
 import 'package:insighta/features/auth/forget_password/data/models/forget_password_request_body.dart';
 
 import 'package:insighta/features/auth/forget_password/data/repos/forget_password_repo.dart';
@@ -13,12 +14,13 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
   ForgetPasswordCubit(this._forgetPasswordRepo)
       : super(const ForgetPasswordState.initial());
 
-  void resetPassword() async {
+  void resetPassword(String email) async {
     emit(const ForgetPasswordState.loading());
     final response = await _forgetPasswordRepo
         .forgetPassword(ForgetPasswordRequestBody(email: emailController.text));
 
-    response.when(success: (forgetPasswordResponseBody) {
+    response.when(success: (forgetPasswordResponseBody) async {
+      await SharedPrefHelper.setData(SharedPrefKeys.email, email);
       emit(ForgetPasswordState.success(
           forgetPasswordResponse: forgetPasswordResponseBody));
     }, failure: (error) {

@@ -7,7 +7,9 @@ import 'package:insighta/features/auth/forget_password/logic/forget_password_cub
 import 'package:insighta/features/auth/forget_password/ui/forget_password_screen.dart';
 import 'package:insighta/features/auth/login/logic/login_cubit/login_cubit.dart';
 import 'package:insighta/features/auth/login/ui/login_screen.dart';
+import 'package:insighta/features/auth/otp/logic/otp_reset_pass_cubit/otp_reset_pass_cubit.dart';
 import 'package:insighta/features/auth/otp/ui/otp_screen.dart';
+import 'package:insighta/features/auth/reset_password/ui/reset_password_screen.dart';
 import 'package:insighta/features/auth/sign_up/logic/signup_cubit/signup_cubit.dart';
 import 'package:insighta/features/auth/sign_up/ui/sign_up_screen.dart';
 import 'package:insighta/features/home/ui/home_screen.dart';
@@ -49,7 +51,13 @@ class AppRouter {
                   child: const ForgetPasswordScreen(),
                 ));
       case Routes.otpScreen:
-        return MaterialPageRoute(builder: (_) => const OtpScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => getIt<OtpResetPassCubit>(),
+                  child: const OtpScreen(),
+                ));
+      case Routes.resetPasswordScreen:
+        return MaterialPageRoute(builder: (_) => const ResetPasswordScreen());
       case Routes.navBarScreen:
         return MaterialPageRoute(builder: (_) => const navBar());
       case Routes.homeScreen:

@@ -6,6 +6,8 @@ import 'package:insighta/features/auth/login/data/models/login_request_body.dart
 import 'package:insighta/features/auth/login/data/models/login_response_body.dart';
 import 'package:insighta/features/auth/otp/data/models/otp_reset_password_request_body.dart';
 import 'package:insighta/features/auth/otp/data/models/otp_reset_password_response_body.dart';
+import 'package:insighta/features/auth/reset_password/data/models/reset_password_request_body.dart';
+import 'package:insighta/features/auth/reset_password/data/models/reset_password_response_body.dart';
 import 'package:insighta/features/auth/sign_up/data/models/sign_up_request_body.dart';
 import 'package:insighta/features/auth/sign_up/data/models/sign_up_response_body.dart';
 import 'package:retrofit/retrofit.dart';
@@ -26,9 +28,12 @@ abstract class ApiService {
   Future<ForgetPasswordResponseBody> forgetPassword(
     @Body() ForgetPasswordRequestBody forgetPasswordRequestBody,
   );
-   @POST(ApiConstants.otpResetPassword)
+   @POST(ApiConstants.otpVerify)
   Future<OtpResetPasswordResponseBody> otpResetPassword(
     @Body()OtpResetPasswordRequestBody otpResetPasswordRequestBody,
   );
-
+  @POST(ApiConstants.resetPassword)
+  Future<ResetPasswordResponseBody> resetPassword(
+    @Body()ResetPasswordRequestBody resetPasswordRequestBody,
+  );
 }

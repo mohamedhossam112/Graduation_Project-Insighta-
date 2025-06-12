@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:insighta/core/utils/styles.dart';
-import 'package:insighta/core/widgets/custom_back_button.dart';
 
 class ParentChildScreen extends StatelessWidget {
   const ParentChildScreen({super.key});
@@ -9,10 +8,10 @@ class ParentChildScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: CustomBackButton(),
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         title: Text(
-          'Linked Accounts',
+          '  Linked Accounts',
           style: Styles.textStyle24P,
         ),
       ),

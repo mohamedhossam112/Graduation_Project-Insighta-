@@ -18,7 +18,12 @@ import 'package:insighta/features/home/ui/home_screen.dart';
 import 'package:insighta/features/notification/ui/notification_screen.dart';
 import 'package:insighta/features/onboarding/ui/onBoarding_screen.dart';
 import 'package:insighta/features/parent_child/ui/parent_child_screen.dart';
+import 'package:insighta/features/profile/ui/about_screen.dart';
+import 'package:insighta/features/profile/ui/edit_profile_screen.dart';
+import 'package:insighta/features/profile/ui/help_screen.dart';
+import 'package:insighta/features/profile/ui/privacy_policy_screen.dart';
 import 'package:insighta/features/profile/ui/profile_screen.dart';
+import 'package:insighta/features/profile/ui/settings_screen.dart';
 import 'package:insighta/features/report/ui/report_card_details_screen.dart';
 import 'package:insighta/features/report/ui/report_screen.dart';
 import 'package:insighta/features/suggest/ui/suggest_screen.dart';
@@ -75,6 +80,16 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const ParentChildScreen());
       case Routes.profileScreen:
         return MaterialPageRoute(builder: (_) => const ProfileScreen());
+      case Routes.editProfileScreen:
+        return MaterialPageRoute(builder: (_) => const EditProfileScreen());
+      case Routes.settingsScreen:
+        return MaterialPageRoute(builder: (_) => const SettingsScreen());
+      case Routes.aboutScreen:
+        return MaterialPageRoute(builder: (_) => const AboutScreen());
+      case Routes.helpScreen:
+        return MaterialPageRoute(builder: (_) => const HelpScreen());
+      case Routes.privacyPolicyScreen:
+        return MaterialPageRoute(builder: (_) => const PrivacyPolicyScreen());
       case Routes.reportScreen:
         return MaterialPageRoute(builder: (_) => const ReportScreen());
       case Routes.therapyScreen:

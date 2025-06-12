@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -14,7 +13,7 @@ class SharedPrefKeys {
   static const String refreshToken = 'refreshToken';
   static const String expiresOn = 'expiresOn';
   static const String refreshTokenExpiration = 'refreshTokenExpiration';
-  static const String role = 'role';
+
   static const String isLoggedIn = 'isLoggedIn';
   static const String isFirstTime = 'isFirstTime';
 }

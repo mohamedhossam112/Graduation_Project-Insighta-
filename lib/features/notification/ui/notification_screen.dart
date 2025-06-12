@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:insighta/core/theming/colors.dart';
 import 'package:insighta/core/utils/styles.dart';
-import 'package:insighta/features/home/ui/home_screen.dart';
+
 import 'package:insighta/features/notification/ui/widgets/notification_screen_body.dart';
 
 class NotificationScreen extends StatelessWidget {
@@ -13,8 +13,8 @@ class NotificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         centerTitle: true,
         automaticallyImplyLeading: false,
         title: Text(

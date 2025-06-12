@@ -11,15 +11,19 @@ class InsightaApp extends StatelessWidget {
     Key? key,
     required this.appRouter,
     required this.hasSeenOnboarding,
+    required this.navigatorKey,
   }) : super(key: key);
   final AppRouter appRouter;
   final bool hasSeenOnboarding;
+
+  final GlobalKey<NavigatorState> navigatorKey;
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       minTextAdapt: true,
       designSize: const Size(393, 852),
       child: MaterialApp(
+        navigatorKey: navigatorKey,
         theme: ThemeData(
             primaryColor: ColorsManager.primaryColor,
             scaffoldBackgroundColor: ColorsManager.white),

@@ -7,6 +7,8 @@ class Routes {
   static const String resetPasswordScreen = '/resetPasswordScreen';
   static const String homeScreen = '/homeScreen';
   static const String notificationScreen = '/notificationScreen';
+  static const String parentChildScreen = '/parentChildScreen';
+  static const String profileScreen = '/profileScreen';
   static const String navBarScreen = '/navBar';
   static const String reportScreen = '/reportScreen';
   static const String therapyScreen = '/therapyScreen';

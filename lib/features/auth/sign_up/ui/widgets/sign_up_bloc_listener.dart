@@ -30,10 +30,10 @@ class SignUpBlocListener extends StatelessWidget {
           },
           success: (signupResponse) {
             Navigator.of(context).pop();
-            Navigator.of(context).pushNamed(Routes.navBarScreen);
+            Navigator.of(context).pushNamed(Routes.logInScreen);
             /*   Navigator.pushNamedAndRemoveUntil(
   context,
-  Routes.navBarScreen,
+  Routes.logInScreen,
   (route) => false,
 );*/
           },

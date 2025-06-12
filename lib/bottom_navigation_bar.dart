@@ -4,6 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:insighta/core/theming/colors.dart';
 import 'package:insighta/features/home/ui/home_screen.dart';
 import 'package:insighta/features/notification/ui/notification_screen.dart';
+import 'package:insighta/features/parent_child/ui/parent_child_screen.dart';
+import 'package:insighta/features/profile/ui/profile_screen.dart';
 
 // ignore: camel_case_types
 class navBar extends StatefulWidget {
@@ -18,10 +20,9 @@ class _navBarState extends State<navBar> {
 
   final List<Widget> _screens = [
     HomeScreen(),
-
     NotificationScreen(),
-    // ParentScreen(),
-    // ProfileScreen(),
+    ParentChildScreen(),
+    ProfileScreen(),
   ];
 
   void _onItemTapped(int index) {

@@ -12,6 +12,8 @@ import 'package:insighta/features/auth/reset_password/data/repos/reset_password_
 import 'package:insighta/features/auth/reset_password/logic/reset_password_cubit/reset_password_cubit.dart';
 import 'package:insighta/features/auth/sign_up/data/repos/sign_up_repo.dart';
 import 'package:insighta/features/auth/sign_up/logic/signup_cubit/signup_cubit.dart';
+import 'package:insighta/features/therapy/data/repos/therapy_repo.dart';
+import 'package:insighta/features/therapy/logic/get_therapist_cubit/get_therapist_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -38,4 +40,7 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<ResetPasswordRepo>(
       () => ResetPasswordRepo(getIt()));
   getIt.registerFactory<ResetPasswordCubit>(() => ResetPasswordCubit(getIt()));
+  //therapy
+  getIt.registerLazySingleton<TherapyRepo>(() => TherapyRepo(getIt()));
+  getIt.registerFactory<GetTherapistCubit>(() => GetTherapistCubit(getIt()));
 }

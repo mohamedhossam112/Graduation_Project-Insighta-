@@ -52,29 +52,29 @@ class HelpScreen extends StatelessWidget {
                 height: 16.h,
               ),
               TitleAndSubtitleCoreProfileItem(
-                title: '1. How does Solidify help with concrete mix design?',
+                title: '1. How does this app help improve my mental health?',
                 subtitle:
-                    'Solidify uses AI-driven algorithms to suggest optimized concrete mix designs based on project requirements, material properties, and environmental conditions. Users can adjust parameters to fine-tune their mix.',
+                    'The app uses AI to track your social media interactions and identify negative patterns affecting your mood. It offers insights and recommendations to support emotional well-being.',
               ),
               TitleAndSubtitleCoreProfileItem(
-                title: '2. Can I save and share my project data?',
+                title: '2. What kind of content does the app analyze?',
                 subtitle:
-                    'Yes! Solidify allows you to save your project details and share them with team members or clients. You can export reports or share data directly through the app.',
+                    'It analyzes the text, images, and videos you engage with across social platforms. The system detects sentiment, emotional triggers, and keywords that may impact your mental health.',
               ),
               TitleAndSubtitleCoreProfileItem(
-                title: '3. Is my data secure in the app?',
+                title: '3. Can the app help reduce my screen time?',
                 subtitle:
-                    'Absolutely. We use encryption and secure storage methods to protect your information. You also have control over your data and can modify or delete it anytime.',
+                    'Yes. The app provides detailed reports on your daily social media usage and gives personalized suggestions to help you minimize unhealthy screen time.',
               ),
               TitleAndSubtitleCoreProfileItem(
-                title: '4. How accurate are the AI recommendations?',
+                title: '4. Will I receive recommendations?',
                 subtitle:
-                    'Our AI is trained on industry standards and best practices, providing highly reliable suggestions. However, we always recommend that engineers validate AI-generated results before implementation.',
+                    'Absolutely. The app offers AI-based content recommendations like uplifting videos, mindfulness exercises, and healthier digital habits tailored to your behavior.',
               ),
               TitleAndSubtitleCoreProfileItem(
-                title: '5. What should I do if I encounter a technical issue?',
+                title: '5. How does the app detect emotional changes?',
                 subtitle:
-                    'If you face any issues, try restarting the app or checking for updates. If the problem persists, contact our support team through the app’s support section.',
+                    'Using sentiment analysis, the app monitors how the content you consume correlates with emotional signals like stress, anxiety, or sadness, then visualizes the trends.',
               ),
               SizedBox(
                 height: 40.h,

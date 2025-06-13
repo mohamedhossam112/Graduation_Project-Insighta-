@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:insighta/core/theming/colors.dart';
 import 'package:insighta/core/utils/styles.dart';
@@ -30,7 +30,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
                 height: 30.h,
               ),
               Image.asset(
-                'assets/images/help_image.png',
+                'assets/images/privacy_image.png',
                 width: 200.w,
                 height: 200.h,
                 color: ColorsManager.primaryColor,
@@ -39,10 +39,11 @@ class PrivacyPolicyScreen extends StatelessWidget {
                 height: 12.h,
               ),
               Text(
-                'Welcome to the Help Center! Here, you will find '
-                'answers to common questions, guides on '
-                'using our services, If you need further assistance, '
-                'please contact our support team.',
+                'We committed to protecting your privacy.'
+                ' Please read this Privacy Policy carefully. '
+                'If you do not agree with the terms of this Privacy'
+                ' Policy, please do not access the app or use our '
+                'services.',
                 textAlign: TextAlign.center,
                 style: Styles.textStyle14P.copyWith(
                   color: ColorsManager.primaryColor.withValues(alpha: 0.8),
@@ -52,29 +53,29 @@ class PrivacyPolicyScreen extends StatelessWidget {
                 height: 16.h,
               ),
               TitleAndSubtitleCoreProfileItem(
-                title: '1. How does Solidify help with concrete mix design?',
+                title: '1. What data does the app collect?',
                 subtitle:
-                    'Solidify uses AI-driven algorithms to suggest optimized concrete mix designs based on project requirements, material properties, and environmental conditions. Users can adjust parameters to fine-tune their mix.',
+                    'The app collects usage patterns, content interaction data, and basic profile information. It does not read private messages or store sensitive personal data.',
               ),
               TitleAndSubtitleCoreProfileItem(
-                title: '2. Can I save and share my project data?',
+                title: '2. How is my data used?',
                 subtitle:
-                    'Yes! Solidify allows you to save your project details and share them with team members or clients. You can export reports or share data directly through the app.',
+                    'Data is used to generate emotional insights, provide recommendations, and improve the AI model. It’s never sold or shared without your explicit consent.',
               ),
               TitleAndSubtitleCoreProfileItem(
-                title: '3. Is my data secure in the app?',
+                title: '3. Is my identity protected?',
                 subtitle:
-                    'Absolutely. We use encryption and secure storage methods to protect your information. You also have control over your data and can modify or delete it anytime.',
+                    'Yes. All user data is anonymized before processing. Your identity is safe and secure under strict encryption protocols.',
               ),
               TitleAndSubtitleCoreProfileItem(
-                title: '4. How accurate are the AI recommendations?',
+                title: '4. Can I delete my data?',
                 subtitle:
-                    'Our AI is trained on industry standards and best practices, providing highly reliable suggestions. However, we always recommend that engineers validate AI-generated results before implementation.',
+                    'Yes. Users have full control over their data. You can request data deletion at any time through the settings menu.',
               ),
               TitleAndSubtitleCoreProfileItem(
-                title: '5. What should I do if I encounter a technical issue?',
+                title: '5. Does the app track me across other apps?',
                 subtitle:
-                    'If you face any issues, try restarting the app or checking for updates. If the problem persists, contact our support team through the app’s support section.',
+                    'No. The app only tracks interactions within itself and the data you choose to share from social media platforms via integration.',
               ),
               SizedBox(
                 height: 40.h,

@@ -8,7 +8,7 @@ class LogoutHelper {
     await SharedPrefHelper.clearAllData();
     await SharedPrefHelper.setData(SharedPrefKeys.isLoggedIn, false);
 
-    /*   navigatorKey.currentState?.pushNamedAndRemoveUntil(
+    /*  navigatorKey.currentState?.pushNamedAndRemoveUntil(
       Routes.logInScreen,
           (route) => false,
     );*/

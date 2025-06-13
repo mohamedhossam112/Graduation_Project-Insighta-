@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:insighta/core/networking/api_error_model.dart';
-import 'package:insighta/features/auth/reset_password/data/models/reset_password_response_body.dart';
+
 
 part 'reset_password_state.freezed.dart';
 

@@ -27,6 +27,7 @@ import 'package:insighta/features/profile/ui/settings_screen.dart';
 import 'package:insighta/features/report/ui/report_card_details_screen.dart';
 import 'package:insighta/features/report/ui/report_screen.dart';
 import 'package:insighta/features/suggest/ui/suggest_screen.dart';
+import 'package:insighta/features/therapy/logic/get_therapist_cubit/get_therapist_cubit.dart';
 import 'package:insighta/features/therapy/ui/select_time_slots_screen.dart';
 import 'package:insighta/features/therapy/ui/booking_success_screen.dart';
 import 'package:insighta/features/therapy/ui/therapy_screen.dart';
@@ -93,7 +94,11 @@ class AppRouter {
       case Routes.reportScreen:
         return MaterialPageRoute(builder: (_) => const ReportScreen());
       case Routes.therapyScreen:
-        return MaterialPageRoute(builder: (_) => const TherapyScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => getIt<GetTherapistCubit>(),
+                  child: const TherapyScreen(),
+                ));
       case Routes.reportCardDetailsScreen:
         final args = settings.arguments as Map<String, dynamic>?;
         return MaterialPageRoute(

@@ -13,7 +13,7 @@ class SharedPrefKeys {
   static const String refreshToken = 'refreshToken';
   static const String expiresOn = 'expiresOn';
   static const String refreshTokenExpiration = 'refreshTokenExpiration';
-
+  static const String joinedDate = 'joinedDate';
   static const String isLoggedIn = 'isLoggedIn';
   static const String isFirstTime = 'isFirstTime';
 }

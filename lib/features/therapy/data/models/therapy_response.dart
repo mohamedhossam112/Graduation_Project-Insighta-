@@ -4,9 +4,9 @@ part 'therapy_response.g.dart';
 @JsonSerializable()
 class TherapyResponse {
   String code;
-  String message;
-  Pagination pagination;
-  List<Payload> payload;
+  String? message;
+  Pagination? pagination;
+  List<Payload>? payload;
 
   TherapyResponse(
       {required this.code,
@@ -23,8 +23,11 @@ class TherapyResponse {
 @JsonSerializable()
 class Pagination {
   int page;
+  @JsonKey(name: 'next_page')
   int nextPage;
+  @JsonKey(name: 'last_page')
   int lastPage;
+  @JsonKey(name: 'result_count')
   int resultCount;
 
   Pagination(
@@ -42,13 +45,13 @@ class Pagination {
 @JsonSerializable()
 class Payload {
   String id;
-  String name;
-  String email;
-  String phone;
-  String specialty;
-  String rating;
-  String price;
-  File file;
+  String? name;
+  String? email;
+  String? phone;
+  String? specialty;
+  String? rating;
+  String? price;
+  File? file;
 
   Payload(
       {required this.id,
@@ -69,11 +72,11 @@ class Payload {
 @JsonSerializable()
 class File {
   int id;
-  String url;
-  String name;
-  @JsonKey(name:'mime_type')
-  String mimeType;
-  String type;
+  String? url;
+  String? name;
+  @JsonKey(name: 'mime_type')
+  String? mimeType;
+  String? type;
 
   File(
       {required this.id,

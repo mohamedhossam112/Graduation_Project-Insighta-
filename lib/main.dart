@@ -5,7 +5,7 @@ import 'package:insighta/core/di/dependency_injection.dart';
 import 'package:insighta/core/helpers/shared_pref_helper.dart';
 
 import 'package:insighta/core/routing/app_router.dart';
-import 'package:insighta/core/routing/routes.dart';
+
 import 'package:insighta/insighta_app.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -32,7 +32,7 @@ Future<void> main() async {
   }*/
   runApp(InsightaApp(
     appRouter: AppRouter(),
-    //initialRoute: initialRoute,
+    isLoggedIn: isLoggedIn,
     hasSeenOnboarding: hasSeen,
     navigatorKey: navigatorKey,
   ));

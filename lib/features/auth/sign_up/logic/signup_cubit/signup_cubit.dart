@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
+import 'package:insighta/core/helpers/shared_pref_helper.dart';
 import 'package:insighta/features/auth/sign_up/data/models/sign_up_request_body.dart';
 import 'package:insighta/features/auth/sign_up/data/repos/sign_up_repo.dart';
 
@@ -26,7 +27,11 @@ class SignupCubit extends Cubit<SignupState> {
         passwordConfirmation: passwordConfirmationController.text,
       ),
     );
-    response.when(success: (signupResponseBody) {
+    response.when(success: (signupResponseBody) async {
+      await SharedPrefHelper.setData(
+          SharedPrefKeys.joinedDate, DateTime.now().toString());
+
+      await SharedPrefHelper.setData(SharedPrefKeys.isLoggedIn, true);
       emit(SignupState.success(signupResponse: signupResponseBody));
     }, failure: (error) {
       emit(SignupState.error(error: error.message ?? ''));

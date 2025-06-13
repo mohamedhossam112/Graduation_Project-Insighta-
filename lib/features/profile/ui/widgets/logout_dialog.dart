@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:insighta/core/helpers/log_out_helper.dart';
 
 import 'package:insighta/core/theming/colors.dart';
@@ -26,7 +26,11 @@ class LogoutDialog extends StatelessWidget {
           SizedBox(
             height: 22.h,
           ),
-          SvgPicture.asset('assets/images/log_out.png'),
+          Icon(
+            Icons.logout,
+            color: Colors.red,
+            size: 36.sp,
+          ),
           SizedBox(
             height: 12.h,
           ),
@@ -78,7 +82,7 @@ class LogoutDialog extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 12.h,
+            height: 16.h,
           ),
         ],
       ),

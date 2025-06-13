@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 
-import 'package:insighta/features/therapy/data/models/therapy_response.dart';
+
 import 'package:insighta/features/therapy/data/repos/therapy_repo.dart';
 import 'package:insighta/features/therapy/logic/get_therapist_cubit/get_therapist_state.dart';
 

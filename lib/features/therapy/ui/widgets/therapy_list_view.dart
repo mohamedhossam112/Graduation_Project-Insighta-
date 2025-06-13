@@ -15,7 +15,6 @@ class _TherapyListViewState extends State<TherapyListView> {
   @override
   void initState() {
     super.initState();
-    // Trigger data fetch when this widget is initialized
     context.read<GetTherapistCubit>().getTherapist();
   }
 
@@ -28,10 +27,13 @@ class _TherapyListViewState extends State<TherapyListView> {
           loading: () => const Center(child: CircularProgressIndicator()),
           success: (therapyResponse) {
             return ListView.builder(
-              itemCount: therapyResponse.payload.length,
+              itemCount: therapyResponse.payload?.length ?? 0,
               itemBuilder: (context, index) {
-                final therapist = therapyResponse.payload[index];
-                return TherapyCard(therapyModel: therapist);
+                final therapist = therapyResponse.payload?[index];
+                if (therapist != null) {
+                  return TherapyCard(therapyModel: therapist);
+                }
+                return const SizedBox.shrink();
               },
             );
           },

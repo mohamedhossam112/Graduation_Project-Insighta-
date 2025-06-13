@@ -31,9 +31,9 @@ class TherapyCard extends StatelessWidget {
         child: Column(
           children: [
             ListTile(
-              leading: Image.network(therapyModel.file.url),
+              leading: Image.network(therapyModel.file?.url ?? ''),
               title: Text(
-                therapyModel.name,
+                therapyModel.name ?? '',
                 style: Styles.textStyle20P,
               ),
               subtitle: Text('Gynecologue obstericien'),

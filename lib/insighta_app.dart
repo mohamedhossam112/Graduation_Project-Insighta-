@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:insighta/core/routing/app_router.dart';
+import 'package:insighta/core/routing/routes.dart';
 
 import 'package:insighta/core/theming/colors.dart';
 
@@ -12,9 +13,11 @@ class InsightaApp extends StatelessWidget {
     required this.appRouter,
     required this.hasSeenOnboarding,
     required this.navigatorKey,
+    required this.isLoggedIn,
   }) : super(key: key);
   final AppRouter appRouter;
   final bool hasSeenOnboarding;
+  final bool isLoggedIn;
 
   final GlobalKey<NavigatorState> navigatorKey;
   @override
@@ -29,8 +32,8 @@ class InsightaApp extends StatelessWidget {
             scaffoldBackgroundColor: ColorsManager.white),
         debugShowCheckedModeBanner: false,
         initialRoute:
-            //    hasSeenOnboarding ? Routes.logInScreen : Routes.onBoardingScreen,
-            '/onBoardingScreen',
+            isLoggedIn ? Routes.navBarScreen : Routes.onBoardingScreen,
+        //   '/onBoardingScreen',
         onGenerateRoute: appRouter.generateRoute,
       ),
     );

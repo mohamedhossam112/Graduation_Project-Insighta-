@@ -18,7 +18,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
         centerTitle: true,
         title: Text(
           'Privacy Policy',
-          style: Styles.textStyle24P,
+          style: Styles.textStyle20P,
         ),
       ),
       body: SingleChildScrollView(

@@ -18,7 +18,7 @@ class HelpScreen extends StatelessWidget {
         centerTitle: true,
         title: Text(
           'Help',
-          style: Styles.textStyle24P,
+          style: Styles.textStyle20P,
         ),
       ),
       body: SingleChildScrollView(

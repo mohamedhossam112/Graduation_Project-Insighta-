@@ -19,7 +19,7 @@ class ProfileScreen extends StatelessWidget {
         centerTitle: true,
         title: Text(
           'Profile',
-          style: Styles.textStyle24P,
+          style: Styles.textStyle20P,
         ),
       ),
       body: SafeArea(

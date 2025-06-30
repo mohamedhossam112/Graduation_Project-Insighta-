@@ -63,7 +63,13 @@ class Styles {
     fontSize: 14.sp,
     fontWeight: FontWeight.w400,
     fontFamily: 'Poppins',
-    color: ColorsManager.therapyGrey,
+    color: ColorsManager.searchFieldText,
+  );
+  static final textStyle14I = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w400,
+    fontFamily: 'Inter',
+    color: ColorsManager.primaryColor,
   );
   static final textStyle16P = TextStyle(
     fontSize: 16.sp,

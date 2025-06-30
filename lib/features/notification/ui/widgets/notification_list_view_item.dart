@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:insighta/core/theming/colors.dart';
 
 import 'package:insighta/core/utils/styles.dart';
 
@@ -20,22 +21,20 @@ class NotificationsListViewItem extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 12.h),
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 18.w),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
-              child: Text(
-                message,
-                style: Styles.textStyle16I,
-                overflow: TextOverflow.ellipsis,
-                maxLines: 2,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox.shrink(),
+                Text(
+                  timeAgo,
+                  style: Styles.textStyle12I,
+                ),
+              ],
             ),
-            Text(
-              timeAgo,
-              style: Styles.textStyle12I,
-            ),
+            Text(message, style: Styles.textStyle14I.copyWith(fontSize: 16.sp)),
           ],
         ),
       ),

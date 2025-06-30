@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:insighta/core/theming/colors.dart';
 import 'package:insighta/core/utils/styles.dart';
@@ -18,7 +18,7 @@ class EditProfileScreen extends StatelessWidget {
         centerTitle: true,
         title: Text(
           'Edit Profile',
-          style: Styles.textStyle24P,
+          style: Styles.textStyle20P,
         ),
       ),
       body: SafeArea(

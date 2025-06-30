@@ -19,6 +19,7 @@ import 'package:insighta/features/notification/ui/notification_screen.dart';
 import 'package:insighta/features/onboarding/ui/onBoarding_screen.dart';
 import 'package:insighta/features/parent_child/ui/parent_child_screen.dart';
 import 'package:insighta/features/profile/ui/about_screen.dart';
+import 'package:insighta/features/profile/ui/about_your_account_screen.dart';
 import 'package:insighta/features/profile/ui/edit_profile_screen.dart';
 import 'package:insighta/features/profile/ui/help_screen.dart';
 import 'package:insighta/features/profile/ui/privacy_policy_screen.dart';
@@ -87,6 +88,9 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const SettingsScreen());
       case Routes.aboutScreen:
         return MaterialPageRoute(builder: (_) => const AboutScreen());
+      case Routes.aboutYourAccountScreen:
+        return MaterialPageRoute(
+            builder: (_) => const AboutYourAccountScreen());
       case Routes.helpScreen:
         return MaterialPageRoute(builder: (_) => const HelpScreen());
       case Routes.privacyPolicyScreen:

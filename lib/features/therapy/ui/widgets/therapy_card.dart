@@ -6,7 +6,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:insighta/core/theming/colors.dart';
 import 'package:insighta/core/utils/styles.dart';
 import 'package:insighta/features/therapy/data/models/therapy_response.dart';
-import 'package:insighta/features/therapy/ui/widgets/second_half_of_therapy_card.dart';
 
 class TherapyCard extends StatelessWidget {
   const TherapyCard({
@@ -31,19 +30,24 @@ class TherapyCard extends StatelessWidget {
         child: Column(
           children: [
             ListTile(
-              leading: Image.network(therapyModel.file?.url ?? ''),
+              leading: Padding(
+                padding: EdgeInsets.only(top: 8.h),
+                child: Image.network(
+                  therapyModel.file?.url ?? '',
+                  width: 36.w,
+                ),
+              ),
               title: Text(
                 therapyModel.name ?? '',
                 style: Styles.textStyle20P,
               ),
-              subtitle: Text('Gynecologue obstericien'),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 12.h),
+              padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 10.h),
               child: Row(
                 children: [
                   Icon(
-                    FontAwesomeIcons.locationDot,
+                    FontAwesomeIcons.envelope,
                     color: ColorsManager.primaryColor,
                     size: 20.sp,
                   ),
@@ -51,37 +55,92 @@ class TherapyCard extends StatelessWidget {
                     width: 10.w,
                   ),
                   Text(
-                    '4 Rue du Doctour Roux 75015 Paric',
+                    therapyModel.email ?? '',
                     style: Styles.textStyle14P,
                   ),
                 ],
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 18.w,
-              ),
+              padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 10.h),
               child: Row(
                 children: [
                   Icon(
-                    FontAwesomeIcons.check,
+                    FontAwesomeIcons.phone,
                     color: ColorsManager.primaryColor,
-                    size: 20.sp,
+                    size: 18.sp,
                   ),
                   SizedBox(
                     width: 10.w,
                   ),
                   Text(
-                    'Conventionne secture 2',
+                    therapyModel.phone ?? '',
                     style: Styles.textStyle14P,
                   ),
                 ],
               ),
             ),
-            Divider(
-              color: ColorsManager.primaryColor,
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 10.h),
+              child: Row(
+                children: [
+                  Icon(
+                    FontAwesomeIcons.userDoctor,
+                    color: ColorsManager.primaryColor,
+                    size: 18.sp,
+                  ),
+                  SizedBox(
+                    width: 10.w,
+                  ),
+                  Text(
+                    therapyModel.specialty ?? '',
+                    style: Styles.textStyle14P,
+                  ),
+                ],
+              ),
             ),
-            SecondHalfofTherapyCard(),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 10.h),
+              child: Row(
+                children: [
+                  Icon(
+                    FontAwesomeIcons.star,
+                    color: ColorsManager.primaryColor,
+                    size: 18.sp,
+                  ),
+                  SizedBox(
+                    width: 10.w,
+                  ),
+                  Text(
+                    therapyModel.rating ?? '',
+                    style: Styles.textStyle14P,
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                right: 18.w,
+                left: 18.w,
+                top: 12.h,
+              ),
+              child: Row(
+                children: [
+                  Icon(
+                    FontAwesomeIcons.dollarSign,
+                    color: ColorsManager.primaryColor,
+                    size: 18.sp,
+                  ),
+                  SizedBox(
+                    width: 10.w,
+                  ),
+                  Text(
+                    therapyModel.price ?? '',
+                    style: Styles.textStyle14P,
+                  ),
+                ],
+              ),
+            ),
             SizedBox(
               height: 40.h,
             ),

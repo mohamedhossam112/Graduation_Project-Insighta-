@@ -12,6 +12,7 @@ class Routes {
   static const String editProfileScreen = '/editProfileScreen';
   static const String settingsScreen = '/settingsScreen';
   static const String aboutScreen = '/aboutScreen';
+  static const String aboutYourAccountScreen = '/aboutYourAccountScreen';
   static const String helpScreen = '/helpScreen';
   static const String privacyPolicyScreen = '/privacyPolicyScreen';
   static const String navBarScreen = '/navBar';

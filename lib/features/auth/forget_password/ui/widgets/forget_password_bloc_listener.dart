@@ -30,9 +30,9 @@ class ForgetPasswordBlocListener extends StatelessWidget {
           success: (forgetPasswordResponse) {
             Navigator.of(context).pop();
             Navigator.of(context).pushNamed(Routes.otpScreen);
-            /*   Navigator.pushNamedAndRemoveUntil(
+            /*       Navigator.pushNamedAndRemoveUntil(
   context,
-  Routes.navBarScreen,
+Routes.otpScreen,
   (route) => false,
 );*/
           },

@@ -8,44 +8,35 @@ class NotificationScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Divider(
-          height: 3,
-          thickness: 2,
-          color: ColorsManager.primaryColor,
-        ),
-        Expanded(
-          child: ListView.separated(
-            padding: EdgeInsets.zero,
-            itemCount: 3,
-            separatorBuilder: (context, index) {
-              return Divider(
-                height: 0.5.h,
-                color: ColorsManager.primaryColor,
-                thickness: 0.5.w,
-              );
-            },
-            itemBuilder: (context, index) {
-              return NotificationsListViewItem(
-                message: getMessage(index),
-                timeAgo: getTimeAgo(index),
-              );
-            },
-          ),
-        ),
-      ],
+    return Expanded(
+      child: ListView.separated(
+        padding: EdgeInsets.zero,
+        itemCount: 3,
+        separatorBuilder: (context, index) {
+          return Divider(
+            height: 0.5.h,
+            color: ColorsManager.primaryColor,
+            thickness: 0.6,
+          );
+        },
+        itemBuilder: (context, index) {
+          return NotificationsListViewItem(
+            message: getMessage(index),
+            timeAgo: getTimeAgo(index),
+          );
+        },
+      ),
     );
   }
 
   String getMessage(int index) {
     switch (index) {
       case 0:
-        return 'Check the details and confirm the delivery schedule.';
+        return 'You booked a therapy session.';
       case 1:
-        return 'Your order #231667 has been dispatched and is on its way to the site.';
+        return 'A report for your usage is out!';
       case 2:
-        return 'A login attempt was made from a new device. If this wasn’t you, update your security settings.';
+        return 'Want to check any new recommendations?';
 
       default:
         return 'Notification message';

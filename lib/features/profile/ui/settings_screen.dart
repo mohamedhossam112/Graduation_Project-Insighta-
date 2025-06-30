@@ -18,7 +18,7 @@ class SettingsScreen extends StatelessWidget {
         centerTitle: true,
         title: Text(
           'Settings',
-          style: Styles.textStyle24P,
+          style: Styles.textStyle20P,
         ),
       ),
       body: SafeArea(

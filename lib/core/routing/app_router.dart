@@ -18,6 +18,7 @@ import 'package:insighta/features/home/ui/home_screen.dart';
 import 'package:insighta/features/notification/ui/notification_screen.dart';
 import 'package:insighta/features/onboarding/ui/onBoarding_screen.dart';
 import 'package:insighta/features/parent_child/ui/parent_child_screen.dart';
+import 'package:insighta/features/profile/logic/change_avatar_cubit/change_avatar_cubit.dart';
 import 'package:insighta/features/profile/ui/about_screen.dart';
 import 'package:insighta/features/profile/ui/about_your_account_screen.dart';
 import 'package:insighta/features/profile/ui/edit_profile_screen.dart';
@@ -83,7 +84,11 @@ class AppRouter {
       case Routes.profileScreen:
         return MaterialPageRoute(builder: (_) => const ProfileScreen());
       case Routes.editProfileScreen:
-        return MaterialPageRoute(builder: (_) => const EditProfileScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => getIt<ChangeAvatarCubit>(),
+                  child: const EditProfileScreen(),
+                ));
       case Routes.settingsScreen:
         return MaterialPageRoute(builder: (_) => const SettingsScreen());
       case Routes.aboutScreen:

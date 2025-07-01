@@ -29,7 +29,6 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   bloc: ^9.0.0
-  build_runner: ^2.4.15
   cupertino_icons: ^1.0.8
   d_chart: ^2.10.5
   dartz: ^0.10.1
@@ -40,6 +39,7 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^9.0.0
   flutter_native_splash: ^2.4.4
+  retrofit_generator: ^9.1.5
   flutter_screenutil: ^5.9.3
   flutter_secure_storage: ^9.2.4
   flutter_svg: ^2.0.17
@@ -67,7 +67,9 @@ dev_dependencies:
     sdk: flutter
   #A build system for Dart code generation and modular compilation.
   json_serializable: ^6.9.1
-  retrofit_generator: ^9.1.9
+  build_runner: ^2.4.13
+  
+  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

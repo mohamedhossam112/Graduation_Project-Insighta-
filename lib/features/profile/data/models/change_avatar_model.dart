@@ -19,6 +19,7 @@ class UserModel {
 
   factory UserModel.fromJson(Map<String, dynamic> json) =>
       _$UserModelFromJson(json);
+  Map<String, dynamic> toJson() => _$UserModelToJson(this);
 }
 
 @JsonSerializable()
@@ -36,4 +37,5 @@ class AvatarResponse {
 
   factory AvatarResponse.fromJson(Map<String, dynamic> json) =>
       _$AvatarResponseFromJson(json);
+  Map<String, dynamic> toJson() => _$AvatarResponseToJson(this);
 }

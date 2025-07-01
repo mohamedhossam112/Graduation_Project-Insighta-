@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
 import 'package:insighta/core/networking/api_constants.dart';
 import 'package:insighta/features/auth/forget_password/data/models/forget_password_request_body.dart';
@@ -44,7 +42,7 @@ abstract class ApiService {
   Future<TherapyResponse> getTherapist();
   @POST(ApiConstants.changeAvatar)
   @MultiPart()
-  Future<AvatarResponse> uploadAvatar(
-    @Part(name: "avatar") File file,
+  Future<AvatarResponse> changeAvatar(
+    @Part(name: 'avatar') MultipartFile avatar,
   );
 }

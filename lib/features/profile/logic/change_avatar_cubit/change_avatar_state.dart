@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:insighta/core/networking/api_error_model.dart';
-import 'package:insighta/core/networking/api_result.dart';
+
 import 'package:insighta/features/profile/data/models/change_avatar_model.dart';
 part 'change_avatar_state.freezed.dart';
 

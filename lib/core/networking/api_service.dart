@@ -12,6 +12,7 @@ import 'package:insighta/features/auth/reset_password/data/models/reset_password
 import 'package:insighta/features/auth/reset_password/data/models/reset_password_response_body.dart';
 import 'package:insighta/features/auth/sign_up/data/models/sign_up_request_body.dart';
 import 'package:insighta/features/auth/sign_up/data/models/sign_up_response_body.dart';
+import 'package:insighta/features/profile/data/models/change_avatar_model.dart';
 import 'package:insighta/features/therapy/data/models/therapy_response.dart';
 import 'package:retrofit/retrofit.dart';
 part 'api_service.g.dart';
@@ -41,4 +42,9 @@ abstract class ApiService {
   );
   @GET(ApiConstants.therapy)
   Future<TherapyResponse> getTherapist();
+  @POST(ApiConstants.changeAvatar)
+  @MultiPart()
+  Future<AvatarResponse> uploadAvatar(
+    @Part(name: "avatar") File file,
+  );
 }

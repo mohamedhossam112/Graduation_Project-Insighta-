@@ -6,4 +6,5 @@ class ApiConstants {
   static const String otpVerify = 'password/reset/verify';
   static const String resetPassword = 'password/reset/confirm';
    static const String therapy = 'therapists?page=1&per_page=10';
+   static const String changeAvatar = 'profile/avatar';
 }

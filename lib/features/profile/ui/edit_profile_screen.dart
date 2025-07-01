@@ -39,21 +39,25 @@ class EditProfileScreen extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    top: 8,
-                    right: 130,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: ColorsManager.primaryColor,
-                        shape: BoxShape.circle,
+                      bottom: -10,
+                      right: 130,
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: Container(
+                          decoration: BoxDecoration(
+                            color: ColorsManager.primaryColor,
+                            shape: BoxShape.circle,
+                          ),
+                          padding: EdgeInsets.all(6),
+                          child: Icon(
+                            Icons.add_a_photo,
+                            color: Colors.white,
+                            size: 14.sp,
+                          ),
+                        ),
+                      )
+                     
                       ),
-                      padding: EdgeInsets.all(6),
-                      child: Icon(
-                        Icons.edit,
-                        color: Colors.white,
-                        size: 10,
-                      ),
-                    ),
-                  ),
                 ],
               ),
             ),
@@ -78,6 +82,6 @@ class EditProfileScreen extends StatelessWidget {
         ),
       )),
     );
-    ;
+    
   }
 }

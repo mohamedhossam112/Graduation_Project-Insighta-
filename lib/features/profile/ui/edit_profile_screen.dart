@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:insighta/core/theming/colors.dart';
 import 'package:insighta/core/utils/styles.dart';
 import 'package:insighta/core/widgets/custom_back_button.dart';
+import 'package:insighta/features/profile/ui/widgets/change_photo_widget.dart';
 import 'package:insighta/features/profile/ui/widgets/profile_screen_item.dart';
 
 class EditProfileScreen extends StatelessWidget {
@@ -27,40 +28,7 @@ class EditProfileScreen extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 24.h),
-            GestureDetector(
-              onTap: () {},
-              child: Stack(
-                children: [
-                  Center(
-                    child: CircleAvatar(
-                      radius: 50.r,
-                      backgroundImage:
-                          AssetImage('assets/images/profile_image.png'),
-                    ),
-                  ),
-                  Positioned(
-                      bottom: -10,
-                      right: 130,
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: Container(
-                          decoration: BoxDecoration(
-                            color: ColorsManager.primaryColor,
-                            shape: BoxShape.circle,
-                          ),
-                          padding: EdgeInsets.all(6),
-                          child: Icon(
-                            Icons.add_a_photo,
-                            color: Colors.white,
-                            size: 14.sp,
-                          ),
-                        ),
-                      )
-                     
-                      ),
-                ],
-              ),
-            ),
+            ChangePhotoWidget(),
             SizedBox(height: 16.h),
             SizedBox(height: 30.h),
             ProfileScreenItem(
@@ -82,6 +50,5 @@ class EditProfileScreen extends StatelessWidget {
         ),
       )),
     );
-    
   }
 }

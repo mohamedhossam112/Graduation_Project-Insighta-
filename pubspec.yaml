@@ -39,7 +39,6 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^9.0.0
   flutter_native_splash: ^2.4.4
-  retrofit_generator: ^9.1.5
   flutter_screenutil: ^5.9.3
   flutter_secure_storage: ^9.2.4
   flutter_svg: ^2.0.17
@@ -53,6 +52,7 @@ dependencies:
   package_info_plus: ^8.3.0
   pretty_dio_logger: ^1.4.0
   retrofit: ^4.4.2
+  retrofit_generator: ^9.1.5
   shared_preferences: ^2.5.3
   smooth_page_indicator: ^1.2.1
   top_snackbar_flutter: ^3.2.0

@@ -1,4 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:insighta/features/therapy/data/models/therapy_response.dart';
+
 part 'therapy_response.g.dart';
 
 @JsonSerializable()
@@ -51,7 +53,8 @@ class Payload {
   String? specialty;
   String? rating;
   String? price;
-  File? file;
+  @JsonKey(name: 'file')
+TherapyFile? therapyFile;
 
   Payload(
       {required this.id,
@@ -61,7 +64,7 @@ class Payload {
       required this.specialty,
       required this.rating,
       required this.price,
-      required this.file});
+      required this.therapyFile});
 
   factory Payload.fromJson(Map<String, dynamic> json) =>
       _$PayloadFromJson(json);
@@ -70,7 +73,7 @@ class Payload {
 }
 
 @JsonSerializable()
-class File {
+class TherapyFile {
   int id;
   String? url;
   String? name;
@@ -78,14 +81,15 @@ class File {
   String? mimeType;
   String? type;
 
-  File(
+  TherapyFile(
       {required this.id,
       required this.url,
       required this.name,
       required this.mimeType,
       required this.type});
 
-  factory File.fromJson(Map<String, dynamic> json) => _$FileFromJson(json);
+  factory TherapyFile.fromJson(Map<String, dynamic> json) =>
+      _$TherapyFileFromJson(json);
 
-  Map<String, dynamic> toJson() => _$FileToJson(this);
+  Map<String, dynamic> toJson() => _$TherapyFileToJson(this);
 }

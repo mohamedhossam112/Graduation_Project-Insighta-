@@ -87,7 +87,7 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
             ),
           ),
           SizedBox(
-            height: 200.h,
+            height: 100.h,
           ),
           AppTextButton(
             text: 'Change Password',

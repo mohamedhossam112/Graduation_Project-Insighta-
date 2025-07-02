@@ -20,7 +20,7 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
         .forgetPassword(ForgetPasswordRequestBody(email: emailController.text));
 
     response.when(success: (forgetPasswordResponseBody) async {
-      await SharedPrefHelper.setData(SharedPrefKeys.email, email);
+       await SharedPrefHelper.setData(SharedPrefKeys.email, email);
       emit(ForgetPasswordState.success(
           forgetPasswordResponse: forgetPasswordResponseBody));
     }, failure: (error) {

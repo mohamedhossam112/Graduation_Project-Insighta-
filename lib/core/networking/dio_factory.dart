@@ -45,7 +45,8 @@ class DioFactory {
             if (token != null) {
               await SharedPrefHelper.setSecuredString(
                   SharedPrefKeys.userToken, token);
-              dio?.options.headers['Authorization'] = token;
+              // dio?.options.headers['Authorization'] = token;
+              dio?.options.headers['Authorization'] = 'Bearer $token';
             }
             handler.next(response);
           },

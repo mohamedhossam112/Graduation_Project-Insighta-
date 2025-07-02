@@ -33,7 +33,7 @@ class TherapyCard extends StatelessWidget {
               leading: Padding(
                 padding: EdgeInsets.only(top: 8.h),
                 child: Image.network(
-                  therapyModel.file?.url ?? '',
+                  therapyModel.therapyFile?.url ?? '',
                   width: 36.w,
                 ),
               ),

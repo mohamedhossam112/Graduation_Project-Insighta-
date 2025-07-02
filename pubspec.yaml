@@ -51,7 +51,7 @@ dependencies:
   meta: ^1.16.0
   package_info_plus: ^8.3.0
   pretty_dio_logger: ^1.4.0
-  retrofit: ^4.4.2
+  retrofit: ^4.4.1
   retrofit_generator: ^9.1.5
   shared_preferences: ^2.5.3
   smooth_page_indicator: ^1.2.1
@@ -66,7 +66,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   #A build system for Dart code generation and modular compilation.
-  json_serializable: ^6.9.1
+  json_serializable: ^6.9.0
   build_runner: ^2.4.13
   
   

@@ -49,9 +49,9 @@ Payload _$PayloadFromJson(Map<String, dynamic> json) => Payload(
       specialty: json['specialty'] as String?,
       rating: json['rating'] as String?,
       price: json['price'] as String?,
-      file: json['file'] == null
+      therapyFile: json['file'] == null
           ? null
-          : File.fromJson(json['file'] as Map<String, dynamic>),
+          : TherapyFile.fromJson(json['file'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$PayloadToJson(Payload instance) => <String, dynamic>{
@@ -62,10 +62,10 @@ Map<String, dynamic> _$PayloadToJson(Payload instance) => <String, dynamic>{
       'specialty': instance.specialty,
       'rating': instance.rating,
       'price': instance.price,
-      'file': instance.file,
+      'file': instance.therapyFile,
     };
 
-File _$FileFromJson(Map<String, dynamic> json) => File(
+TherapyFile _$TherapyFileFromJson(Map<String, dynamic> json) => TherapyFile(
       id: (json['id'] as num).toInt(),
       url: json['url'] as String?,
       name: json['name'] as String?,
@@ -73,7 +73,8 @@ File _$FileFromJson(Map<String, dynamic> json) => File(
       type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$FileToJson(File instance) => <String, dynamic>{
+Map<String, dynamic> _$TherapyFileToJson(TherapyFile instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'url': instance.url,
       'name': instance.name,

@@ -1,5 +1,8 @@
 
 
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:insighta/core/networking/api_constants.dart';
 import 'package:insighta/features/auth/forget_password/data/models/forget_password_request_body.dart';
@@ -13,8 +16,9 @@ import 'package:insighta/features/auth/reset_password/data/models/reset_password
 import 'package:insighta/features/auth/sign_up/data/models/sign_up_request_body.dart';
 import 'package:insighta/features/auth/sign_up/data/models/sign_up_response_body.dart';
 import 'package:insighta/features/profile/data/models/change_avatar_model.dart';
-
 import 'package:insighta/features/therapy/data/models/therapy_response.dart';
+
+
 import 'package:retrofit/retrofit.dart';
 part 'api_service.g.dart';
 
@@ -46,8 +50,8 @@ abstract class ApiService {
   @POST(ApiConstants.changeAvatar)
   @MultiPart()
   Future<AvatarResponse> changeAvatar(
- //   @Part(name: 'avatar') MultipartFile avatar,
-     @Body() FormData formData,
+    @Part(name: 'avatar') File avatar,
+  //@Body() FormData formData,
    
   );
 }

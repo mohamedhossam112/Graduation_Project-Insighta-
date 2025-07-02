@@ -14,6 +14,7 @@ import 'package:insighta/features/auth/sign_up/data/repos/sign_up_repo.dart';
 import 'package:insighta/features/auth/sign_up/logic/signup_cubit/signup_cubit.dart';
 import 'package:insighta/features/profile/data/repos/change_avatar_repo.dart';
 import 'package:insighta/features/profile/logic/change_avatar_cubit/change_avatar_cubit.dart';
+
 import 'package:insighta/features/therapy/data/repos/therapy_repo.dart';
 import 'package:insighta/features/therapy/logic/get_therapist_cubit/get_therapist_cubit.dart';
 
@@ -46,6 +47,7 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<TherapyRepo>(() => TherapyRepo(getIt()));
   getIt.registerFactory<GetTherapistCubit>(() => GetTherapistCubit(getIt()));
   //changeAvatar
-   getIt.registerLazySingleton<ChangeAvatarRepo>(() => ChangeAvatarRepo(getIt()));
+  getIt
+      .registerLazySingleton<ChangeAvatarRepo>(() => ChangeAvatarRepo(getIt()));
   getIt.registerFactory<ChangeAvatarCubit>(() => ChangeAvatarCubit(getIt()));
 }

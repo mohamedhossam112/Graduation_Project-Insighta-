@@ -88,7 +88,7 @@ class _ApiService implements ApiService {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'password/reset/otp',
+            'auth/password/reset/otp',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -118,7 +118,7 @@ class _ApiService implements ApiService {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'password/reset/verify',
+            'auth/password/reset/verify',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -148,7 +148,7 @@ class _ApiService implements ApiService {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'password/reset/confirm',
+            'auth/password/reset/confirm',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -193,11 +193,20 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<AvatarResponse> changeAvatar(FormData formData) async {
+  Future<AvatarResponse> changeAvatar(File avatar) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = formData;
+    final _data = FormData();
+    _data.files.add(
+      MapEntry(
+        'avatar',
+        MultipartFile.fromFileSync(
+          avatar.path,
+          filename: avatar.path.split(Platform.pathSeparator).last,
+        ),
+      ),
+    );
     final _options = _setStreamType<AvatarResponse>(
       Options(
         method: 'POST',

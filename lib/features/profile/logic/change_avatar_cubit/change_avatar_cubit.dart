@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:bloc/bloc.dart';
 import 'package:insighta/core/helpers/shared_pref_helper.dart';
 import 'package:insighta/features/profile/data/models/change_avatar_model.dart';
-import 'package:insighta/features/profile/data/models/change_avatar_request.dart';
 
 import 'package:insighta/features/profile/data/repos/change_avatar_repo.dart';
 import 'package:insighta/features/profile/logic/change_avatar_cubit/change_avatar_state.dart';
@@ -17,17 +16,18 @@ class ChangeAvatarCubit extends Cubit<ChangeAvatarState> {
     if (newImage == null) return;
 
     emit(ChangeAvatarState.loading());
-    final request = ChangeAvatarRequest(profileImageUrl: newImage);
-    final response = await _avatarRepo.changeAvatar(request);
+
+    final response = await _avatarRepo.changeAvatar(newImage);
     response.when(
       success: (avatarResponse) {
         userData = avatarResponse;
-        if (avatarResponse.avatarUrl != null) {
+        if (avatarResponse.avatarUrl.isNotEmpty) {
           SharedPrefHelper.setData(
             SharedPrefKeys.profileImageUrl,
             avatarResponse.avatarUrl,
           );
         }
+
         emit(ChangeAvatarState.success(avatarResponse));
       },
       failure: (error) {

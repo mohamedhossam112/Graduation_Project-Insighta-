@@ -19,8 +19,10 @@ import 'package:insighta/features/notification/ui/notification_screen.dart';
 import 'package:insighta/features/onboarding/ui/onBoarding_screen.dart';
 import 'package:insighta/features/parent_child/ui/parent_child_screen.dart';
 import 'package:insighta/features/profile/logic/change_avatar_cubit/change_avatar_cubit.dart';
+
 import 'package:insighta/features/profile/ui/about_screen.dart';
 import 'package:insighta/features/profile/ui/about_your_account_screen.dart';
+import 'package:insighta/features/profile/ui/change_name_screen.dart';
 import 'package:insighta/features/profile/ui/edit_profile_screen.dart';
 import 'package:insighta/features/profile/ui/help_screen.dart';
 import 'package:insighta/features/profile/ui/privacy_policy_screen.dart';
@@ -82,7 +84,11 @@ class AppRouter {
       case Routes.parentChildScreen:
         return MaterialPageRoute(builder: (_) => const ParentChildScreen());
       case Routes.profileScreen:
-        return MaterialPageRoute(builder: (_) => const ProfileScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => getIt<ChangeAvatarCubit>(),
+                  child: const ProfileScreen(),
+                ));
       case Routes.editProfileScreen:
         return MaterialPageRoute(
             builder: (_) => BlocProvider(
@@ -125,6 +131,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const SuggestScreen());
       case Routes.usageScreen:
         return MaterialPageRoute(builder: (_) => const UsageScreen());
+      case Routes.changeNameScreen:
+        return MaterialPageRoute(builder: (_) => const ChangeNameScreen());
       default:
         // If no route matches, show an error screen
         return MaterialPageRoute(

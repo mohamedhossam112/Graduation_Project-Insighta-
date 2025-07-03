@@ -7,4 +7,5 @@ class ApiConstants {
   static const String resetPassword = 'auth/password/reset/confirm';
   static const String therapy = 'therapists?page=1&per_page=10';
   static const String changeAvatar = 'profile/avatar';
+  static const String deleteProfile = 'profile';
 }

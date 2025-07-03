@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
-class ChangeNameScreen extends StatelessWidget {
-  const ChangeNameScreen({super.key});
+class DeleteAccountScreen extends StatelessWidget {
+  const DeleteAccountScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

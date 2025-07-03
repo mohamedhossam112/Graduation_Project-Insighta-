@@ -120,7 +120,7 @@ class EditProfileScreen extends StatelessWidget {
                     titleStyle: Styles.textStyle16I.copyWith(
                         fontWeight: FontWeight.w700, color: Colors.black),
                     onTap: () {
-                      Navigator.pushNamed(context, Routes.changeNameScreen);
+                    
                     },
                   ),
                   SizedBox(height: 16.h),

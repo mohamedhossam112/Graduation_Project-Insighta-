@@ -22,7 +22,7 @@ import 'package:insighta/features/profile/logic/change_avatar_cubit/change_avata
 
 import 'package:insighta/features/profile/ui/about_screen.dart';
 import 'package:insighta/features/profile/ui/about_your_account_screen.dart';
-import 'package:insighta/features/profile/ui/change_name_screen.dart';
+import 'package:insighta/features/profile/ui/delete_account_screen.dart';
 import 'package:insighta/features/profile/ui/edit_profile_screen.dart';
 import 'package:insighta/features/profile/ui/help_screen.dart';
 import 'package:insighta/features/profile/ui/privacy_policy_screen.dart';
@@ -95,6 +95,8 @@ class AppRouter {
                   create: (context) => getIt<ChangeAvatarCubit>(),
                   child: const EditProfileScreen(),
                 ));
+      case Routes.deleteAccountScreen:
+        return MaterialPageRoute(builder: (_) => const DeleteAccountScreen());
       case Routes.settingsScreen:
         return MaterialPageRoute(builder: (_) => const SettingsScreen());
       case Routes.aboutScreen:
@@ -131,8 +133,6 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const SuggestScreen());
       case Routes.usageScreen:
         return MaterialPageRoute(builder: (_) => const UsageScreen());
-      case Routes.changeNameScreen:
-        return MaterialPageRoute(builder: (_) => const ChangeNameScreen());
       default:
         // If no route matches, show an error screen
         return MaterialPageRoute(

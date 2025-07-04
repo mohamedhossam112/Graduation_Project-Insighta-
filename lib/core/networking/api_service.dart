@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
@@ -52,7 +51,7 @@ abstract class ApiService {
     @Part(name: 'avatar') File avatar,
     //@Body() FormData formData,
   );
-  @POST(ApiConstants.deleteProfile)
+  @DELETE(ApiConstants.deleteProfile)
   Future<DeleteAccountResponse> deleteProfile(
     @Body() DeleteAccountRequest deleteAccountRequest,
   );

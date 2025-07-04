@@ -7,10 +7,10 @@ import 'package:insighta/features/suggest/ui/widgets/suggest_card.dart';
 
 class SuggestColumnListView extends StatelessWidget {
   const SuggestColumnListView({
-    Key? key,
+    super.key,
     required this.txt,
     required this.type,
-  }) : super(key: key);
+  });
   final String txt;
   final String type;
   @override
@@ -33,7 +33,7 @@ class SuggestColumnListView extends StatelessWidget {
               itemCount: 8,
               itemBuilder: (context, index) {
                 return SuggestCard(
-                  imagePath: 'assets/images/${type}.png',
+                  imagePath: 'assets/images/$type.png',
                 );
               }),
         ),

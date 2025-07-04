@@ -9,7 +9,7 @@ class DeleteAccountRepo {
   final ApiService _apiService;
 
   DeleteAccountRepo(this._apiService);
-  Future<ApiResult<DeleteAccountResponse>> forgetPassword(
+  Future<ApiResult<DeleteAccountResponse>> deleteAccount(
       DeleteAccountRequest deleteAccountRequest) async {
     try {
       final response = await _apiService.deleteProfile(deleteAccountRequest);

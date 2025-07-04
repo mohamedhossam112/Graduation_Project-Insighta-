@@ -6,8 +6,6 @@ import 'package:insighta/core/helpers/app_regex.dart';
 import 'package:insighta/features/auth/login/ui/widgets/app_text_form_field.dart';
 import 'package:insighta/features/auth/login/ui/widgets/password_validations.dart';
 import 'package:insighta/features/auth/sign_up/logic/signup_cubit/signup_cubit.dart';
-import 'package:insighta/features/auth/sign_up/ui/widgets/sign_up_form.dart'
-    as passwordController;
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm({super.key});
@@ -62,6 +60,7 @@ class _SignUpFormState extends State<SignUpForm> {
               if (value == null || value.isEmpty) {
                 return 'Please Enter valid Name';
               }
+              return null;
             },
             controller: context.read<SignupCubit>().nameController,
           ),
@@ -74,6 +73,7 @@ class _SignUpFormState extends State<SignUpForm> {
               if (value == null || value.isEmpty) {
                 return 'Please Enter Valid Email';
               }
+              return null;
             },
             controller: context.read<SignupCubit>().emailController,
           ),
@@ -85,6 +85,7 @@ class _SignUpFormState extends State<SignUpForm> {
               if (value == null || value.isEmpty) {
                 return 'Please Enter Valid Password';
               }
+              return null;
             },
             controller: context.read<SignupCubit>().passwordController,
             hintText: 'Enter your Password',
@@ -107,6 +108,7 @@ class _SignUpFormState extends State<SignUpForm> {
               if (value == null || value.isEmpty) {
                 return 'Please Enter Valid Password';
               }
+              return null;
             },
             controller:
                 context.read<SignupCubit>().passwordConfirmationController,
@@ -124,6 +126,16 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           SizedBox(
             height: 16.h,
+          ),
+          AppTextFormField(
+            hintText: 'Enter your Role',
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please Enter Valid Role';
+              }
+              return null;
+            },
+            controller: context.read<SignupCubit>().roleController,
           ),
           PasswordValidations(
             hasLowerCase: hasLowercase,

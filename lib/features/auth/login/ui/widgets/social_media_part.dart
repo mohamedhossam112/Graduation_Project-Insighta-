@@ -6,10 +6,10 @@ import 'package:insighta/core/theming/colors.dart';
 
 class SocialMediaPart extends StatelessWidget {
   const SocialMediaPart({
-    Key? key,
+    super.key,
     required this.iconImage,
     this.onPressed,
-  }) : super(key: key);
+  });
   final String iconImage;
   final void Function()? onPressed;
   @override

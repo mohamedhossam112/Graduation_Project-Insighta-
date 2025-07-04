@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:insighta/features/therapy/data/models/therapy_response.dart';
 
 part 'therapy_response.g.dart';
 
@@ -54,7 +53,7 @@ class Payload {
   String? rating;
   String? price;
   @JsonKey(name: 'file')
-TherapyFile? therapyFile;
+  TherapyFile? therapyFile;
 
   Payload(
       {required this.id,

@@ -9,9 +9,9 @@ import 'package:insighta/features/usage/data/bar_data.dart';
 
 class SocialUsageBarChart extends StatelessWidget {
   const SocialUsageBarChart({
-    Key? key,
+    super.key,
     required this.socialUsage,
-  }) : super(key: key);
+  });
   final List<double> socialUsage;
   @override
   Widget build(BuildContext context) {

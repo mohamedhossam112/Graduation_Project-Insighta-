@@ -20,27 +20,27 @@ class ResetPasswordScreen extends StatelessWidget {
       ),
       body: SafeArea(
         child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 10.h),
-            child: SafeArea(
-                child: BlocBuilder<ResetPasswordCubit, ResetPasswordState>(
-              builder: (context, state) {
-                return state.when(
-                  initial: () => const SizedBox.shrink(),
-                  loadingStoredData: () =>
-                      const Center(child: CircularProgressIndicator()),
-                  storedDataLoaded: (isPasswordHidden,
-                          isConfirmPasswordHidden) =>
-                      _buildContent(isPasswordHidden, isConfirmPasswordHidden),
-                  loading: () => _buildContent(
-                    context.read<ResetPasswordCubit>().isPasswordHidden,
-                    context.read<ResetPasswordCubit>().isConfirmPasswordHidden,
-                  ),
-                  success: () => const SizedBox.shrink(),
-                  error: (error) =>
-                      Center(child: Text(error.getAllErrorMessages())),
-                );
-              },
-            ))),
+          padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 10.h),
+          child: SafeArea(
+              child: BlocBuilder<ResetPasswordCubit, ResetPasswordState>(
+            builder: (context, state) {
+              return state.when(
+                initial: () => const SizedBox.shrink(),
+                loadingStoredData: () =>
+                    const Center(child: CircularProgressIndicator()),
+                storedDataLoaded: (isPasswordHidden, isConfirmPasswordHidden) =>
+                    _buildContent(isPasswordHidden, isConfirmPasswordHidden),
+                loading: () => _buildContent(
+                  context.read<ResetPasswordCubit>().isPasswordHidden,
+                  context.read<ResetPasswordCubit>().isConfirmPasswordHidden,
+                ),
+                success: () => const SizedBox.shrink(),
+                error: (error) =>
+                    Center(child: Text(error.getAllErrorMessages())),
+              );
+            },
+          )),
+        ),
       ),
     );
   }

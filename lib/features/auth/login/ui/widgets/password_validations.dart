@@ -7,13 +7,13 @@ import 'package:insighta/core/utils/styles.dart';
 
 class PasswordValidations extends StatelessWidget {
   const PasswordValidations({
-    Key? key,
+    super.key,
     required this.hasUpperCase,
     required this.hasLowerCase,
     required this.hasSpecialCharacters,
     required this.hasNumber,
     required this.hasMinLength,
-  }) : super(key: key);
+  });
 
   final bool hasUpperCase;
   final bool hasLowerCase;

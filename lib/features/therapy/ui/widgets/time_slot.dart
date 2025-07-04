@@ -8,10 +8,10 @@ import 'package:insighta/features/therapy/logic/time_select_cubit/time_select_cu
 
 class TimeSlot extends StatelessWidget {
   const TimeSlot({
-    Key? key,
+    super.key,
     required this.title,
     required this.slots,
-  }) : super(key: key);
+  });
   final String title;
   final List<String> slots;
   @override

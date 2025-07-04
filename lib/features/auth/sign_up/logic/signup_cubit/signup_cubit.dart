@@ -11,7 +11,7 @@ class SignupCubit extends Cubit<SignupState> {
   final formKey = GlobalKey<FormState>();
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
-
+  TextEditingController roleController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController passwordConfirmationController =
       TextEditingController();
@@ -21,9 +21,9 @@ class SignupCubit extends Cubit<SignupState> {
     final response = await _signUpRepo.signup(
       SignupRequestBody(
         name: nameController.text,
-        email: emailController.text,
+        email: emailController.text.trim().toLowerCase(),
         password: passwordController.text,
-        role: 'user',
+        role: roleController.text,
         passwordConfirmation: passwordConfirmationController.text,
       ),
     );

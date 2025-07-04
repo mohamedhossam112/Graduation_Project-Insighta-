@@ -33,10 +33,11 @@ class _ForgetPasswordFormState extends State<ForgetPasswordForm> {
                   !AppRegex.isEmailValid(value)) {
                 return 'Please Enter Valid Email';
               }
+              return null;
             },
           ),
           SizedBox(
-            height: 400.h,
+            height: 100.h,
           ),
           AppTextButton(
             text: 'Send',

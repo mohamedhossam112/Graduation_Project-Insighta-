@@ -4,9 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SuggestCard extends StatelessWidget {
   const SuggestCard({
-    Key? key,
+    super.key,
     required this.imagePath,
-  }) : super(key: key);
+  });
   final String imagePath;
 
   @override

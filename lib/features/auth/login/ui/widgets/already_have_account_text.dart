@@ -6,11 +6,11 @@ import 'package:insighta/core/utils/styles.dart';
 
 class AlreadyHaveAccountText extends StatelessWidget {
   const AlreadyHaveAccountText({
-    Key? key,
+    super.key,
     required this.text1,
     required this.text2,
     required this.path,
-  }) : super(key: key);
+  });
   final String text1;
   final String text2;
   final String path;

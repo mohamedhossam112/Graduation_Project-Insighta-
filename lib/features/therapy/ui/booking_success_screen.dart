@@ -5,10 +5,10 @@ import 'package:insighta/features/therapy/ui/widgets/booking_success_screen_body
 
 class BookingSuccessScreen extends StatelessWidget {
   const BookingSuccessScreen({
-    Key? key,
+    super.key,
     required this.date,
     required this.time,
-  }) : super(key: key);
+  });
   final DateTime date;
   final String time;
   @override

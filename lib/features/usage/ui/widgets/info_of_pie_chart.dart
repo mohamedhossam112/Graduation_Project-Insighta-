@@ -5,10 +5,10 @@ import 'package:insighta/core/utils/styles.dart';
 
 class InfoOfPieChart extends StatelessWidget {
   const InfoOfPieChart({
-    Key? key,
+    super.key,
     required this.color,
     required this.platform,
-  }) : super(key: key);
+  });
   final Color color;
   final String platform;
   @override

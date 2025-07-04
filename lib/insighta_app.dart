@@ -9,12 +9,12 @@ import 'package:insighta/core/theming/colors.dart';
 
 class InsightaApp extends StatelessWidget {
   const InsightaApp({
-    Key? key,
+    super.key,
     required this.appRouter,
     required this.hasSeenOnboarding,
     required this.navigatorKey,
     required this.isLoggedIn,
-  }) : super(key: key);
+  });
   final AppRouter appRouter;
   final bool hasSeenOnboarding;
   final bool isLoggedIn;

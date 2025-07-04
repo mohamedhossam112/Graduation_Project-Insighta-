@@ -16,10 +16,10 @@ class ResetPasswordForm extends StatefulWidget {
   final bool isPasswordHidden;
   final bool isConfirmPasswordHidden;
   const ResetPasswordForm({
-    Key? key,
+    super.key,
     required this.isPasswordHidden,
     required this.isConfirmPasswordHidden,
-  }) : super(key: key);
+  });
 
   @override
   State<ResetPasswordForm> createState() => _ResetPasswordFormState();
@@ -45,6 +45,7 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
               if (value == null || value.isEmpty) {
                 return 'Please Enter Valid Password';
               }
+              return null;
             },
             controller: cubit.newPasswordController,
             hintText: 'New Password',
@@ -69,6 +70,7 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
               if (value == null || value.isEmpty) {
                 return 'Please Enter Valid Password';
               }
+              return null;
             },
             controller:
                 context.read<ResetPasswordCubit>().confirmPasswordController,

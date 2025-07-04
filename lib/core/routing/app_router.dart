@@ -19,6 +19,7 @@ import 'package:insighta/features/notification/ui/notification_screen.dart';
 import 'package:insighta/features/onboarding/ui/onBoarding_screen.dart';
 import 'package:insighta/features/parent_child/ui/parent_child_screen.dart';
 import 'package:insighta/features/profile/logic/change_avatar_cubit/change_avatar_cubit.dart';
+import 'package:insighta/features/profile/logic/delete_account_cubit/delete_account_cubit.dart';
 
 import 'package:insighta/features/profile/ui/about_screen.dart';
 import 'package:insighta/features/profile/ui/about_your_account_screen.dart';
@@ -96,7 +97,11 @@ class AppRouter {
                   child: const EditProfileScreen(),
                 ));
       case Routes.deleteAccountScreen:
-        return MaterialPageRoute(builder: (_) => const DeleteAccountScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => getIt<DeleteAccountCubit>(),
+                  child: const DeleteAccountScreen(),
+                ));
       case Routes.settingsScreen:
         return MaterialPageRoute(builder: (_) => const SettingsScreen());
       case Routes.aboutScreen:

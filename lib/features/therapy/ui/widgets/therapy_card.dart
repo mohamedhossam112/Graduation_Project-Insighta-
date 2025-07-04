@@ -9,9 +9,9 @@ import 'package:insighta/features/therapy/data/models/therapy_response.dart';
 
 class TherapyCard extends StatelessWidget {
   const TherapyCard({
-    Key? key,
+    super.key,
     required this.therapyModel,
-  }) : super(key: key);
+  });
   final Payload therapyModel;
   @override
   Widget build(BuildContext context) {

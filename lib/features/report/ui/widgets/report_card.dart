@@ -8,10 +8,10 @@ import 'package:insighta/core/utils/styles.dart';
 // ignore: camel_case_types
 class ReportCard extends StatelessWidget {
   const ReportCard({
-    Key? key,
+    super.key,
     required this.platform,
     required this.assetPath,
-  }) : super(key: key);
+  });
   final String platform;
   final String assetPath;
 

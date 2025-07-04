@@ -4,12 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CircledArrowButton extends StatelessWidget {
   const CircledArrowButton({
-    Key? key,
+    super.key,
     required this.onPressed,
     required this.icon,
     required this.color,
     required this.iconColor,
-  }) : super(key: key);
+  });
   final VoidCallback onPressed;
   final IconData icon;
   final Color color;

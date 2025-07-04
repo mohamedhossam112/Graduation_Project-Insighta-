@@ -15,8 +15,16 @@ import 'package:insighta/features/profile/logic/change_avatar_cubit/change_avata
 
 import 'package:insighta/features/profile/ui/widgets/profile_screen_item.dart';
 
+import '../../../core/helpers/shared_pref_helper.dart';
+
 class EditProfileScreen extends StatelessWidget {
   const EditProfileScreen({super.key});
+  Future<String> getProfileUrl() async {
+    String? profileUrl = await SharedPrefHelper.getString(
+            SharedPrefKeys.profileImageUrl) ??
+        'https://cdn.pixabay.com/photo/2017/06/13/12/54/profile-2398783_1280.png';
+    return profileUrl;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +51,7 @@ class EditProfileScreen extends StatelessWidget {
             success: (res) => res.avatarUrl,
             orElse: () => null,
           );
-
+//
           return SafeArea(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.h),
@@ -65,13 +73,24 @@ class EditProfileScreen extends StatelessWidget {
                     child: Stack(
                       children: [
                         Center(
-                          child: CircleAvatar(
-                            radius: 50.r,
-                            backgroundImage: avatarUrl != null
-                                ? CachedNetworkImageProvider(avatarUrl)
-                                : AssetImage('assets/images/profile_image.png')
-                                    as ImageProvider,
-                          ),
+                          child: FutureBuilder(
+                              future: getProfileUrl(),
+                              builder: (BuildContext context,
+                                  AsyncSnapshot<dynamic> snapshot) {
+                                if (snapshot.hasData) {
+                                  String? url = snapshot.data;
+                                  return CircleAvatar(
+                                    radius: 50.r,
+                                    backgroundImage: url != null
+                                        ? CachedNetworkImageProvider(url)
+                                        : AssetImage(
+                                                'assets/images/profile_image.png')
+                                            as ImageProvider,
+                                  );
+                                } else {
+                                  return CircularProgressIndicator();
+                                }
+                              }),
                         ),
                         Positioned(
                           bottom: -10,
@@ -119,9 +138,7 @@ class EditProfileScreen extends StatelessWidget {
                     title: 'Change Name',
                     titleStyle: Styles.textStyle16I.copyWith(
                         fontWeight: FontWeight.w700, color: Colors.black),
-                    onTap: () {
-                    
-                    },
+                    onTap: () {},
                   ),
                   SizedBox(height: 16.h),
                   ProfileScreenItem(
@@ -129,7 +146,9 @@ class EditProfileScreen extends StatelessWidget {
                     title: 'Delete Account',
                     titleStyle: Styles.textStyle16I.copyWith(
                         fontWeight: FontWeight.w700, color: Colors.black),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, Routes.deleteAccountScreen);
+                    },
                   ),
                 ],
               ),

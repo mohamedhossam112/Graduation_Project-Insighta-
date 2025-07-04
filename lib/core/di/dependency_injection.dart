@@ -13,7 +13,9 @@ import 'package:insighta/features/auth/reset_password/logic/reset_password_cubit
 import 'package:insighta/features/auth/sign_up/data/repos/sign_up_repo.dart';
 import 'package:insighta/features/auth/sign_up/logic/signup_cubit/signup_cubit.dart';
 import 'package:insighta/features/profile/data/repos/change_avatar_repo.dart';
+import 'package:insighta/features/profile/data/repos/delete_account_repo.dart';
 import 'package:insighta/features/profile/logic/change_avatar_cubit/change_avatar_cubit.dart';
+import 'package:insighta/features/profile/logic/delete_account_cubit/delete_account_cubit.dart';
 
 import 'package:insighta/features/therapy/data/repos/therapy_repo.dart';
 import 'package:insighta/features/therapy/logic/get_therapist_cubit/get_therapist_cubit.dart';
@@ -50,4 +52,8 @@ Future<void> setupGetIt() async {
   getIt
       .registerLazySingleton<ChangeAvatarRepo>(() => ChangeAvatarRepo(getIt()));
   getIt.registerFactory<ChangeAvatarCubit>(() => ChangeAvatarCubit(getIt()));
+  //deleteAccount
+  getIt.registerLazySingleton<DeleteAccountRepo>(
+      () => DeleteAccountRepo(getIt()));
+  getIt.registerFactory<DeleteAccountCubit>(() => DeleteAccountCubit(getIt()));
 }

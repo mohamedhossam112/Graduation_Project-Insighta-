@@ -8,8 +8,8 @@ import 'package:insighta/features/usage/ui/widgets/info_of_pie_chart.dart';
 
 class SocialUsageCard extends StatelessWidget {
   const SocialUsageCard({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

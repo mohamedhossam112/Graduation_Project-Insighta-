@@ -1,7 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:insighta/core/theming/colors.dart';
 import 'package:insighta/core/utils/styles.dart';
@@ -9,10 +8,10 @@ import 'package:intl/intl.dart';
 
 class BookingSuccessScreenBody extends StatelessWidget {
   const BookingSuccessScreenBody({
-    Key? key,
+    super.key,
     required this.date,
     required this.time,
-  }) : super(key: key);
+  });
   final DateTime date;
   final String time;
   @override
@@ -35,7 +34,7 @@ class BookingSuccessScreenBody extends StatelessWidget {
             color: ColorsManager.primaryColor,
           ),
           Text(
-            formattedDate + ', ' + time,
+            '$formattedDate, $time',
             style: Styles.textStyle24I.copyWith(color: Colors.black),
           ),
           SizedBox(

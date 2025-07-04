@@ -26,7 +26,7 @@ class DioFactory {
     print("_addDioHeaders token: $token");
     dio?.options.headers = {
       'Accept': 'application/json',
-      if (token.isNotEmpty) 'Authorization': "Bearer ${token}",
+      if (token.isNotEmpty) 'Authorization': "Bearer $token",
     };
   }
 

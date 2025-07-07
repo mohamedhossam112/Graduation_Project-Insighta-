@@ -31,6 +31,8 @@ import 'package:insighta/features/profile/ui/profile_screen.dart';
 import 'package:insighta/features/profile/ui/settings_screen.dart';
 import 'package:insighta/features/report/ui/report_card_details_screen.dart';
 import 'package:insighta/features/report/ui/report_screen.dart';
+import 'package:insighta/features/suggest/logic/get_books_cubit/get_books_cubit.dart';
+
 import 'package:insighta/features/suggest/ui/suggest_screen.dart';
 import 'package:insighta/features/therapy/logic/get_therapist_cubit/get_therapist_cubit.dart';
 import 'package:insighta/features/therapy/ui/select_time_slots_screen.dart';
@@ -135,7 +137,12 @@ class AppRouter {
                   time: args['time'] as String,
                 ));
       case Routes.suggestScreen:
-        return MaterialPageRoute(builder: (_) => const SuggestScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => getIt<GetBooksCubit>(),
+                  child: const SuggestScreen(),
+                ));
+
       case Routes.usageScreen:
         return MaterialPageRoute(builder: (_) => const UsageScreen());
       default:

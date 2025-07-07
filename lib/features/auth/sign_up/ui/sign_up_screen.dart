@@ -44,7 +44,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 AppTextButton(
                   text: 'Sign Up',
-                  buttonheight: 60.h,
+                  buttonheight: 80.h,
                   textStyle: Styles.textStyle24P.copyWith(color: Colors.white),
                   onPressed: () {
                     validateThenDoSignup(context);

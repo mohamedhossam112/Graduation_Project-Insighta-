@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:insighta/core/networking/api_service.dart';
+import 'package:insighta/core/networking/books_api_service.dart';
 import 'package:insighta/core/networking/dio_factory.dart';
 import 'package:insighta/features/auth/forget_password/data/repos/forget_password_repo.dart';
 import 'package:insighta/features/auth/forget_password/logic/forget_password_cubit/forget_password_cubit.dart';
@@ -16,6 +17,8 @@ import 'package:insighta/features/profile/data/repos/change_avatar_repo.dart';
 import 'package:insighta/features/profile/data/repos/delete_account_repo.dart';
 import 'package:insighta/features/profile/logic/change_avatar_cubit/change_avatar_cubit.dart';
 import 'package:insighta/features/profile/logic/delete_account_cubit/delete_account_cubit.dart';
+import 'package:insighta/features/suggest/data/repos/get_books_repo.dart';
+import 'package:insighta/features/suggest/logic/get_books_cubit/get_books_cubit.dart';
 
 import 'package:insighta/features/therapy/data/repos/therapy_repo.dart';
 import 'package:insighta/features/therapy/logic/get_therapist_cubit/get_therapist_cubit.dart';
@@ -26,6 +29,11 @@ Future<void> setupGetIt() async {
   // Dio & ApiService
   Dio dio = await DioFactory.getDio();
   getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
+  //Dio & BooksService
+  Dio booksDio = await DioFactory.getBooksDio();
+  // Dio booksDio = Dio(BaseOptions(baseUrl: 'https://www.googleapis.com/books/v1/'));
+  getIt.registerLazySingleton<BooksApiService>(() => BooksApiService(booksDio));
+
   // Login
   getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
   getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
@@ -56,4 +64,7 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<DeleteAccountRepo>(
       () => DeleteAccountRepo(getIt()));
   getIt.registerFactory<DeleteAccountCubit>(() => DeleteAccountCubit(getIt()));
+  //getBooksSuggest
+  getIt.registerLazySingleton<GetBooksRepo>(() => GetBooksRepo(getIt()));
+  getIt.registerFactory<GetBooksCubit>(() => GetBooksCubit(getIt()));
 }

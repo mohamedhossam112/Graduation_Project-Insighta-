@@ -1,30 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:insighta/features/suggest/ui/widgets/suggest_column_list_view.dart';
+
+import 'package:insighta/core/utils/styles.dart';
+import 'package:insighta/features/suggest/ui/widgets/featured_list_view.dart';
 
 class SuggestScreenBody extends StatelessWidget {
   const SuggestScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(left: 28.sp),
-      child: Column(
-        children: [
-          SuggestColumnListView(
-            txt: 'Videos',
-            type: 'video',
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30),
+                child: Text(
+                  'Books & Articles',
+                  style: Styles.textStyle20P,
+                ),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              FeaturedBooksListView(),
+            ],
           ),
-          SuggestColumnListView(
-            txt: 'Articles',
-            type: 'article',
-          ),
-          SuggestColumnListView(
-            txt: 'Books',
-            type: 'book',
-          )
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

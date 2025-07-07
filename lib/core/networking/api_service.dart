@@ -15,6 +15,7 @@ import 'package:insighta/features/auth/sign_up/data/models/sign_up_response_body
 import 'package:insighta/features/profile/data/models/change_avatar_model.dart';
 import 'package:insighta/features/profile/data/models/delete_account_request.dart';
 import 'package:insighta/features/profile/data/models/delete_account_response.dart';
+
 import 'package:insighta/features/therapy/data/models/therapy_response.dart';
 
 import 'package:retrofit/retrofit.dart';
@@ -55,4 +56,5 @@ abstract class ApiService {
   Future<DeleteAccountResponse> deleteProfile(
     @Body() DeleteAccountRequest deleteAccountRequest,
   );
+
 }

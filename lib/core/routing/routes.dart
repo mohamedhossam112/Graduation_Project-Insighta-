@@ -18,10 +18,11 @@ class Routes {
   static const String navBarScreen = '/navBar';
   static const String reportScreen = '/reportScreen';
   static const String therapyScreen = '/therapyScreen';
- static const String deleteAccountScreen = '/deleteAccountScreen';
+  static const String deleteAccountScreen = '/deleteAccountScreen';
   static const String reportCardDetailsScreen = '/reportCardDetailsScreen';
   static const String selectTimeSlotsScreen = '/selectTimeSlotsScreen';
   static const String bookingSuccessScreen = '/bookingSuccessScreen';
   static const String suggestScreen = '/suggestScreen';
+
   static const String usageScreen = '/usageScreen';
 }

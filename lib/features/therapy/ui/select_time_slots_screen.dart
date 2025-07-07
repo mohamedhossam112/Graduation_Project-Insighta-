@@ -45,13 +45,7 @@ class SelectTimeSlotsScreen extends StatelessWidget {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16.r)),
               onPressed: () {
-                /*   if (state is AppointmentSuccess) {
-                  Navigator.pushNamed(context, '/bookingSuccessScreen');
-                } else if (state is AppointmentFailure) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Please select both date and time')),
-                  );
-                }*/
+            
 
                 final dateState = context.read<DateSelectCubit>().state;
                 final timeState = context.read<TimeSelectCubit>().state;
@@ -62,12 +56,12 @@ class SelectTimeSlotsScreen extends StatelessWidget {
                   final selectedDate = dateState.dates[dateState.selectedIndex];
                   final selectedTime = timeState.selectedTime!;
 
-                  // Trigger Cubit to emit success (this will be listened to by the listener)
+                
                   context
                       .read<AppointmentCubit>()
                       .confirmAppointment(selectedDate, selectedTime);
                 } else {
-                  // Show error message if time not selected
+                 
                   context.read<AppointmentCubit>().showError();
                 }
               },

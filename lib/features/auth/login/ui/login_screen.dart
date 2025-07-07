@@ -58,7 +58,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 AppTextButton(
                   text: 'Login',
-                  buttonheight: 60.h,
+                  buttonheight: 80.h,
                   textStyle: Styles.textStyle24P.copyWith(color: Colors.white),
                   onPressed: () {
                     validateThenDoLogin(context);

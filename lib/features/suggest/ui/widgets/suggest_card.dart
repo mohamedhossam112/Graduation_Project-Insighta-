@@ -1,5 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SuggestCard extends StatelessWidget {
@@ -13,8 +13,8 @@ class SuggestCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: SizedBox(
-        height: 120.h,
-        width: 180.w,
+        height: 200.h,
+        width: 200.w,
         child: Card(
           color: Colors.white,
           elevation: 2,
@@ -25,12 +25,15 @@ class SuggestCard extends StatelessWidget {
             ),
             borderRadius: BorderRadius.circular(12.r),
           ),
-          child: Image.asset(
-            imagePath,
-            fit: BoxFit.cover,
+          child: ClipRRect(
+            child: Image.asset(
+              imagePath,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
       ),
     );
   }
 }
+*/

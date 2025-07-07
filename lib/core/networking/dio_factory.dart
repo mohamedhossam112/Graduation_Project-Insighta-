@@ -54,4 +54,27 @@ class DioFactory {
       ],
     );
   }
+
+  static Future<Dio> getBooksDio() async {
+    Duration timeOut = const Duration(seconds: 30);
+    final Dio booksDio = Dio();
+    booksDio.options
+      ..connectTimeout = timeOut
+      ..receiveTimeout = timeOut
+      ..headers = {
+        'Accept': 'application/json',
+        // No Authorization header here
+      };
+
+    booksDio.interceptors.add(
+      PrettyDioLogger(
+        requestHeader: true,
+        responseHeader: true,
+        responseBody: true,
+        requestBody: true,
+      ),
+    );
+
+    return booksDio;
+  }
 }

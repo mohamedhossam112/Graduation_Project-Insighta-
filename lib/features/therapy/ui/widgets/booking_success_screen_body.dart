@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:insighta/core/routing/routes.dart';
 
 import 'package:insighta/core/theming/colors.dart';
 import 'package:insighta/core/utils/styles.dart';
@@ -47,7 +48,7 @@ class BookingSuccessScreenBody extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
               ),
             ),
-            onPressed: () => Navigator.pop(context),
+            onPressed: () => Navigator.pushNamed(context, Routes.therapyScreen),
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 80.w, vertical: 16.h),
               child: Text(

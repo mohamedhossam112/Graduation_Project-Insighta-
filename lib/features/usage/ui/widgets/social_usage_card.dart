@@ -37,9 +37,12 @@ class SocialUsageCard extends StatelessWidget {
               height: 8.h,
             ),
             CustomPieChart(),
-            InfoOfPieChart(color: Color(0xffd33d97), platform: 'Instagram'),
-            InfoOfPieChart(color: Color(0xff51b9ff), platform: 'Twitter'),
-            InfoOfPieChart(color: Color(0xff1877f2), platform: 'Facebook'),
+            InfoOfPieChart(
+                color: ColorsManager.instagramColor, platform: 'Instagram'),
+            InfoOfPieChart(
+                color: ColorsManager.twitterColor, platform: 'Twitter'),
+            InfoOfPieChart(
+                color: ColorsManager.facebookColor, platform: 'Facebook'),
           ],
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:insighta/core/theming/colors.dart';
 import 'package:insighta/features/report/ui/widgets/report_card.dart';
 
 class ReportScreenBody extends StatelessWidget {
@@ -14,12 +15,16 @@ class ReportScreenBody extends StatelessWidget {
           children: [
             ReportCard(
                 platform: 'Facebook',
+                color: ColorsManager.facebookColor,
                 assetPath: 'assets/svgs/facebook_logo.svg'),
             ReportCard(
                 platform: 'Instagram',
+                color: ColorsManager.instagramColor,
                 assetPath: 'assets/svgs/instagram_logo.svg'),
             ReportCard(
-                platform: 'Twitter', assetPath: 'assets/svgs/twitter_logo.svg')
+                color: ColorsManager.twitterColor,
+                platform: 'Twitter',
+                assetPath: 'assets/svgs/twitter_logo.svg')
           ],
         ),
       ),

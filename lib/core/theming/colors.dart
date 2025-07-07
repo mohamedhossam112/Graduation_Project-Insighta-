@@ -13,4 +13,7 @@ class ColorsManager {
   static const Color navBarText = Color(0xff9A9898);
   static const Color cardText = Color(0xff616161);
   static const Color therapyGrey = Color(0xff959595);
+  static const Color facebookColor = Color(0xff1877f2);
+  static const Color twitterColor = Color(0xff51b9ff);
+  static const Color instagramColor = Color(0xffd33d97);
 }

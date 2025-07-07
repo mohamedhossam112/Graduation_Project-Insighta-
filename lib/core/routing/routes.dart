@@ -23,6 +23,6 @@ class Routes {
   static const String selectTimeSlotsScreen = '/selectTimeSlotsScreen';
   static const String bookingSuccessScreen = '/bookingSuccessScreen';
   static const String suggestScreen = '/suggestScreen';
-
+  static const String linkedAccountReportScreen = '/linkedAccountReportScreen';
   static const String usageScreen = '/usageScreen';
 }

@@ -18,6 +18,7 @@ class ReportCardDetailsScreen extends StatelessWidget {
     final String platform = arguments!['platform'];
     final String assetPath = arguments!['assetPath'];
 
+    final Color color = arguments!['color'];
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,
@@ -27,6 +28,7 @@ class ReportCardDetailsScreen extends StatelessWidget {
             child: Column(
           children: [
             Card(
+              elevation: 2,
               margin: EdgeInsets.symmetric(
                 vertical: 18.h,
                 horizontal: 22.w,
@@ -49,7 +51,7 @@ class ReportCardDetailsScreen extends StatelessWidget {
                         SizedBox(width: 4.w),
                         Text(
                           platform,
-                          style: Styles.textStyle20I,
+                          style: Styles.textStyle20I.copyWith(color: color),
                         ),
                       ],
                     ),

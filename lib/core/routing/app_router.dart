@@ -17,6 +17,8 @@ import 'package:insighta/features/home/ui/home_screen.dart';
 
 import 'package:insighta/features/notification/ui/notification_screen.dart';
 import 'package:insighta/features/onboarding/ui/onBoarding_screen.dart';
+import 'package:insighta/features/parent_child/data/models/linked_account_model.dart';
+import 'package:insighta/features/parent_child/ui/linked_account_report_screen.dart';
 import 'package:insighta/features/parent_child/ui/parent_child_screen.dart';
 import 'package:insighta/features/profile/logic/change_avatar_cubit/change_avatar_cubit.dart';
 import 'package:insighta/features/profile/logic/delete_account_cubit/delete_account_cubit.dart';
@@ -117,6 +119,10 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const PrivacyPolicyScreen());
       case Routes.reportScreen:
         return MaterialPageRoute(builder: (_) => const ReportScreen());
+      case Routes.linkedAccountReportScreen:
+        final args = arguments as LinkedAccountModel;
+        return MaterialPageRoute(
+            builder: (_) => LinkedAccountReportScreen(account: args));
       case Routes.therapyScreen:
         return MaterialPageRoute(
             builder: (_) => BlocProvider(

@@ -11,9 +11,11 @@ class ReportCard extends StatelessWidget {
     super.key,
     required this.platform,
     required this.assetPath,
+    required this.color,
   });
   final String platform;
   final String assetPath;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -22,16 +24,18 @@ class ReportCard extends StatelessWidget {
         Navigator.pushNamed(context, '/reportCardDetailsScreen', arguments: {
           'platform': platform,
           'assetPath': assetPath,
+          'color': color,
         });
       },
       child: Card(
+        elevation: 2,
         margin: EdgeInsets.symmetric(
           vertical: 18.h,
           horizontal: 22.w,
         ),
         shape: RoundedRectangleBorder(
           side: BorderSide(color: Color(0xffC8C3C3)),
-          borderRadius: BorderRadius.circular(12.r),
+          borderRadius: BorderRadius.circular(16.r),
         ),
         color: Colors.white,
         child: Padding(
@@ -48,7 +52,7 @@ class ReportCard extends StatelessWidget {
                     SizedBox(width: 4.w),
                     Text(
                       platform,
-                      style: Styles.textStyle20I,
+                      style: Styles.textStyle20I.copyWith(color: color),
                     ),
                   ],
                 ),

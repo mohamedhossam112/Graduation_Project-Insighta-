@@ -5,6 +5,7 @@ import 'package:insighta/core/di/dependency_injection.dart';
 import 'package:insighta/core/routing/routes.dart';
 import 'package:insighta/features/auth/forget_password/logic/forget_password_cubit/forget_password_cubit.dart';
 import 'package:insighta/features/auth/forget_password/ui/forget_password_screen.dart';
+import 'package:insighta/features/auth/login/logic/facebook_login_cubit/facebook_login_cubit.dart';
 import 'package:insighta/features/auth/login/logic/login_cubit/login_cubit.dart';
 import 'package:insighta/features/auth/login/ui/login_screen.dart';
 import 'package:insighta/features/auth/otp/logic/otp_reset_pass_cubit/otp_reset_pass_cubit.dart';
@@ -51,8 +52,15 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const onBoardingScreen());
       case Routes.logInScreen:
         return MaterialPageRoute(
-            builder: (_) => BlocProvider(
-                  create: (context) => getIt<LoginCubit>(),
+            builder: (_) => MultiBlocProvider(
+                  providers: [
+                    BlocProvider(
+                      create: (context) => getIt<LoginCubit>(),
+                    ),
+                    BlocProvider(
+                      create: (context) => getIt<FacebookLoginCubit>(),
+                    ),
+                  ],
                   child: LoginScreen(),
                 ));
       case Routes.signUpScreen:

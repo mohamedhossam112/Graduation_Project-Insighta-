@@ -8,13 +8,13 @@ class SignupResponseBody {
   String token;
 
   @JsonKey(name: 'Verification Code')
-  String verificationCode;
+  String? verificationCode;
 
   SignupResponseBody(
       {required this.status,
       required this.message,
       required this.token,
-      required this.verificationCode});
+      this.verificationCode});
 
   factory SignupResponseBody.fromJson(Map<String, dynamic> json) =>
       _$SignupResponseBodyFromJson(json);

@@ -29,7 +29,9 @@ class SignUpBlocListener extends StatelessWidget {
             );
           },
           success: (signupResponse) {
-            Navigator.of(context).pop();
+            if (Navigator.canPop(context)) {
+              Navigator.of(context).pop();
+            }
             Navigator.of(context).pushNamed(Routes.logInScreen);
             /*   Navigator.pushNamedAndRemoveUntil(
   context,
@@ -38,7 +40,9 @@ class SignUpBlocListener extends StatelessWidget {
 );*/
           },
           error: (error) {
-            Navigator.of(context).pop();
+            if (Navigator.canPop(context)) {
+              Navigator.of(context).pop();
+            }
             setupErrorState(context, error);
           },
         );

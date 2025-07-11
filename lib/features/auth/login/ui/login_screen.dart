@@ -10,6 +10,7 @@ import 'package:insighta/features/auth/login/ui/widgets/app_text_button.dart';
 import 'package:insighta/features/auth/login/ui/widgets/continue_with_other_platform.dart';
 import 'package:insighta/features/auth/login/ui/widgets/custom_divider.dart';
 import 'package:insighta/features/auth/login/ui/widgets/email_and_password.dart';
+import 'package:insighta/features/auth/login/ui/widgets/facebook_bloc_listener.dart';
 import 'package:insighta/features/auth/login/ui/widgets/login_bloc_listener.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -80,7 +81,8 @@ class LoginScreen extends StatelessWidget {
                   text2: ' Sign Up',
                   path: '/signUpScreen',
                 ),
-                LoginBlocListener(),
+                const LoginBlocListener(),
+                const FacebookLoginBlocListener(),
               ],
             ),
           ],

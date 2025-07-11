@@ -56,5 +56,4 @@ abstract class ApiService {
   Future<DeleteAccountResponse> deleteProfile(
     @Body() DeleteAccountRequest deleteAccountRequest,
   );
-
 }

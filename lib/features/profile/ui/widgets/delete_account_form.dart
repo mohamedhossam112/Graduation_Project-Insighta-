@@ -54,7 +54,7 @@ class _DeleteAccountFormState extends State<DeleteAccountForm> {
           ),
           AppTextButton(
             text: 'Delete My Account',
-            buttonheight: 60.h,
+            buttonheight: 80.h,
             textStyle: Styles.textStyle24P.copyWith(color: Colors.white),
             onPressed: () {
               submitForm(context,

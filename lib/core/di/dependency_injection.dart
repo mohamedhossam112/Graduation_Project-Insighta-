@@ -6,6 +6,7 @@ import 'package:insighta/core/networking/dio_factory.dart';
 import 'package:insighta/features/auth/forget_password/data/repos/forget_password_repo.dart';
 import 'package:insighta/features/auth/forget_password/logic/forget_password_cubit/forget_password_cubit.dart';
 import 'package:insighta/features/auth/login/data/repos/login_repo.dart';
+import 'package:insighta/features/auth/login/logic/facebook_login_cubit/facebook_login_cubit.dart';
 import 'package:insighta/features/auth/login/logic/login_cubit/login_cubit.dart';
 import 'package:insighta/features/auth/otp/data/repos/otp_reset_password_repo.dart';
 import 'package:insighta/features/auth/otp/logic/otp_reset_pass_cubit/otp_reset_pass_cubit.dart';
@@ -67,4 +68,6 @@ Future<void> setupGetIt() async {
   //getBooksSuggest
   getIt.registerLazySingleton<GetBooksRepo>(() => GetBooksRepo(getIt()));
   getIt.registerFactory<GetBooksCubit>(() => GetBooksCubit(getIt()));
+  // facebook login (no repo for now)
+  getIt.registerFactory<FacebookLoginCubit>(() => FacebookLoginCubit());
 }
